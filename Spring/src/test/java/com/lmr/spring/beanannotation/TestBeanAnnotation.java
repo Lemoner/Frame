@@ -10,7 +10,7 @@ import com.lmr.spring.base.UnitTestBase;
 public class TestBeanAnnotation extends UnitTestBase{
 
 	public TestBeanAnnotation() {
-		super("classpath*:spring-beanannotation.xml");
+		super("classpath:spring-beanannotation.xml");
 	}
 	
 	@Test
