@@ -1,5 +1,8 @@
 package com.lmr.spring.beanannotation.injection.service;
 
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -9,8 +12,10 @@ import com.lmr.spring.beanannotation.injection.dao.InjectionDao;
 @Service
 public class InjectionServiceImpl implements InjectionService{
 
-	@Autowired()
-	@Qualifier("injectionDaoImplOne")
+//	@Autowired()
+//	@Qualifier("injectionDaoImplOne")
+	@Inject
+	@Named("injectionDaoImplTwo")
 	private InjectionDao injectionDao;
 	
 	//设值注入

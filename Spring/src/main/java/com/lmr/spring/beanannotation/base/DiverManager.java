@@ -2,8 +2,6 @@ package com.lmr.spring.beanannotation.base;
 
 public class DiverManager {
 
-	
-	
 	public DiverManager(String username, String password, String url) {
 		// TODO Auto-generated constructor stub
 		
