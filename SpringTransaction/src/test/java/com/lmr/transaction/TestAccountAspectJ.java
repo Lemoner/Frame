@@ -1,20 +1,20 @@
 package com.lmr.transaction;
 
+import javax.annotation.Resource;
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.BlockJUnit4ClassRunner;
 
-import com.lmr.transaction.AccountService;
-
 @RunWith(BlockJUnit4ClassRunner.class)
-public class TestAccount extends UnitTestBase{
+public class TestAccountAspectJ extends UnitTestBase{
 
-	public TestAccount() {
-		super("classpath:spring-transaction.xml");
+	public TestAccountAspectJ() {
+		super("classpath:spring-transaction-aspectj.xml");
 	}
 	
 	@Test
-	public void TestTransfer(){
+	public void TestTranfer(){
 		AccountService service=(AccountService)super.getBean("accountService");
 		service.transfer("aaa", "bbb", 200.0);
 	}

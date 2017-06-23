@@ -23,9 +23,9 @@ public class UnitTestBase {
 	@Before
 	public void Before(){
 		
-		if(StringUtils.isEmpty(springxmlpath)){
-			springxmlpath = "classpath*:spring-*.xml";
-		}
+//		if(StringUtils.isEmpty(springxmlpath)){
+//			springxmlpath = "classpath*:spring-*.xml";
+//		}
 		
 		try {
 			context=new ClassPathXmlApplicationContext(springxmlpath);

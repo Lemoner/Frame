@@ -7,10 +7,10 @@ import org.junit.runners.BlockJUnit4ClassRunner;
 import com.lmr.transaction.AccountService;
 
 @RunWith(BlockJUnit4ClassRunner.class)
-public class TestAccount extends UnitTestBase{
+public class TestAccountAnnotation extends UnitTestBase{
 
-	public TestAccount() {
-		super("classpath:spring-transaction.xml");
+	public TestAccountAnnotation() {
+		super("classpath:spring-transaction-annotation.xml");
 	}
 	
 	@Test
