@@ -10,6 +10,7 @@
 <body>
 <center>
 <p>Login Success !</p>
+<p>msg:  ${msg}</p>*-*<br>
 <p>${loginbean.loginid}</p>*-*<br>
 <p>${loginbean.loginpw}</p>*-*<br>
 <p>${loginBean.loginid}</p>*-*<br>

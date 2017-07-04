@@ -19,6 +19,21 @@
 
 	<mvc:annotation-driven />
 
+	<mvc:interceptors>
+
+		<mvc:interceptor>
+			<mvc:mapping path="/login/result*" />
+			<bean class="com.lmr.springmvc.interceptor.LoginInterceptor"></bean>
+		</mvc:interceptor>
+
+		<mvc:interceptor>
+			<!-- 拦截的action路径 -->
+			<mvc:mapping path="/login/*" />
+			<bean class="com.lmr.springmvc.interceptor.EncodingInterceptor"></bean>
+		</mvc:interceptor>
+
+	</mvc:interceptors>
+
 	<bean
 		class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
 		<property name="order" value="1" />
@@ -48,7 +63,7 @@
 		<property name="prefix" value="/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
-	
+
 	<!--200*1024*1024即200M resolveLazily属性启用是为了推迟文件解析，以便捕获文件大小异常 -->
 	<bean id="multipartResolver"
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
