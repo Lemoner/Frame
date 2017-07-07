@@ -17,5 +17,41 @@
 		<servlet-name>ListServlet</servlet-name>
 		<url-pattern>/list.action</url-pattern>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DeleteMessageServlet</servlet-name>
+		<servlet-class>com.lmr.mybaits.servlet.DeleteMessageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteMessageServlet</servlet-name>
+		<url-pattern>/deleteMessage.action</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>DeleteMessageListServlet</servlet-name>
+		<servlet-class>com.lmr.mybaits.servlet.DeleteMessageListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteMessageListServlet</servlet-name>
+		<url-pattern>/deleteMessageList.action</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>InitTalkServlet</servlet-name>
+		<servlet-class>com.lmr.mybaits.servlet.InitTalkServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InitTalkServlet</servlet-name>
+		<url-pattern>/initTalk.action</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AutoReplyServlet</servlet-name>
+		<servlet-class>com.lmr.mybaits.servlet.AutoReplyServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AutoReplyServlet</servlet-name>
+		<url-pattern>/autoReply.action</url-pattern>
+	</servlet-mapping>
 
 </web-app>

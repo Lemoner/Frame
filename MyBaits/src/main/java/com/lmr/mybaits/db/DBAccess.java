@@ -1,14 +1,23 @@
 package com.lmr.mybaits.db;
 
+import java.io.IOException;
+import java.io.Reader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.ibatis.io.Resources;
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+
 import com.lmr.mybaits.bean.Message;
 
-
+/**
+ * 数据库连接类
+ */
 public class DBAccess {
 	
 	public void JDBCAccess(){
@@ -37,4 +46,21 @@ public class DBAccess {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * MyBaits方式连接
+	 * @return SqlSession会话
+	 * @throws IOException
+	 */
+	public SqlSession mybaitsAccess() throws IOException{
+		
+		Reader reader=Resources.getResourceAsReader("Configuration.xml");
+//		Reader reader=new FileReader(new File(getClass().getClassLoader().getResource("Configuration.xml").getFile()));
+		SqlSessionFactory factory=new SqlSessionFactoryBuilder().build(reader);
+		SqlSession sqlSession=factory.openSession();
+		
+		return sqlSession;
+		
+	}
+	
 }

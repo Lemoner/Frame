@@ -1,11 +1,7 @@
 package com.lmr.mybaits.bean;
 
 /**
- * 
- * @author 漠然
- * 
  * 对应的数据库中的message表
- *
  */
 public class Message {
 
