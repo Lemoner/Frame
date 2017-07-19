@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="MyBaits/src/main/java"/>
+	<classpathentry kind="src" path="MyBaits/src/test/java"/>
+	<classpathentry kind="src" path="ProxyModel/src/main/java"/>
+	<classpathentry kind="src" path="ProxyModel/src/test/java"/>
+	<classpathentry kind="src" path="Spring/src/main/java"/>
+	<classpathentry kind="src" path="Spring/src/test/java"/>
+	<classpathentry kind="src" path="SpringMVC/src/main/java"/>
+	<classpathentry kind="src" path="SpringTransaction/src/main/java"/>
+	<classpathentry kind="src" path="SpringTransaction/src/test/java"/>
+	<classpathentry kind="lib" path="MyBaits/target/MyBaits.jar"/>
+	<classpathentry kind="lib" path="ProxyModel/target/ProxyModel-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="lib" path="SpringMVC/target/SpringMVC-0.0.1-SNAPSHOT.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="MyBaits/target/classes"/>
+</classpath>
