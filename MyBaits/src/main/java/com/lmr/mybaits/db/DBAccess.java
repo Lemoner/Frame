@@ -54,9 +54,11 @@ public class DBAccess {
 	 */
 	public SqlSession mybaitsAccess() throws IOException{
 		
+		//通过配置文件获取数据库连接信息
 		Reader reader=Resources.getResourceAsReader("Configuration.xml");
-//		Reader reader=new FileReader(new File(getClass().getClassLoader().getResource("Configuration.xml").getFile()));
+		//通过配置信息构建一个SqlSessionFactory
 		SqlSessionFactory factory=new SqlSessionFactoryBuilder().build(reader);
+		//通过SqlSessionFactory打开一个数据库会话
 		SqlSession sqlSession=factory.openSession();
 		
 		return sqlSession;

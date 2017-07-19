@@ -19,6 +19,33 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>ListMessageByPageServlet</servlet-name>
+		<servlet-class>com.lmr.mybaits.servlet.ListMessageByPageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ListMessageByPageServlet</servlet-name>
+		<url-pattern>/listMessageByPage.action</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>InitInsertMessageServlet</servlet-name>
+		<servlet-class>com.lmr.mybaits.servlet.InitInsertMessageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InitInsertMessageServlet</servlet-name>
+		<url-pattern>/initInsertMessage.action</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>InsertMessageServlet</servlet-name>
+		<servlet-class>com.lmr.mybaits.servlet.InsertMessageServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InsertMessageServlet</servlet-name>
+		<url-pattern>/insertMessage.action</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>DeleteMessageServlet</servlet-name>
 		<servlet-class>com.lmr.mybaits.servlet.DeleteMessageServlet</servlet-class>
 	</servlet>

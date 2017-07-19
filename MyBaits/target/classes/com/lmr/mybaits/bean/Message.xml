@@ -20,7 +20,15 @@
 		<result column="CONTENT" jdbcType="VARCHAR" property="content" />
 	</resultMap>
 	
-	<select id="queryMessageList" parameterType="com.lmr.mybaits.bean.Message" resultMap="MessageResult">
+	<select id="queryMessageSize" resultType="int">
+		select count(*) from message order by id
+	</select>
+	
+	<select id="queryMessageMaxId" resultType="int">
+		select max(id) from message order by id
+	</select>
+	
+ 	<select id="queryMessageList" parameterType="com.lmr.mybaits.bean.Message" resultMap="MessageResult">
 		select <include refid="columns" /> from message
 		<where>
 			<if test="command != null and !&quot;&quot;.equals(command.trim())">
@@ -32,6 +40,19 @@
 		</where>
 	</select>
 	
+	<select id="queryMessageListByPage" parameterType="java.util.Map" resultMap="MessageResult">
+		select <include refid="columns" /> from message
+		<where>
+			<if test="command != null and !&quot;&quot;.equals(command.trim())">
+				and COMMAND=#{message.command}
+			</if>
+			<if test="description != null and !&quot;&quot;.equals(description.trim())">
+				and DESCRIPTION like '%' #{description} '%'
+			</if>
+		</where>
+		order by ID limit #{page.dbIndex} , #{page.dbNumber}
+	</select>
+	
 	<select id="queryMessageByCommand" parameterType="String" resultMap="MessageResult">
 		select <include refid="columns" /> from message
 		<where>
@@ -39,6 +60,10 @@
 		</where>
 	</select>
 
+	<insert id="insertMessage" parameterType="com.lmr.mybaits.bean.Message">
+		insert into message values ( #{id}, #{command}, #{description}, #{content} )
+	</insert>
+	
 	<delete id="deleteMessage" parameterType="int">
 		delete from message where ID=#{_parameter}
 	</delete>

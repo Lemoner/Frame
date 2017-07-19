@@ -9,12 +9,13 @@ import com.lmr.mybaits.bean.CommandContent;
 import com.lmr.mybaits.bean.Message;
 import com.lmr.mybaits.dao.CommandDao;
 import com.lmr.mybaits.dao.MessageDao;
+import com.lmr.mybaits.util.Page;
 
 /**
  * 查询相关的业务功能
  */
 public class QueryService {
-
+	
 	/**
 	 * 查询Message表的全部记录
 	 * 
@@ -26,6 +27,32 @@ public class QueryService {
 		
 		MessageDao messageDao=new MessageDao();
 		return messageDao.listMessage(command, description);
+		
+	}
+	
+	/**
+	 * 查询指定页数的Message表的记录
+	 * 
+	 * @param page 	页数
+	 * @param description 	简要描述
+	 * @param command	命令
+	 * 
+	 * @return Message的List集合
+	 */
+	public List<Message> queryMessageListByPage(String command, String description, Page page){
+		
+		MessageDao messageDao=new MessageDao();
+		
+		Message message=new Message();
+		message.setCommand(command);
+		message.setDescription(description);
+		
+		page.setTotalNumber(messageDao.queryMessageSize());
+		page.count();
+		
+		System.out.println(page.toString());
+		
+		return messageDao.queryMessageListByPage(message, page);
 		
 	}
 	

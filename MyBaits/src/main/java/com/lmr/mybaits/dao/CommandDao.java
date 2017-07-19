@@ -7,6 +7,7 @@ import java.util.List;
 import org.apache.ibatis.session.SqlSession;
 
 import com.lmr.mybaits.bean.Command;
+import com.lmr.mybaits.bean.ICommand;
 import com.lmr.mybaits.db.DBAccess;
 
 /**
@@ -36,7 +37,10 @@ public class CommandDao {
 			command.setName(name);
 			command.setDescription(description);
 			
-			commandlist=sqlSession.selectList("Command.queryCommandList", command);
+//			commandlist=sqlSession.selectList("Command.queryCommandList", command);
+			
+			ICommand iCommand=sqlSession.getMapper(ICommand.class);
+			commandlist=iCommand.queryCommandList(command);
 			
 			for(Command com:commandlist){
 				System.out.println(com.toString());

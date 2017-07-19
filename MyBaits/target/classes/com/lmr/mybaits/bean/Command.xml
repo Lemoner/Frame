@@ -21,7 +21,7 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="Command">
+<mapper namespace="com.lmr.mybaits.bean.ICommand">
 
 	<resultMap type="com.lmr.mybaits.bean.Command" id="CommandResult">
 		<id column="C_ID" jdbcType="INTEGER" property="id"/>
@@ -39,5 +39,5 @@
 			</if>
 		</where>
 	</select>
-
+	
 </mapper>

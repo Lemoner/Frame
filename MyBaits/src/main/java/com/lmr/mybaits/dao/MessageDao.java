@@ -2,12 +2,15 @@ package com.lmr.mybaits.dao;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 
 import com.lmr.mybaits.bean.Message;
 import com.lmr.mybaits.db.DBAccess;
+import com.lmr.mybaits.util.Page;
 
 /**
  * 和message表相关的数据库操作
@@ -47,9 +50,131 @@ public class MessageDao {
 			}
 		}
 		
-
 		return messagelist;
 
+	}
+	
+	/**
+	 * 向数据库中查询指定页数的message的记录
+	 * 
+	 * @param page 页数
+	 * @param message 命令和简要描述
+	 * 
+	 * @return Message的List集合
+	 */
+	public List<Message> queryMessageListByPage(Message message, Page page){
+		
+		List<Message> messagelist = new ArrayList<>();
+
+		DBAccess dbAccess=new DBAccess();
+		SqlSession sqlSession=null;
+		
+		try {
+			sqlSession=dbAccess.mybaitsAccess();
+			
+			Map<String, Object> paramMap=new HashMap<>();
+			paramMap.put("message", message);
+			paramMap.put("page", page);
+			
+			messagelist=sqlSession.selectList("Message.queryMessageListByPage", paramMap);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if(sqlSession!=null){
+				sqlSession.close();
+			}
+		}
+		
+		return messagelist;
+		
+	}
+	
+	/**
+	 * 向数据库中查询message的总记录个数
+	 * 
+	 * @return message的总记录个数
+	 */
+	public int queryMessageSize(){
+		int messagesize=0;
+		
+		DBAccess dbAccess=new DBAccess();
+		SqlSession sqlSession=null;
+		
+		try {
+			
+			sqlSession=dbAccess.mybaitsAccess();
+			
+			messagesize=sqlSession.selectOne("Message.queryMessageSize");
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if(sqlSession!=null){
+				sqlSession.close();
+			}
+		}
+		
+		return messagesize;
+	}
+	
+	/**
+	 * 向数据库中查询message的最大的id值
+	 * 
+	 * @return message的最大的id值
+	 */
+	public int queryMessageMaxId(){
+		int maxid=0;
+		
+		DBAccess dbAccess=new DBAccess();
+		SqlSession sqlSession=null;
+		
+		try {
+			
+			sqlSession=dbAccess.mybaitsAccess();
+			
+			maxid=sqlSession.selectOne("Message.queryMessageMaxId");
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if(sqlSession!=null){
+				sqlSession.close();
+			}
+		}
+		
+		return maxid;
+	}
+	
+	/**
+	 * 向数据库中添加一条message的记录
+	 * 
+	 * @param message	添加的message信息
+	 */
+	public void insertMessage(Message message){
+		
+		DBAccess dbAccess=new DBAccess();
+		SqlSession sqlSession=null;
+		try {
+			sqlSession=dbAccess.mybaitsAccess();
+			
+			sqlSession.commit(false);
+			
+			sqlSession.insert("Message.insertMessage", message);
+			sqlSession.commit();
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			if(sqlSession!=null){
+				sqlSession.close();
+			}
+		}
+		
 	}
 	
 	/**
