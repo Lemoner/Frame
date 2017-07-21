@@ -3,32 +3,32 @@ package com.lmr.seckill.entity;
 import java.util.Date;
 
 /**
- * ÃëÉ±¿â´æ±í
+ * ç§’æ€åº“å­˜è¡¨
  */
 public class Seckill {
 
 	/**
-	 * ÉÌÆ·¿â´æID
+	 * å•†å“åº“å­˜ID
 	 */
 	private long seckillId;
 	/**
-	 * ÉÌÆ·Ãû³Æ
+	 * å•†å“åç§°
 	 */
 	private String name;
 	/**
-	 * ¿â´æÊıÁ¿
+	 * åº“å­˜æ•°é‡
 	 */
 	private int number;
 	/**
-	 * ´´½¨Ê±¼ä
+	 * åˆ›å»ºæ—¶é—´
 	 */
 	private Date createTime;
 	/**
-	 * ÃëÉ±¿ªÊ¼Ê±¼ä
+	 * ç§’æ€å¼€å§‹æ—¶é—´
 	 */
 	private Date startTime;
 	/**
-	 * ÃëÉ±½áÊøÊ±¼ä
+	 * ç§’æ€ç»“æŸæ—¶é—´
 	 */
 	private Date endTime;
 

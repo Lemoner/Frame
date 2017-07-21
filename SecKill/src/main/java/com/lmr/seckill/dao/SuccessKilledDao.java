@@ -1,5 +1,7 @@
 package com.lmr.seckill.dao;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.lmr.seckill.entity.SuccessKilled;
 
 /**
@@ -13,7 +15,7 @@ public interface SuccessKilledDao {
 	 * @param userPhone	用户的手机号
 	 * @return	如果影响行数>=1，表示更新库存的记录行数
 	 */
-	public int insertSuccessKilled(long seckillId, long userPhone);
+	public int insertSuccessKilled(@Param("seckillId") long seckillId, @Param("userPhone") long userPhone);
 	
 	/**
 	 * 根据秒杀商品的ID查询秒杀成功明细SuccessKilled对象，该对象携带了Seckill秒杀商品对象
@@ -21,6 +23,6 @@ public interface SuccessKilledDao {
 	 * @param userPhone	用户的手机号
 	 * @return	秒杀成功明细对象
 	 */
-	public SuccessKilled queryByIdWithSeckill(long seckillId, long userPhone);
+	public SuccessKilled queryByIdWithSeckill(@Param("seckillId") long seckillId, @Param("userPhone") long userPhone);
 	
 }
