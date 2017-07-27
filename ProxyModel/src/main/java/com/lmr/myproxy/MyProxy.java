@@ -2,7 +2,6 @@ package com.lmr.myproxy;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -52,14 +51,16 @@ public class MyProxy {
 		
 		JavaCompiler complier=ToolProvider.getSystemJavaCompiler();
 		StandardJavaFileManager fileMgr=complier.getStandardFileManager(null, null, null);
+		@SuppressWarnings("rawtypes")
 		Iterable units=fileMgr.getJavaFileObjects(filename);
+		@SuppressWarnings("unchecked")
 		CompilationTask comtask=complier.getTask(null, fileMgr, null, null, null, units);
 		comtask.call();
 		fileMgr.close();
 		
 		ClassLoader cl=ClassLoader.getSystemClassLoader();
 //		Class c=cl.loadClass(System.getProperty("user.dir")+"\\src\\main\\java\\com\\lmr\\myproxy\\$Proxy0.class");
-		Class c=cl.loadClass("com.lmr.myproxy.$proxy0");
+		Class<?> c=cl.loadClass("com.lmr.myproxy.$proxy0");
 		
 		System.out.println(c.getName());
 		

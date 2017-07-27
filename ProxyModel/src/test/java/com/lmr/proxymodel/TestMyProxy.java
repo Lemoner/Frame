@@ -15,6 +15,7 @@ public class TestMyProxy {
 		Car car=new Car();
 		
 		MyProxy myProxy=new MyProxy();
+		@SuppressWarnings("static-access")
 		MoveAble ma=(MoveAble)myProxy.newProxyInstance(car,car.getClass().getInterfaces()[0]);
 		
 		ma.move();
