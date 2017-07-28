@@ -12,6 +12,7 @@ import org.springframework.util.DigestUtils;
 
 import com.lmr.seckill.dao.SeckillDao;
 import com.lmr.seckill.dao.SuccessKilledDao;
+import com.lmr.seckill.dao.cache.RedisDao;
 import com.lmr.seckill.dto.SeckillExecution;
 import com.lmr.seckill.dto.SeckillExposer;
 import com.lmr.seckill.entity.Seckill;
@@ -40,6 +41,12 @@ public class SeckillServiceImpl implements SeckillService{
 	private SeckillDao seckillDao;
 	
 	/**
+	 * Redis缓存操作对象
+	 */
+	@Autowired
+	private RedisDao redisDao; 
+	
+	/**
 	 * 与秒杀成功明细表相关的数据库操作对象
 	 */
 	@Autowired
@@ -63,12 +70,27 @@ public class SeckillServiceImpl implements SeckillService{
 	@Override
 	public SeckillExposer exportSeckillUrl(long seckillId) {
 
-		Seckill seckill= seckillDao.queryById(seckillId);
+		Seckill seckill=null;
 		
-		//查不到该秒杀物品记录
+		//首先从Redis缓存中取数据
+		seckill=redisDao.getSeckill(seckillId);
 		if(seckill==null){
-			return new SeckillExposer(false, seckillId);
+			seckill= seckillDao.queryById(seckillId);
+			//查不到该秒杀物品记录
+			if(seckill==null){
+				return new SeckillExposer(false, seckillId);
+			}
+			else{
+				redisDao.setSeckill(seckill);
+			}
 		}
+		
+//		Seckill seckill= seckillDao.queryById(seckillId);
+//		
+//		//查不到该秒杀物品记录
+//		if(seckill==null){
+//			return new SeckillExposer(false, seckillId);
+//		}
 		
 		Date nowTime=new Date();
 		//秒杀未开启

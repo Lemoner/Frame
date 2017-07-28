@@ -41,6 +41,11 @@ public class SeckillController{
 	@Autowired
 	private SeckillService seckillService;
 	
+	/**
+	 * 获取秒杀商品列表
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value="/list", method=RequestMethod.GET)
 	public String list(Model model){
 		
@@ -54,6 +59,12 @@ public class SeckillController{
 		return "list";
 	}
 	
+	/**
+	 * 秒杀商品详情
+	 * @param seckillId
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping(value="/{seckillId}/detail", method=RequestMethod.GET)
 	public String detail(@PathVariable("seckillId") Long seckillId, Model model){
 		
@@ -64,7 +75,7 @@ public class SeckillController{
 		Seckill seckill=seckillService.getSeckillById(seckillId);
 		
 		if(seckill==null){
-			return "forward:/seckill/list";
+			return "redirect:/seckill/list";
 		}
 		
 		model.addAttribute("seckill", seckill);
@@ -72,6 +83,11 @@ public class SeckillController{
 		return "detail";
 	}
 	
+	/**
+	 * 秒杀接口地址暴露
+	 * @param seckillId
+	 * @return
+	 */
 	@RequestMapping(value="/{seckillId}/exposer", method=RequestMethod.GET, produces={"application/json;chartset=UTF-8"})
 	@ResponseBody
 	public SeckillResult<SeckillExposer> exposer(@PathVariable("seckillId") Long seckillId){
@@ -90,6 +106,13 @@ public class SeckillController{
 		
 	}
 	
+	/**
+	 * 执行秒杀
+	 * @param seckillId
+	 * @param userPhone
+	 * @param md5
+	 * @return
+	 */
 	@RequestMapping(value="/{seckillId}/{md5}/execution", method=RequestMethod.POST, produces={"application/json;chartset=UTF-8"})
 	@ResponseBody
 	public SeckillResult<SeckillExecution> execution(@PathVariable("seckillId") Long seckillId, @CookieValue(value="userPhone", required=false) Long userPhone, @PathVariable("md5") String md5){
@@ -120,6 +143,10 @@ public class SeckillController{
 		
 	}
 	
+	/**
+	 * 获取当前系统时间
+	 * @return
+	 */
 	@RequestMapping(value="/time/now", method=RequestMethod.GET)
 	@ResponseBody
 	public SeckillResult<Long> time(){

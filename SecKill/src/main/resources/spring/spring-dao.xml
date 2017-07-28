@@ -49,5 +49,10 @@
 		<property name="basePackage" value="com.lmr.seckill.dao"></property>
 
 	</bean>
+	
+	<bean id="redisDao" class="com.lmr.seckill.dao.cache.RedisDao">
+		<constructor-arg name="ip" value="${redis.ip}"></constructor-arg>
+		<constructor-arg name="port" value="${redis.port}"></constructor-arg>
+	</bean>
 
 </beans>
