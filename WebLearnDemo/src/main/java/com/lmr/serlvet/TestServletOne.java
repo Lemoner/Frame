@@ -19,6 +19,7 @@ public class TestServletOne extends HttpServlet{
 		// TODO Auto-generated method stub
 		
 //		ServletRequest servletRequest=new S
+//		request.getSession().
 		request.getRequestDispatcher("").forward(request, response);
 		response.sendRedirect("");
 		super.doGet(request, response);
