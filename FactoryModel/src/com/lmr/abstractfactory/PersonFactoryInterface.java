@@ -1,7 +1,7 @@
 package com.lmr.abstractfactory;
 
 /**
- * 套装工厂接口
+ * 人物套装工厂接口
  */
 public interface PersonFactoryInterface {
 

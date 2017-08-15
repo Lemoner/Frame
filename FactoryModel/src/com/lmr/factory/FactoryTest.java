@@ -4,9 +4,9 @@ public class FactoryTest {
 
 	public static void main(String[] args) {
 		
-		FactoryTestByInterface();
-		FactoryTestByKey();
-		FactoryTestByClass();
+//		FactoryTestByInterface();
+//		FactoryTestByKey();
+//		FactoryTestByClass();
 		FactoryTestByClassKey();
 		
 	}
