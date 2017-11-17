@@ -1,4 +1,4 @@
-package com.lmr.command;
+package com.lmr.autocommand;
 
 /**
  * ÃüÁî½Ó¿Ú
