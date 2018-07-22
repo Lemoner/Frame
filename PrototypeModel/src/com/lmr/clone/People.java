@@ -46,6 +46,9 @@ public class People implements Cloneable,Serializable {
 		this.phone = phone;
 	}
 
+	/**
+	 * 普通克隆
+	 */
 	@Override
 	protected People clone() {
 		People people = null;
@@ -58,6 +61,10 @@ public class People implements Cloneable,Serializable {
 		return people;
 	}
 
+	/**
+	 * 深度克隆，使用序列化的方式进行
+	 * @return	People对象
+	 */
 	protected People deepclone() {
 		People people = null;
 
