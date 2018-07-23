@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap-multiselect.css">
+</head>
+<body>
+<div class="wraper">
+<nav class="navbar-my col-lg-12 col-md-12 col-xs-12 col-sm-12">
+    <img class="logo-img" src="images/logo.png" alt="logo">
+    <div class="navbar-header-my navbar-header ">
+        <span class="logo">派出所住户地址登记查询系统</span>
+    </div>
+
+    <div class="logout" >
+        <p class="navbar-icon navbar-text navbar-right text-right">
+            <a href="#" class="navbar-link"><span class="glyphicon glyphicon-home"></span></a>
+            <a href="#" class="navbar-link"><span class="glyphicon glyphicon-user"></span></a>
+            <a href="#" class="navbar-link"><span class="glyphicon glyphicon-cog"></span></a>
+            <a href="#" class="navbar-link"><span class="glyphicon glyphicon-off"></span></a>
+        </p>
+        <div class="admin pull-right">
+            <img src="images/刘德华.jpg" alt="警员照片">
+            <ul class="admin-info">
+                欢迎您！<span>张三丰&nbsp;<i class="num">[203604]</i></span>巡检提醒（<a class="red" href="#">3</a>/<a class="red" href="#">14</a>/<a class="red" href="#">87</a>）
+            </ul>
+            <ul class="admin-web">
+                上一次登陆：<span>2016年5月1日 12:35&nbsp;&nbsp;[127.135.224.100]</span>
+            </ul>
+        </div>
+    </div><!-- /.navbar-collapse -->
+</nav>
+<div class="main">
+    <div class="left col-lg-2 col-md-2 col-xs-2 col-sm-2">
+        <ul class="nav nav-pills nav-stacked ac-container">
+            <li role="presentation">
+                <label class="grid grid0"><i class="glyphicon glyphicon-home" aria-hidden="true"></i> 首页</label>
+            </li>
+            <li role="presentation">
+                <input id="ac-1" name="accordion-1" type="checkbox" />
+                <label for="ac-1" class="grid grid1"><i class="glyphicon glyphicon-list" aria-hidden="true"></i> 辖区建筑</label>
+                <article class="ac-small ac-small-1">
+                    <!--辖区建筑多级菜单-->
+                    <div class="tree" id="tree">
+                        <ul class="folder">
+                            <li><a class="m0" href="#">下沙派出所辖区</a>
+                                <ul class="subfolder" id="menu1-ul">
+                                    <li ><a class="m1" href="#">德信 中外公寓</a>
+                                        <ul class="file" class="m2">
+                                            <li><a href="#">1幢</a></li>
+                                            <li><a href="#">2幢</a></li>
+                                            <li><a href="#">3幢</a></li>
+                                            <li><a href="#">5幢</a></li>
+                                            <li><a href="#">15幢</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="m1" href="#">东海 柠檬郡</a>
+                                        <ul class="file"  class="m2">
+                                            <li><a href="#">1幢</a></li>
+                                            <li><a href="#">2幢</a></li>
+                                            <li><a href="#">3幢</a></li>
+                                            <li><a href="#">5幢</a></li>
+                                            <li><a href="#">15幢</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="m1" href="#">杭州临江商贸大厦</a></li>
+                                    <li><a class="m1" href="#">江景家园</a></li>
+                                    <li><a class="m1" href="#">龙湖 滟澜山</a></li>
+                                    <li><a class="m1" href="#">头格月雅城</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </article>
+            </li>
+
+            <li role="presentation">
+                <input id="ac-2" name="accordion-1" type="checkbox" />
+                <label for="ac-2" class="grid grid2"><i class="glyphicon glyphicon-camera" aria-hidden="true"></i> 数据统计</label>
+                <article class="ac-small ac-small-2">
+                    <div class="info">
+                        <!--<ul>-->
+                            <!--<span class="info-t">龙湖滟澜山</span> <br>-->
+                            <!--楼宇：总数：<span class="green">20</span>&nbsp;超期：<span class="red">3</span> <br>重点关注：<span class="yellow">2</span><br>-->
+                            <!--房间：总数：<span class="green">124</span>&nbsp;空房间：<span class="blue">12</span> <br>超期：<span-->
+                                    <!--class="red">20</span>&nbsp;重点关注：<span class="yellow">23</span><br>-->
+                            <!--人口：总数：<span class="green">1000</span>&nbsp;重点关注：<span class="yellow">138</span>-->
+                        <!--</ul>-->
+                        <ul class="info-t-box"><span class="info-t">龙湖滟澜山</span>
+                            <li>
+                                <ul>楼宇：
+                                    <li>总数：<span class="green">20</span></li>
+                                    <li>超期：<span class="red">3</span> 重点关注：<span class="yellow">2</span></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>房间：
+                                    <li>总数：<span class="green">124</span>空房：<span class="blue">12</span></li>
+                                    <li>超期：<span class="red">20</span>&nbsp;重点关注：<span class="yellow">23</span></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul>人口：
+                                    <li>总数：<span class="green">1000</span></li>
+                                    <li>重点关注：<span class="yellow">138</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="charts" id="chart1"></div>
+                    <div class="charts" id="chart2"></div>
+                    <div class="charts" id="chart3"></div>
+                </article>
+            </li>
+        </ul>
+    </div>
+    <!--left-->
+    <div class="right col-lg-10 col-md-10 col-xs-10 col-sm-10">
+        <div class="right-top">
+            <div class="bread col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                <ol class="breadcrumb">
+                    <li><a href="#">下沙</a></li>
+                    <li><a href="#">德信中外公寓</a></li>
+                    <li class="active">一幢</li>
+                </ol>
+            </div>
+            <div class="right-top-t  col-lg-8 col-md-8 col-xs-8 col-sm-8" id="bs-example-navbar-collapse-1">
+                <ul class="nav  pull-right navbar-nav">
+                    <li><button class="btn btn-sm" href="#">超期未巡检</button></li>
+                    <li class="zhuzhai">
+                        <div class="btn-group">
+                            <select id="example-onInitialized1" multiple="multiple">
+                                <optgroup label="全选住宅" class="group-1">
+                                    <option value="1">自住住宅</option>
+                                    <option value="2">出租住宅</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="teye">
+                        <div class="btn-group">
+                            <select id="example-onInitialized2" multiple="multiple">
+                                <optgroup label="全选特业" class="group-2">
+                                    <option value="1">旅馆</option>
+                                    <option value="2">网吧</option>
+                                    <option value="3">废旧金属回收</option>
+                                    <option value="4">刻字刻章</option>
+                                    <option value="5">典当</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="school">
+                        <div class="btn-group">
+                            <select id="example-onInitialized3" multiple="multiple">
+                                <optgroup label="全选学校" class="group-3">
+                                    <option value="1">幼儿园</option>
+                                    <option value="2">中小学</option>
+                                    <option value="3">学生宿舍</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="place">
+                        <div class="btn-group">
+                            <select id="example-onInitialized4" multiple="multiple">
+                                <optgroup label="全选场所" class="group-4">
+                                    <option value="1">足浴</option>
+                                    <option value="2">棋牌</option>
+                                    <option value="3">KTV</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="other">
+                        <div class="btn-group">
+                            <select id="example-onInitialized5" multiple="multiple">
+                                <optgroup label="全选其他" class="group-5">
+                                    <option value="1">农贸市场</option>
+                                    <option value="2">基督教堂</option>
+                                    <option value="3">其他</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </li>
+                    <li class="import">
+                        <div class="btn-group">
+                            <select id="example-onInitialized6" multiple="multiple">
+                                <optgroup label="全选" class="group-6">
+                                    <option value="1">一级</option>
+                                    <option value="2">二级</option>
+                                    <option value="3">三级</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+<!--right-top-->
+        <!--<div class="hide-btn" id="hide-btn">显示列表</div>-->
+        <div class="hide-btn2" id="hide-btn2">显</div>
+        <!--<div class="charts-list" id="charts-list">统计列表</div>-->
+        <div class="map col-lg-12 col-md-12 col-xs-12 col-sm-12" id="map"></div>
+
+        <div class="tab col-lg-4 col-md-4 col-xs-4 col-sm-4" id="tab">
+            <ul id="myTab" class="tab-my nav nav-tabs">
+                <li class="active">
+                    <a class="tab-d" href="#dy1" data-toggle="tab">一单元</a>
+                </li>
+                <li>
+                    <a class="tab-d" href="#dy2" data-toggle="tab">二单元</a>
+                </li>
+                <li>
+                    <a class="tab-d" href="#dy3" data-toggle="tab">三单元</a>
+                </li>
+            </ul>
+
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade in active" id="dy1">
+                    <div class="people-addr">
+                        <div class="floor">
+                            <nav>
+                                <ul class="pager">
+                                    <li class="previous"><a href="#"><img src="images/上一层（小）.png" alt="上"></a></li>
+                                    <li class="floor-num">
+                                            第1层/共12层
+                                            <input type="text" class="form-control input-sm" id="floor-num" style="display:inline-block;width:40px">
+                                            <button class="btn btn-default btn-sm" style="display: inline-block">跳转</button>
+                                    </li>
+                                    <li class="next"><a href="#"><img src="images/下一层（小）.png" alt="下"></a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div id="box" class="people-addr-h">
+                            <p>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-success">3
+                                    <span class="badge-my badge-success">101</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-success">2
+                                    <span class="badge-my badge-success">102</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-success">5
+                                    <span class="badge-my badge-success ">103</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-success">3
+                                    <span class="badge-my">104</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-danger">6
+                                    <span class="badge-my badge-danger">105</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-default">
+                                    <span class="badge-my badge-danger">106</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-default">
+                                    <span class="badge-my badge-danger">106</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-success">3
+                                    <span class="badge-my badge-success">101</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-success">2
+                                    <span class="badge-my badge-success">102</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-success">5
+                                    <span class="badge-my badge-danger">103</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-success">3
+                                    <span class="badge-my ">104</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-danger">6
+                                    <span class="badge-my ">105</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-default">
+                                    <span class="badge-my badge-success">106</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-default">
+                                    <span class="badge-my badge-success">106</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-success">3
+                                    <span class="badge-my badge-success">101</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-success">2
+                                    <span class="badge-my ">102</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-success">5
+                                    <span class="badge-my badge-danger">103</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-success">3
+                                    <span class="badge-my badge-danger">104</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-danger">6
+                                    <span class="badge-my ">105</span>
+                                </button>
+                                <button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-default">
+                                    <span class="badge-my badge-success">106</span>
+                                </button>
+                            </p>
+                        </div>
+
+                        <div class="house-info">
+                            <ul class="col-lg-8 col-md-8 col-xs-8 col-sm-8">
+                                <li>龙湖滟澜山 5幢 一单元 101室</li>
+                                <li>累计巡检次数：<span>20次</span></li>
+                                <li>上次巡检时间：<span>2016-5-1</span></li>
+                                <li>上次巡检记录：<a href="#">点击查看</a></li>
+                                <li>巡检间隔时间：<span>7天</span></li>
+                            </ul>
+                            <ul class="col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                                <li>
+                                    <a class="btn btn-xs btn-success">自动巡检</a>
+                                </li>
+                                <br>
+                                <li>
+                                    <a data-toggle="modal" data-target="#myModal" class="btn btn-xs btn-info">手动巡检</a>
+                                </li>
+                                <br>
+                                <li>
+                                    <a data-toggle="modal" data-target="#myModal2" class="btn btn-xs btn-success">添加人员</a>
+                                </li>
+                            </ul>
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+                                 aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close"
+                                                    data-dismiss="modal" aria-hidden="true">
+                                                &times;
+                                            </button>
+                                            <h4 class="modal-title" id="myModalLabel">
+                                                输入巡检信息 <span>(龙湖滟澜山 5幢 一单元 101室)</span>
+                                            </h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="" method="" accept-charset="utf-8">
+                                                巡检时间：<input type="date" name="" value=""  />
+                                                <br>
+                                                巡检记录：<textarea type="text" name="" style="width: 500px;height: 200px;"></textarea>
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <span class="pull-left"><input class="" type="checkbox">标记为重点关注对象</span>
+                                            <button type="button" class="btn btn-default"
+                                                    data-dismiss="modal">取消
+                                            </button>
+                                            <button type="button" class="btn btn-primary">
+                                                提交
+                                            </button>
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal -->
+                            </div>
+                        </div>
+                        <!--巡检信息-->
+                        <div class="modal fade" id="myModal2" tabindex="-1" role="dialog"
+                             aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close"
+                                                data-dismiss="modal" aria-hidden="true">
+                                            &times;
+                                        </button>
+                                        <h4 class="modal-title" id="myModalLabel2">
+                                            输入人员信息
+                                        </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="name">姓名</label>
+                                                <input type="text" class="form-control" id="name">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>性别</label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1"> 男
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2"> 女
+                                                </label>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="tel">电话</label>
+                                                <input type="number" class="form-control" id="tel">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="id-num">身份证号码</label>
+                                                <input type="number" class="form-control" id="id-num">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="log-t">登记时间</label>
+                                                <input type="date" class="form-control" id="log-t">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="log-r">登记原因</label>
+                                                <input type="date" class="form-control" id="log-r">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="huji">户籍所在地</label>
+                                                <input type="text" class="form-control" id="huji">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="juzhu">居住地</label>
+                                                <input type="text" class="form-control" id="juzhu">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="work">工作地</label>
+                                                <input type="text" class="form-control" id="work">
+                                            </div>
+                                            <div class="form-group">
+                                                <label >是否为重点关注对象</label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option1"> 是
+                                                </label>
+                                                <label class="radio-inline">
+                                                    <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option2"> 否
+                                                </label>
+                                            </div>
+                                            备注：<textarea type="text" name="" style="width: 500px;height: 200px;"></textarea>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-default"
+                                                data-dismiss="modal">取消
+                                        </button>
+                                        <button type="button" class="btn btn-primary">
+                                            提交
+                                        </button>
+                                    </div>
+                                </div><!-- /.modal-content -->
+                            </div><!-- /.modal -->
+                        </div>
+                    </div>
+                    <!--添加人员-->
+                        <!--people-addr-h-->
+                        <div class="people-info">
+                            <div class="people-info-body">
+                                <div class="media people-info-sub">
+                                    <a class="pull-left" href="#">
+                                        <img class="media-object" src=""
+                                             alt="媒体对象">
+                                    </a>
+                                    <div class="media-body">
+                                        <h4 class="media-heading">张三</h4>
+                                        <span class="col-lg-6 col-md-6 col-xs-6 col-sm-6 sex">男</span>
+                                        <span class="col-lg-6 col-md-6 col-xs-6 col-sm-6 tel">13800001111</span>
+                                        <span class="col-lg-12 col-md-12 col-xs-12 col-sm-12 id-num">330106198201011100</span>
+                                        <span class="col-lg-8 col-md-8 col-xs-8 col-sm-8 time">入住时间：<span>2015年6月</span></span>
+                                        <span class="col-lg-4 col-md-4 col-xs-4 col-sm-4 ident">常住人口</span>
+                                        <br>
+                                        <a href="#" class="btn btn-xs btn-info">详情</a>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--翻页-->
+                            <form id="form1">
+                                <div>
+                                    <ul class="pagination" id="pagination">
+                                    </ul>
+                                    <input type="hidden" id="PageCount"/>
+                                    <input type="hidden" id="PageSize" value="1" />
+                                    <input type="hidden" id="countindex" value="6"/>
+                                    <!--设置最多显示的页码数 可以手动设置 默认为5-->
+                                    <input type="hidden" id="visiblePages" value="6" />
+                                </div>
+                            </form>
+                        </div>
+                </div>
+                <!--dy1-->
+                <div class="tab-pane fade" id="dy2">
+                    <p>2</p>
+                </div>
+                <div class="tab-pane fade" id="dy3">
+                    <p>3</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--right-->
+</div>
+<!--main-->
+</div>
+<!--wraper-->
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jQuery.rTabs.js"></script>
+<!--<script src="http://api.map.baidu.com/api?v=2.0&ak=z3rHgI6QkD0GKIP2xjnqKM18"  ></script>-->
+<!--<script src="js/createMap.js"></script>-->
+<script src="js/echarts.min.js"></script>
+<script src="js/bootstrap-multiselect.js"></script>
+<script src="js/main.js"></script>
+<script src="js/jqPaginator.min.js"></script>
+<script type="text/javascript">
+    function loadData() {
+        $("#PageCount").val("3");
+    }
+    $(document).ready(function () {
+        mult();
+
+        $(".m1").click(function(){
+            $(this).next().toggle();
+        });
+        $(".m0").click(function(){
+            $(this).next().toggle();
+        });
+
+        creatCharts('chart1');
+        creatCharts('chart2');
+        creatCharts('chart3');
+
+        $('.tab-d').click(function () {
+            $('.house-info').css({"display":"none"});
+            $('.people-info').css({"display":"none"})
+        });
+        $('.btn-h').click(function () {
+            $('.house-info').css({"display":"block"});
+            $('.people-info').css({"display":"block"})
+        });
+    })
+</script>
+</body>
+</html>

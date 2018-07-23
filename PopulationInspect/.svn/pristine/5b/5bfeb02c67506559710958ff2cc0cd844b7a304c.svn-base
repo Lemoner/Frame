@@ -1,0 +1,41 @@
+package com.example.model;
+
+public class Log {
+	private int id;							//对应taskId
+	private String content;					//日志正文
+	private String date;					//提交日期
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public String getDate() {
+		return date;
+	}
+	public void setDate(String date) {
+		this.date = date;
+	}
+	public Log(int id, String content, String date) {
+		super();
+		this.id = id;
+		this.content = content;
+		this.date = date;
+	}
+	public Log() {
+
+	}
+	
+	@Override
+	public String toString() {
+		return "Log [id=" + id + ", content=" + content + ", date=" + date
+				+ "]";
+	}
+	
+}

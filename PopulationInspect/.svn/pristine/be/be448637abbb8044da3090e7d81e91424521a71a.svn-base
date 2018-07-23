@@ -1,0 +1,67 @@
+package com.example.DButil;
+
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+
+/* SQLiteOpenHelper
+ * 1.提供了创建、更新数据库等方法
+ * 2.提供获取数据库对象的方法
+ * */
+public class MySqliteHelper extends SQLiteOpenHelper{
+
+	/*构造函数
+	 * @param context 上下文对象
+	 * @param name 数据库名称
+	 * @param factory 油标工厂
+	 * @param version 数据库版本号 >=1
+	 * */
+	public MySqliteHelper(Context context, String name, CursorFactory factory,
+			int version) {
+		super(context, name, factory, version);
+		// TODO Auto-generated constructor stub
+	}
+
+	public MySqliteHelper(Context context) {
+		super(context, Constant.DATABASE_NAME, null, Constant.DATABASE_VERSION);
+		// TODO Auto-generated constructor stub
+	}
+	
+	/*创建数据库的回调函数
+	 * @param db 数据库对象
+	 * */
+	@Override
+	public void onCreate(SQLiteDatabase db) {
+		Log.i("tag", "创建数据库");
+		//建表语句
+		db.execSQL("create table user(id Integer primary key,username varcher(10),password varcher(10))");
+		db.execSQL("create table log_t(id Integer primary key,content varcher(10),date varcher(10),community varcher(10),room varcher(10))");
+		db.execSQL("create table task_t(id Integer primary key,policeId varcher(10),longitude varcher(10),latitude varcher(10),deadLine varcher(10),community varcher(10),room varcher(10))");
+
+		Log.i("tag", "建表");
+	}
+
+	/*更新数据库的回调函数
+	 * @param db 数据库对象
+	 * @param oldV 数据库旧版本
+	 * @param newV 数据库新版本
+	 * */
+	@Override
+	public void onUpgrade(SQLiteDatabase db, int oldV, int newV) {
+		// TODO Auto-generated method stub
+		Log.i("tag", "更新数据库");
+	}
+
+	/*打开数据库的回调函数
+	 * @param db 数据库对象
+	 * */
+	@Override
+	public void onOpen(SQLiteDatabase db) {
+		super.onOpen(db);
+
+		Log.i("tag", "打开数据库");
+	}
+}
+

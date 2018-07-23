@@ -1,0 +1,194 @@
+/**
+ * Created by Perfect on 2016/4/27.
+ */
+    // 统计表格
+function creatCharts(myChart) {
+
+    var myChart = echarts.init(document.getElementById(myChart));
+
+    var option = {
+        title : {
+            x:'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{a} <br/>{b} : {c} ({d}%)"
+        },
+        series : [
+            {
+                name: '访问来源',
+                type: 'pie',
+                radius : '55%',
+                center: ['50%', '60%'],
+                data:[
+                    {value:335, name:'1'},
+                    {value:310, name:'2'},
+                    {value:234, name:'3'},
+                    {value:135, name:'4'},
+                    {value:1548, name:'5'}
+                ],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+    myChart.setOption(option);
+}
+
+//隐藏与显示详细信息
+$("#hide-btn2").click(function(){
+    if($("#tab").css("display")=="none"){
+        $("#tab").show();
+        
+        $('.map').removeClass('col-lg-12 col-md-12 col-md-12 col-xs-12').addClass('col-lg-8 col-md-8 col-md-8 col-xs-8');
+
+        $('#hide-btn2').html("隐")
+    }else{
+        $("#tab").hide();
+
+        $('.map').removeClass('col-lg-8 col-md-8 col-md-8 col-xs-8').addClass('col-lg-12 col-md-12 col-md-12 col-xs-12');
+
+        $('#hide-btn2').html("显");
+    }
+});
+
+//翻页
+
+function exeData(num, type) {
+    loadData(num);
+    loadpage();
+}
+function loadpage() {
+    var myPageCount = parseInt($("#PageCount").val());
+    var myPageSize = parseInt($("#PageSize").val());
+    var countindex = myPageCount % myPageSize > 0 ? (myPageCount / myPageSize) + 1 : (myPageCount / myPageSize);
+    $("#countindex").val(countindex);
+
+    $.jqPaginator('#pagination', {
+        totalPages: parseInt($("#countindex").val()),
+        visiblePages: parseInt($("#visiblePages").val()),
+        currentPage: 1,
+        first: '<li class="first"><a href="javascript:;">首页</a></li>',
+        prev: '<li class="prev"><a href="javascript:;">&lt;&lt;</a></li>',
+        next: '<li class="next"><a href="javascript:;">&gt;&gt;</a></li>',
+        last: '<li class="last"><a href="javascript:;">末页</a></li>',
+        page: '<li class="page"><a href="javascript:;">{{page}}</a></li>',
+        onPageChange: function (num, type) {
+            if (type == "change") {
+                exeData(num, type);
+            }
+        }
+    });
+}
+$(function () {
+    loadData(1);
+    loadpage();
+});
+
+//房间动态生成实例
+// var txt = [
+//     {'nump':3,'numh':'101'},
+//     {'nump':3,'numh':'101'},
+//     {'nump':3,'numh':'101'},
+//     {'nump':3,'numh':'101'},
+//     {'nump':3,'numh':'101'},
+//     {'nump':3,'numh':'101'},
+//     {'nump':3,'numh':'101'},
+//     {'nump':3,'numh':'101'},
+//     {'nump':3,'numh':'101'},
+//     {'nump':3,'numh':'101'},
+//     {'nump':3,'numh':'101'},
+//     {'nump':3,'numh':'101'},
+// ];
+// var box = $('#box');
+// var p = '';
+// for (var i = txt.length - 1; i >= 0; i--) {
+//     p += '<button type="button" class="btn-h col-lg-2 col-md-2 btn btn-success">'+txt[i].nump+' <span class="badge">'+txt[i].numh+'</span> </button>'
+// }
+// box.html(p);
+
+function mult() {
+    $('#example-onInitialized1').multiselect({
+        enableClickableOptGroups: true,
+        buttonText: function(options, select) {
+            return '住宅';
+        },
+        buttonTitle: function(options, select) {
+            var labels = [];
+            options.each(function () {
+                labels.push($(this).text());
+            });
+            return labels.join(' - ');
+        }
+    });
+    $('#example-onInitialized2').multiselect({
+        enableClickableOptGroups: true,
+        buttonText: function(options, select) {
+            return '特业';
+        },
+        buttonTitle: function(options, select) {
+            var labels = [];
+            options.each(function () {
+                labels.push($(this).text());
+            });
+            return labels.join(' - ');
+        }
+    });
+    $('#example-onInitialized3').multiselect({
+        enableClickableOptGroups: true,
+        buttonText: function(options, select) {
+            return '学校';
+        },
+        buttonTitle: function(options, select) {
+            var labels = [];
+            options.each(function () {
+                labels.push($(this).text());
+            });
+            return labels.join(' - ');
+        }
+    });
+    $('#example-onInitialized4').multiselect({
+        enableClickableOptGroups: true,
+        buttonText: function(options, select) {
+            return '场所';
+        },
+        buttonTitle: function(options, select) {
+            var labels = [];
+            options.each(function () {
+                labels.push($(this).text());
+            });
+            return labels.join(' - ');
+        }
+    });
+    $('#example-onInitialized5').multiselect({
+        enableClickableOptGroups: true,
+        buttonText: function(options, select) {
+            return '其他';
+        },
+        buttonTitle: function(options, select) {
+            var labels = [];
+            options.each(function () {
+                labels.push($(this).text());
+            });
+            return labels.join(' - ');
+        }
+    });
+    $('#example-onInitialized6').multiselect({
+        enableClickableOptGroups: true,
+        buttonText: function(options, select) {
+            return '重点关注';
+        },
+        buttonTitle: function(options, select) {
+            var labels = [];
+            options.each(function () {
+                labels.push($(this).text());
+            });
+            return labels.join(' - ');
+        }
+    });
+}

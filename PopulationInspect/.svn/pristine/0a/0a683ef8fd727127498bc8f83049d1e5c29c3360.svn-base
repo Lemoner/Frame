@@ -1,0 +1,418 @@
+/**
+ * 一，首页加载所需数据示例
+ */
+/**
+ * 辖区书的数据格式
+ * @type {Array}
+ */
+tree = [
+	{
+		id:1,
+		name:'下沙派出所',
+		children:[
+			{
+				id:2,
+				name:'杭电小区公寓',
+				children:[
+					{
+						id:1,
+						name:'1号楼'
+					},
+					{
+						id:2,
+						name:'2号楼'
+					},
+					{
+						id:3,
+						name:'3号楼'
+					}
+				]
+			},
+			{
+				id:4,
+				name:'浙江理工',
+				children:[
+					{
+						id:14,
+						name:'理工1号楼'
+					},
+					{
+						id:16,
+						name:'理工3号楼'
+					},
+					{
+						id:17,
+						name:'理工8号楼'
+					}
+				]
+			},
+			{
+				id:9,
+				name:'浙江传媒',
+				children:[
+					{
+						id:27,
+						name:'传媒8号楼'
+					},
+					{
+						id:29,
+						name:'传媒4号楼'
+					}
+				]
+			}
+		]
+	}
+];
+
+
+/**
+ * 2.首页加载地图所需地图的数据格式
+ * 辖区的数据，lng表示经度，lat表示纬度，到时候有多少点，传多少点
+ * @type {Array}
+ */
+area = [
+	{lat:30.3245650000,lng:120.3452370000},{lat:30.3159920000,lng:120.3457400000},{lat:30.3159920000,lng:120.3457400000},{lat:30.3177690000,lng:120.3687360000},
+	{lat:30.3246270000,lng:120.3698140000},{lat:30.3249080000,lng:120.3644240000},{lat:30.3220400000,lng:120.3612620000},{lat:30.3222270000,lng:120.3524950000},
+	{lat:30.3247210000,lng:120.3523870000}
+];
+
+/**
+ * 点击楼宇后获取的数据
+ */
+buiding = [
+	{
+		name:'一单元',
+		children: [
+			{
+				floor:'第一层',
+				children:[
+					{
+						roomNum: 101,
+						personNum: 0,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum: 102,
+						personNum: 5,
+						checked: false,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:103,
+						personNum:5,
+						checked: false,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:104,
+						personNum:5,
+						checked: true,	//true or false
+						focus: true	//true or false
+					},
+					{
+						roomNum:105,
+						personNum:5,
+						checked: false,	//true or false
+						focus: true	//true or false
+					},
+					{
+						roomNum:106,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:107,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:108,
+						personNum:5,
+						checked: false,	//true or false
+						focus: false	//true or false
+					}
+				]
+			},
+			{
+				floor:'第二层',
+				children:[
+					{
+						roomNum:201,
+						personNum:5,
+						checked: true,	//true or false	标识是否已巡检
+						focus: false	//true or false	标识是否重点关注
+					},
+					{
+						roomNum:202,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:203,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:204,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:205,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:206,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:207,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:208,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					}
+				]
+			}
+		]
+	},
+	{
+		name:'二单元',
+		children: [
+			{
+				floor:'第一层',
+				children:[
+					{
+						roomNum:101,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:102,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:103,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:104,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:105,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:106,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:107,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:108,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					}
+				]
+			},
+			{
+				floor:'第二层',
+				children:[
+					{
+						roomNum:201,
+						personNum:5,
+						checked: true,	//true or false	标识是否已巡检
+						focus: false	//true or false	标识是否重点关注
+					},
+					{
+						roomNum:202,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:203,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:204,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:205,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:206,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:207,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:208,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					}
+				]
+			}
+		]
+	},
+	{
+		name:'三单元',
+		children: [
+			{
+				floor:'第一层',
+				children:[
+					{
+						roomNum:101,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:102,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:103,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:104,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:105,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:106,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:107,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:108,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					}
+				]
+			},
+			{
+				floor:'第二层',
+				children:[
+					{
+						roomNum:201,
+						personNum:5,
+						checked: true,	//true or false	标识是否已巡检
+						focus: false	//true or false	标识是否重点关注
+					},
+					{
+						roomNum:202,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:203,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:204,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:205,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:206,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:207,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					},
+					{
+						roomNum:208,
+						personNum:5,
+						checked: true,	//true or false
+						focus: false	//true or false
+					}
+				]
+			}
+		]
+	}
+];
+
+

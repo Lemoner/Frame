@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>巡检情况查询</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/people_info.css">
+</head>
+<body>
+<nav class="navbar-my col-lg-12 col-md-12 col-xs-12 col-sm-12">
+    <img class="logo-img" src="images/logo.png" alt="logo">
+    <div class="navbar-header-my navbar-header ">
+        <span class="logo">派出所住户地址登记查询系统</span>
+    </div>
+
+    <div class="logout" >
+        <p class="navbar-icon navbar-text navbar-right text-right">
+            <a href="#" class="navbar-link"><span class="icomoon">&#xe900;</span></a>
+            <a href="#" class="navbar-link"><span class="icomoon">&#xe905;</span></a>
+            <a href="#" class="navbar-link"><span class="icomoon">&#xe908;</span></a>
+            <a href="#" class="navbar-link"><span class="icomoon">&#xe90b;</span></a>
+        </p>
+        <div id="admin" class="admin pull-right"></div>
+    </div><!-- /.navbar-collapse -->
+</nav>
+
+<div class="main2">
+    <div class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2">
+        <div class="plot">
+            <div id="plot" class="plot-chart col-lg-5 col-md-5"></div>
+            <div id="plot-info" class="plot-info col-lg-7 col-md-7">
+                <li class="li-h list-group-item-danger"><span class="icomoon">&#xe90e;</span>未巡检小区：10</li>
+                <li class="li-h list-group-item-success"><span class="icomoon">&#xe90f;</span>已巡检小区：3</li>
+                <ul class="plot-check-log list-unstyled">
+                    <li class="list-group-item-danger"><span class="icomoon">&#xe90e;</span>小区名称</li>
+                    <li class="list-group-item-danger"><span class="icomoon">&#xe90e;</span>小区名称</li>
+                    <li class="list-group-item-danger"><span class="icomoon">&#xe90e;</span>小区名称</li>
+                    <li class="list-group-item-danger"><span class="icomoon">&#xe90e;</span>小区名称</li>
+                    <li class="list-group-item-danger"><span class="icomoon">&#xe90e;</span>小区名称</li>
+                    <li class="list-group-item-success"><span class="icomoon">&#xe90f;</span>小区名称</li>
+                    <li class="list-group-item-success"><span class="icomoon">&#xe90f;</span>小区名称</li>
+                    <li class="list-group-item-success"><span class="icomoon">&#xe90f;</span>小区名称</li>
+
+                </ul>
+
+            </div>
+        </div>
+        <div class="building">
+            <div id="building" class="building-chart col-lg-5 col-md-5"></div>
+            <div id="building-info" class="building-info col-lg-7 col-md-7">
+                <li class="li-h list-group-item-danger"><span class="icomoon">&#xe90e;</span>未巡检楼宇：10</li>
+                <li class="li-h list-group-item-success"><span class="icomoon">&#xe90f;</span>已巡检楼宇：3</li>
+                <ul class="building-check-log list-unstyled">
+                    <li class="list-group-item-danger"><span class="icomoon">&#xe90e;</span>楼宇名称</li>
+                    <li class="list-group-item-danger"><span class="icomoon">&#xe90e;</span>楼宇名称</li>
+                    <li class="list-group-item-danger"><span class="icomoon">&#xe90e;</span>楼宇名称</li>
+                    <li class="list-group-item-danger"><span class="icomoon">&#xe90e;</span>楼宇名称</li>
+                    <li class="list-group-item-danger"><span class="icomoon">&#xe90e;</span>楼宇名称</li>
+                    <li class="list-group-item-success"><span class="icomoon">&#xe90f;</span>楼宇名称</li>
+                    <li class="list-group-item-success"><span class="icomoon">&#xe90f;</span>楼宇名称</li>
+                    <li class="list-group-item-success"><span class="icomoon">&#xe90f;</span>楼宇名称</li>
+                </ul>
+
+                <div class="demo pull-right">
+                    <p id="demo1-text"></p>
+                    <ul id="demo1" class="pagination"></ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="house-c">
+            <div id="house-c" class="house-chart col-lg-5 col-md-5"></div>
+            <div class="house-c-info col-lg-7 col-md-7">
+                <li class="li-h list-group-item-danger"><span class="icomoon">&#xe90e;</span>未巡检房间：10</li>
+                <li class="li-h list-group-item-success"><span class="icomoon">&#xe90f;</span>已巡检房间：3</li>
+                <ul class="house-check-log list-unstyled">
+                    <li class="list-group-item-danger"><span class="icomoon">&#xe90e;</span>房间信息</li>
+                    <li class="list-group-item-danger"><span class="icomoon">&#xe90e;</span>房间信息</li>
+                    <li class="list-group-item-danger"><span class="icomoon">&#xe90e;</span>房间信息</li>
+                    <li class="list-group-item-danger"><span class="icomoon">&#xe90e;</span>房间信息</li>
+                    <li class="list-group-item-danger"><span class="icomoon">&#xe90e;</span>房间信息</li>
+                    <li class="list-group-item-success"><span class="icomoon">&#xe90f;</span>房间信息</li>
+                    <li class="list-group-item-success"><span class="icomoon">&#xe90f;</span>房间信息</li>
+                    <li class="list-group-item-success"><span class="icomoon">&#xe90f;</span>房间信息</li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/test.js"></script>
+<script src="js/data.js"></script>
+<script src="js/police.js"></script>
+<script src="js/jqPaginator.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        var datas = JSON.parse(storage.getItem('police-info'));
+        var poli_id_my = datas.police.poliId;
+        admin();
+
+        var data1 = [
+            {value:335, name:'1'},
+            {value:310, name:'2'},
+            {value:234, name:'3'},
+            {value:135, name:'4'},
+            {value:1548, name:'5'}
+        ];
+        creatCharts('plot',data1,'title');
+        creatCharts('building',data1,'title');
+        creatCharts('house-c',data1,'title');
+
+        page('#demo1',10,5,1);
+    });
+</script>
+</html>

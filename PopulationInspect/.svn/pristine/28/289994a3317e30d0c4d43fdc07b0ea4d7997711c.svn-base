@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="edu.hdu.lab.checkIn.mapper.InfoGetMapper">
+	<!-- 用户函数  -->
+  <!-- PoliceBasic  map -->
+  
+  <resultMap id="PoliceBasicMap" type="edu.hdu.lab.checkIn.dto.PoliceBasic" >
+   <id column="POLI_ID" property="poliId" jdbcType="INTEGER" />
+    <result column="POLI_CODE" property="poliCode" jdbcType="CHAR" />
+    <result column="POLI_NAME" property="poliName" jdbcType="VARCHAR" />
+    <result column="POLI_PASS" property="poliPass" jdbcType="VARCHAR" />
+    <result column="POLI_ROLE" property="poliRole" jdbcType="CHAR" />
+    <result column="POLI_PHOTO" property="poliPhoto" jdbcType="VARCHAR" />
+    <result column="POLI_DISTRICT" property="poliDistrict" jdbcType="VARCHAR" />
+    <result column="TIME_LASTLOGIN" property="timeLastlogin" jdbcType="TIMESTAMP" />
+    <result column="IP_LASTLOGIN" property="ipLastlogin" jdbcType="VARCHAR" />
+    <result column="IS_DELETED" property="isDeleted" jdbcType="BIT" />
+    <result column="RAMARK" property="ramark" jdbcType="VARCHAR" />
+    <result column="STAT_ID" property="statId" jdbcType="INTEGER" />
+    <result column="POLI_ROLE_NAME" property="poliRoleName" jdbcType="VARCHAR" />
+    <result column="STAT_NAME" property="poliOfficeName" jdbcType="VARCHAR" />
+  </resultMap>
+  
+  <!-- 用户登录 -->
+  
+  <select id="login" parameterType="java.lang.String" resultMap="PoliceBasicMap">
+  	select p.*,d.ITEM_NAME as POLI_ROLE_NAME,b.STAT_NAME as POLI_OFFICE_NAME from policestation as b,police as p,dictionary as d 
+	where p.STAT_ID= b.STAT_ID
+	and d.DICT_CLASS="JYJS"  and p.POLI_ROLE= d.DICT_ITEM
+	and p.POLI_CODE = #{user,jdbcType=VARCHAR};  
+  </select>
+  
+  
+	<!-- 获取超期信息 -->
+	<select id="getOverData" parameterType="java.lang.Integer"
+		resultMap="OverDataMap">
+		select count(*) as room_overinspect,count(distinct c.COMM_ID) as
+		comm_overinspect,
+		count(distinct b.BUIL_ID) as buil_overinspect
+		from community as c,building as b,room as r,sysparam as s
+		where (c.POLI_ID = #{poliId,jdbcType=INTEGER}
+		and c.COMM_ID = b.COMM_ID)
+		or b.POLI_ID = #{poliId,jdbcType=INTEGER}
+		and r.BUIL_ID=b.BUIL_ID
+		and s.PARA_NAME="INSPECT_PERIOD"
+		and to_days(now())-to_days(r.TIME_LASTINSPECT)>s.PARA_VALUE;
+	</select>
+
+	<resultMap type="edu.hdu.lab.checkIn.dto.OverData" id="OverDataMap">
+		<result column="room_overinspect" property="room_overinspect"
+			jdbcType="INTEGER" />
+		<result column="buil_overinspect" property="buil_overinspect"
+			jdbcType="INTEGER" />
+		<result column="comm_overinspect" property="comm_overinspect"
+			jdbcType="INTEGER" />
+	</resultMap>
+	
+	<!-- 获取初始生成树 -->
+	<!-- 通过警员id查询小区 -->
+	<select id="getComm" parameterType="java.lang.Integer" resultMap="Map">
+		select * from community 
+		where POLI_ID=#{id,jdbcType=INTEGER};
+	</select>
+	<!-- 通过警员id查询独立建筑-->
+	<select id="getBuilByPoli" parameterType="java.lang.Integer" resultMap="Map">
+		select * from building 
+		where POLI_ID=#{id,jdbcType=INTEGER};
+	</select>
+	
+	<!-- 通过小区id查询建筑-->
+	<select id="getBuilByComm" parameterType="java.lang.Integer" resultMap="Map">
+		select * from building 
+		where COMM_ID=#{id,jdbcType=INTEGER};
+	</select>
+	
+	<!-- 获取点击树时 -->
+	<!-- 通过派出所编号id查询警员所管辖的所有小区-->
+	<select id="getCommByOffi" parameterType="java.lang.Integer" resultMap="java.util.Map">
+		select * from community as c,police as p
+		where p.POLI_OFFICE = "0101"
+		and POLI_ROLE="01";
+		and c.POLI_ID=p.POLI_ID;
+	</select>
+	
+	<!-- 通过派出所编号查询警员所管辖的独立建筑-->
+	<select id="getbBuilByOffi">
+		select * from building as b,police as p
+		where p.POLI_OFFICE = "0101"
+		and b.POLI_ID=p.POLI_ID;
+	</select>
+	
+	
+	<!-- 通过build_id，统计所有room的信息-->
+	<select id="ge">
+	
+	</select>
+
+
+</mapper>

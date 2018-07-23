@@ -1,0 +1,70 @@
+/**
+ * author levi
+ * url http://levi.cg.am
+ */
+$(function() {
+	$(document).mousemove(function(e) {
+		if (!!this.move) {
+			var posix = !document.move_target ? {'x': 0, 'y': 0} : document.move_target.posix,
+				callback = document.call_down || function() {
+					$(this.move_target).css({
+						// 'top': e.pageY - posix.y,
+						// 'left': e.pageX - posix.x
+					});
+				};
+
+			callback.call(this, e, posix);
+		}
+	}).mouseup(function(e) {
+		if (!!this.move) {
+			var callback = document.call_up || function(){};
+			callback.call(this, e);
+			$.extend(this, {
+				'move': false,
+				'move_target': null,
+				'call_down': false,
+				'call_up': false
+			});
+		}
+	});
+	// var $box2 = $('#box2'),
+	// 	$box2w = $box2.width();
+
+	var $bodyw = $('body').width();
+
+	var $box = $('#box').mousedown(function(e) {
+	    var offset = $(this).offset();
+	    
+	    this.posix = {'x': e.pageX - offset.left, 'y': e.pageY - offset.top};
+	    $.extend(document, {'move': true, 'move_target': this});
+	}).on('mousedown', '#coor', function(e) {
+	    var posix = {
+	            'w': $box.width(), 
+	            'h': $box.height(), 
+	            'x': e.pageX, 
+	            'y': e.pageY
+	        };
+
+
+	    $.extend(document, {'move': true, 'call_down': function(e) {
+
+			var present1=(e.pageX - posix.x + posix.w)/$bodyw*100,
+				present2 = Math.min(30,present1);
+				present2 = Math.max(15,present2)
+	        $box.css({
+				'width':present2+'%'
+				// 'width': Math.min(0.3*$bodyw, e.pageX - posix.x + posix.w)
+	        });
+			$('#charts').css({
+				'height': $('#charts').width()*.8
+			});
+			var present3 = Math.max(70,100-present2);
+			$('#box2').css({
+				'width':present3+'%',
+				'left':present2+'%'
+				// 'width':Math.max(0.7*$bodyw,$bodyw-e.pageX - posix.x + posix.w)
+			});
+	    }});
+	    return false;
+	});
+});

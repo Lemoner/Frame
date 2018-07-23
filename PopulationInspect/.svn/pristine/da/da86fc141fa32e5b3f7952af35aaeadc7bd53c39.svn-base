@@ -1,0 +1,208 @@
+package com.example.project;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.example.DButil.DBMannger;
+import com.example.DButil.MySqliteHelper;
+import com.example.Http.PostLogThread;
+
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.support.v4.app.ListFragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.SimpleAdapter;
+import android.widget.Toast;
+
+public class MyFragment02 extends ListFragment{
+	
+	private ListView mListView;				//列表视图
+	private SimpleAdapter sim_adapter;		//列表适配�?
+	private Button submit;					//提交日志
+	
+	//日志输入框布局
+	private RelativeLayout mLogInputLay;
+	private EditText mEditText;
+	private Button confirm;					//确认修改
+	private Button cancel;					//取消
+	
+	int currentId = 1;						//当前日志id
+	String currentText = "修改成功";			//当前日志正文，单击日志条目时赋�?�为该条日志正文
+	String logToPost = "";					//待发送的数据
+	
+	//数据�?
+	private MySqliteHelper helper;
+	
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View view = inflater.inflate(R.layout.tab02, container, false);  
+		
+		/**初始化控�?*/
+		mListView = (ListView) view.findViewById(android.R.id.list);  
+		submit = (Button) view.findViewById(R.id.submit);
+		
+		//输入框部分的控件
+		mLogInputLay = (RelativeLayout) view.findViewById(R.id.log_inputLay);
+		mEditText = (EditText) view.findViewById(R.id.log_editText);
+		confirm = (Button) view.findViewById(R.id.confirm);
+		cancel = (Button) view.findViewById(R.id.cancel);
+		
+		//设置控件的点击事件
+		initView();
+		
+		return view;	
+	}
+	
+	private void initView() {
+		//提交日志
+		submit.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				Map<String,Object> mapToPost = new HashMap<String, Object>();
+				mapToPost.put("data", logToPost);
+	
+				//这里应该有向web发�?�post请求，将日志信息传过�?
+				new PostLogThread("http://10.0.5.199:8080/PopulationInspect/log/Log_add",getActivity(),mapToPost.toString()).start();
+				
+				//发送成功后清空日志列表
+				SQLiteDatabase db;
+		    	String sql;
+		    	db = helper.getWritableDatabase();
+
+				sql = "DELETE FROM log_t";
+    			DBMannger.execSQL(db, sql);
+				updateData();									//提交完日志后重新加载日志信息								
+    			db.close();
+					
+				Toast.makeText(getActivity(), "提交成功", Toast.LENGTH_SHORT ).show();
+			}
+		});
+		
+		//修改日志信息
+		confirm.setOnClickListener(new OnClickListener() {	
+			SQLiteDatabase db;
+	    	String sql;
+	    	
+			@Override
+			public void onClick(View view) {					//点击提交按钮�?,获取输入框中的文本和当前时间，存入数据库�?
+				db = helper.getWritableDatabase();
+				
+				SimpleDateFormat mDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+				Date date = new Date();
+				String fdata = mDateFormat.format(date);
+				currentText = mEditText.getText().toString();	//将输入框中的内容赋�?�给当前选中条目
+
+				sql = "update log_t set content='"+currentText+"' where id='"+currentId+"'";
+    			DBMannger.execSQL(db, sql);
+				
+				mLogInputLay.setVisibility(View.GONE);	//隐藏输入�?
+				updateData();							//修改完日志后重新加载日志信息					
+				
+    			db.close();	
+    			mEditText.setText("");
+    			Toast.makeText(getActivity(), "修改成功", Toast.LENGTH_SHORT ).show();
+    		
+			}
+		});
+		
+		//取消按钮
+		cancel.setOnClickListener(new OnClickListener() {			
+			@Override
+			public void onClick(View arg0) {
+				mLogInputLay.setVisibility(View.GONE);	//隐藏输入�?
+			}
+		});
+	}
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		
+		initDBMannger(); 		//初始化数据库管理
+        updateData();			//从数据库查询日志信息
+	}
+
+	//初始化数据库管理
+	private void initDBMannger() {
+		helper = DBMannger.getIntance(getActivity());
+		//创建数据�?
+		SQLiteDatabase db = helper.getWritableDatabase();
+	}
+	
+	//从数据库查询日志信息
+	public void updateData() {
+		sim_adapter = new SimpleAdapter(getActivity(), getData(), R.layout.logitem, new String[]{"community","room","log_pic","log_date"}, new int[]{R.id.community, R.id.room, R.id.log_pic, R.id.log_date});
+        setListAdapter(sim_adapter);  
+	}
+	//获取日志列表数据
+	private List<Map<String,Object>> getData(){
+		List<Map<String,Object>> dataList = new ArrayList<Map<String,Object>>();
+		
+		SQLiteDatabase db = helper.getWritableDatabase();
+    	String sql;   	
+    	JSONArray jsonlist = new JSONArray();
+	
+		sql = "select * from log_t";					
+		Cursor c = db.rawQuery(sql,null);
+		if(c != null){
+			String[] cols = c.getColumnNames();		//id,content,date
+			while(c.moveToNext()){
+				Map<String,Object> map = new HashMap<String, Object>();
+				map.put("log_id", c.getString(c.getColumnIndex("id")));
+				map.put("log_content", c.getString(c.getColumnIndex("content")));
+	    		map.put("log_pic", R.drawable.log);
+	    		map.put("log_date", c.getString(c.getColumnIndex("date")));
+	    		map.put("community", c.getString(c.getColumnIndex("community")));
+	    		map.put("room", c.getString(c.getColumnIndex("room")));
+	    		dataList.add(map);
+	    		
+	    		//将读取到的数据转化成json用做post请求的数据
+	    		JSONObject json = new JSONObject();
+	    	    try {
+					json.put("id", map.get("log_id"));
+					json.put("content", map.get("log_content"));
+		    	    json.put("date", map.get("log_date"));
+				} catch (JSONException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+	    	    jsonlist.put(json);
+	    	    logToPost = jsonlist.toString();
+			}
+		}
+		c.close();
+		db.close();
+
+    	return dataList;
+    }
+	
+	//列表条目点击事件
+	@Override
+	public void onListItemClick(ListView l, View v, int position, long id) {
+		mLogInputLay.setVisibility(View.VISIBLE);	//显示输入�?
+		
+		HashMap map = (HashMap)mListView.getItemAtPosition(position);			//获取被点击条目的信息，转化成HashMap类型
+		currentId = Integer.parseInt(map.get("log_id").toString());				//将当前条目的id和content保存下来用于数据库的修改操作
+		currentText = (String) map.get("log_content");
+		mEditText.setText(currentText);
+	}
+}
+

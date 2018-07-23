@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>巡检日志查询</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/people_info.css">
+</head>
+<body>
+<nav class="navbar-my navbar navbar-default">
+    <div class="navbar-header-my navbar-header ">
+        <span class="logo">派出所住户地址登记查询系统</span>
+    </div>
+
+    <div class="logout" >
+        <p class="navbar-icon navbar-text navbar-right text-right">
+            <a href="#" class="navbar-link"><span class="glyphicon glyphicon-upload"></span></a>
+            <a href="#" class="navbar-link"><span class="glyphicon glyphicon-time"></span></a>
+            <a href="#" class="navbar-link"><span class="glyphicon glyphicon-off"></span></a>
+            <a href="#" class="navbar-link"><span class="glyphicon glyphicon-picture"></span></a>
+        </p>
+        <div class="admin pull-right">
+            <img src="images/刘德华.jpg" alt="警员照片">
+            <ul class="admin-info">
+                您好！<span>123456</span>号<span>警员</span><span>张三丰</span>&nbsp;您负责<span>白杨派出所</span><span>白杨街道</span>
+            </ul>
+            <ul class="admin-web">
+                上一次登陆时间：<span>2016-5-1</span>上一次登陆IP：<span>127.0.0.1</span>
+            </ul>
+            <ul class="admin-work">
+                超期未检情况：<span>3</span><span>10</span><span>50</span>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="main">
+    <div class="check-log col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2">
+        <table class="table">
+            <caption>巡检日志</caption>
+            <thead>
+            <tr>
+                <th>时间</th>
+                <th>警员</th>
+                <th>小区</th>
+                <th>楼宇（建筑）</th>
+                <th>单元数</th>
+                <th>层</th>
+                <th>房间</th>
+                <th>巡检记录</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>2016-5-1</td>
+                <td>张三丰</td>
+                <td>德信中外公寓</td>
+                <td>1幢</td>
+                <td>一单元</td>
+                <td>一层</td>
+                <td>101</td>
+                <td><a href="#">巡检记录</a></td>
+            </tr>
+            <tr>
+                <td>2016-5-1</td>
+                <td>张三丰</td>
+                <td>德信中外公寓</td>
+                <td>1幢</td>
+                <td>一单元</td>
+                <td>一层</td>
+                <td>101</td>
+                <td><a href="#">巡检记录</a></td>
+            </tr>
+            <tr>
+                <td>2016-5-1</td>
+                <td>张三丰</td>
+                <td>德信中外公寓</td>
+                <td>1幢</td>
+                <td>一单元</td>
+                <td>一层</td>
+                <td>101</td>
+                <td><a href="#">巡检记录</a></td>
+            </tr>
+            <tr>
+                <td>2016-5-1</td>
+                <td>张三丰</td>
+                <td>德信中外公寓</td>
+                <td>1幢</td>
+                <td>一单元</td>
+                <td>一层</td>
+                <td>101</td>
+                <td><a href="#">巡检记录</a></td>
+            </tr>
+            <tr>
+                <td>2016-5-1</td>
+                <td>张三丰</td>
+                <td>德信中外公寓</td>
+                <td>1幢</td>
+                <td>一单元</td>
+                <td>一层</td>
+                <td>101</td>
+                <td><a href="#">巡检记录</a></td>
+            </tr>
+            <tr>
+                <td>2016-5-1</td>
+                <td>张三丰</td>
+                <td>德信中外公寓</td>
+                <td>1幢</td>
+                <td>一单元</td>
+                <td>一层</td>
+                <td>101</td>
+                <td><a href="#">巡检记录</a></td>
+            </tr>
+            <tr>
+                <td>2016-5-1</td>
+                <td>张三丰</td>
+                <td>德信中外公寓</td>
+                <td>1幢</td>
+                <td>一单元</td>
+                <td>一层</td>
+                <td>101</td>
+                <td><a href="#">巡检记录</a></td>
+            </tr>
+            <tr>
+                <td>2016-5-1</td>
+                <td>张三丰</td>
+                <td>德信中外公寓</td>
+                <td>1幢</td>
+                <td>一单元</td>
+                <td>一层</td>
+                <td>101</td>
+                <td><a href="#">巡检记录</a></td>
+            </tr>
+            <tr>
+                <td>2016-5-1</td>
+                <td>张三丰</td>
+                <td>德信中外公寓</td>
+                <td>1幢</td>
+                <td>一单元</td>
+                <td>一层</td>
+                <td>101</td>
+                <td><a href="#">巡检记录</a></td>
+            </tr>
+            <tr>
+                <td>2016-5-1</td>
+                <td>张三丰</td>
+                <td>德信中外公寓</td>
+                <td>1幢</td>
+                <td>一单元</td>
+                <td>一层</td>
+                <td>101</td>
+                <td><a href="#">巡检记录</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <form id="form1">
+            <div>
+                <ul class="pagination" id="pagination">
+                </ul>
+                <input type="hidden" id="PageCount"/>
+                <input type="hidden" id="PageSize" value="1" />
+                <input type="hidden" id="countindex" value="6"/>
+                <!--设置最多显示的页码数 可以手动设置 默认为5-->
+                <input type="hidden" id="visiblePages" value="8" />
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jqPaginator.min.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript">
+    function loadData() {
+        $("#PageCount").val("10");
+    }
+</script>
+</html>

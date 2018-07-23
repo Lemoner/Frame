@@ -1,0 +1,185 @@
+//网页加载完毕显示出警员管辖范围内所有小区名字
+function community01(policeId){
+
+	  $.ajax({
+		url: '../police/jurisdiction',
+		type: 'POST',
+		data: {
+			poli_id: policeId,
+		},
+		success:function(data){
+				var communityName = $("#communityName");
+					communityName.html('');
+				var loneBuilding = $("#loneBuilding");
+					loneBuilding.html('');
+			console.log(data);
+			var datas = eval('('+data+')');
+			var p = '<option  class="selected" value="community" selected >请选择小区...</option>';
+			var p1 = '<option value="lone" selected >请选择独立建筑...</option>';
+			for(var  i=0;i<datas.community.length;i++){
+				  p += '<option value="'+datas.community[i].commId+'">' + datas.community[i].commName + '</option>';
+			}
+			for(var j=0;j<datas.building.length;j++){
+				p1 += '<option value="'+datas.building[j].builId+'">' + datas.building[j].builName+ '</option>';
+			}
+			communityName.append(p);
+			loneBuilding.append(p1);
+		},
+		error:function(err){
+		alert('发生了错误：'+err.status);
+		console.table(err);
+		}
+	});
+
+}
+//根据小区获取建筑名称
+function getCommunity1(commId){
+	$.ajax({
+		url: '../community/building',
+		type: 'POST',
+		data: {
+			comm_id: commId,
+		},
+		success:function(data){
+			var buildingName = $("#buildingName");
+				buildingName.html('');
+			// console.log(data);
+			var datas = eval('('+data+')');
+			var p = '<option  class="selected" value="building" selected >请选择楼宇...</option>';
+			for(var  i=0;i<datas.building.length;i++){
+				  p += '<option value="'+datas.building[i].builId+'">' + datas.building[i].builName + '</option>';
+			}
+			buildingName.append(p);
+			
+		},
+		error:function(err){
+		alert('发生了错误：'+err.status);
+		console.table(err);
+		}
+	});
+}
+//根据房间分类获取子类
+function getRoomSub(roomSelectName){
+	var roomSelectSub = $("#roomSelectSub");
+		roomSelectSub.html('');
+		var p = ' <option value="" selected disabled>请选择房间子类...</option>';
+   if(roomSelectName == "01"){
+		p += ' <option value="0101">自住住宅</option>'+
+		  '<option value="0102">出租住宅</option>';
+   }else if(roomSelectName == "02"){
+	  p += '<option value="0201">旅馆</option>' +
+		  '<option value="0202">废旧金属回收</option>'+
+		  '<option value="0203">刻字刻章</option>'+
+		  '<option value="0204">典当</option>';
+   }else if(roomSelectName == "03"){
+	p += '<option value="0301">幼儿园</option>'+
+		  '<option value="0302">中小学</option>'+
+		  '<option value="0303">学生宿舍</option>';
+   }else if(roomSelectName == "04"){
+	 p += '<option value="0401">足浴</option>'+
+		  '<option value="0402">棋牌</option>'+
+		  '<option value="0403">KTV</option>'+
+		  '<option value="0404">网吧</option>'+
+		  '<option value="0405">餐饮</option>'+
+		  '<option value="0406">药店（医院）</option>'+
+		  '<option value="0407">水果店</option>'+
+		  '<option value="0408">超市</option>'+
+		  '<option value="0409">通讯器材</option>'+
+		  '<option value="0410">理发店</option>'+
+		  '<option value="0411">福利彩票</option>'+
+		  '<option value="0412">寄递</option>'+
+		  '<option value="0413">摄影</option>'+
+		  '<option value="0414">洗衣店</option>'+
+		  '<option value="0415">修车店</option>';
+   }else if(roomSelectName == "05"){
+	p += '<option value="0501">农贸市场</option>'+
+		  '<option value="0502">基督教堂</option'+
+		  '<option value="0503">其他</option>';
+   }else if(roomSelectName == "06"){
+	p += '<option value="0601">一级</option>'+
+		  '<option value="0602">二级</option>'+
+		  '<option value="0603">三级</option>';
+   }
+   roomSelectSub.append(p);
+}
+//查询人员详情
+function searchPersonInfo(policeId){
+	var data = {};
+	data.poli_id = policeId;
+  if($("#communityName option:selected").val() != "community"){
+	 communityId = $("#communityName option:selected").val();
+	 data.comm_id = communityId;
+  }
+  if($("#buildingName option:selected").val() != "building"){
+	buildingId = $("#buildingName option:selected").val();
+	data.buil_id = buildingId;
+  }
+
+  if($('#loneBuilding option:selected').val() != "lone"){
+	 loneBuildingId = $('#loneBuilding option:selected').val();
+	 data.buil_id = loneBuildingId;
+
+  }
+  if($("#unit").val().replace(/[^0-9]/ig,"") != ""){
+	data.room_unit = $("#unit").val().replace(/[^0-9]/ig,"");
+  }
+  if($("#floor").val().replace(/[^0-9]/ig,"") != ""){
+	data.room_floor = $("#unit").val().replace(/[^0-9]/ig,"");
+  }
+  if($("#room").val() != ""){
+	if($("#room").val().replace(/[^0-9]/ig,"").length == 3){
+		data.room_no = "0" + $("#room").val().replace(/[^0-9]/ig,"");
+	}
+	if($("#room").val().replace(/[^0-9]/ig,"").length == 4){
+		data.room_no = $("#room").val().replace(/[^0-9]/ig,"");
+	}
+  }
+	if($('#roomSelect option:selected').val() != "roomSelect"){
+	 data.room_class = $('#roomSelect option:selected').val();
+
+  }
+   if($('#roomSelectSub option:selected').val() != "roomSelectSub"){
+	 data.room_subclass = $('#roomSelectSub option:selected').val();
+
+  }
+  if($("#name").val() != ""){
+	data.pers_name = $("#name").val();
+  }
+
+
+  if($('#sex option:selected').val() != "sex"){
+	 data.pers_sex= $('#sex option:selected').val();
+  }
+  
+  if($("#card").val() != ""){
+	data.pers_idcard = $("#card").val();
+  }
+  if($("#phone").val() != ""){
+  	data.pers_phone = $("#phone").val();
+  }
+  if($("#regitsterStart").val() != ""){
+  	data.startTime = $("#regitsterStart").val();
+  }
+   if($("#registerEnd").val() != ""){
+  	data.endTime = $("#registerEnd").val();
+  }
+  if($('#whyRegister option:selected').val() != "whyRegister"){
+	 data.why_register= $('#whyRegister option:selected').val();
+  }
+   if($('#isFocus option:selected').val() != "isFocus"){
+	 data.is_focus= $('#is_focus option:selected').val();
+  }
+  $.ajax({
+		url: '../person/searchSize.do',
+		type: 'POST',
+		data: data,
+		success:function(data){
+			console.log("chenggong");
+			
+		},
+		error:function(err){
+		alert('发生了错误：'+err.status);
+		console.table(err);
+		}
+	});
+}

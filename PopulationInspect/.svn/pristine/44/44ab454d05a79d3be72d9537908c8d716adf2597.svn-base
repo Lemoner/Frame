@@ -1,0 +1,35 @@
+package edu.hdu.lab.checkIn.mapper;
+
+import edu.hdu.lab.checkIn.dto.PoliceBasic;
+import edu.hdu.lab.checkIn.model.Police;
+import edu.hdu.lab.checkIn.model.PoliceExample;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
+public interface PoliceMapper {
+    int countByExample(PoliceExample example);
+
+    int deleteByExample(PoliceExample example);
+
+    int deleteByPrimaryKey(Integer poliId);
+
+    int insert(Police record);
+
+    int insertSelective(Police record);
+
+    List<Police> selectByExample(PoliceExample example);
+
+    Police selectByPrimaryKey(Integer poliId);
+
+    int updateByExampleSelective(@Param("record") Police record, @Param("example") PoliceExample example);
+
+    int updateByExample(@Param("record") Police record, @Param("example") PoliceExample example);
+
+    int updateByPrimaryKeySelective(Police record);
+
+    int updateByPrimaryKey(Police record);
+    
+    List<PoliceBasic> login(String user);
+}

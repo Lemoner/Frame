@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>任务列表</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/logo.png" type="image/png" >
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    	.main{
+    		padding: 0 50px;
+    		top:90px;
+    		padding-bottom: 90px;
+    	}
+    	body{
+    		overflow-y:auto;
+    	}
+    	label{
+    		margin-left: 20px
+    	}
+    	input.btn{
+    		min-width: 60px;
+    		margin-left: 20px
+    	}
+    </style>
+</head>
+<body>
+	<nav class="navbar-my col-lg-12 col-md-12 col-xs-12 col-sm-12">
+	    <img class="logo-img" src="images/logo.png" alt="logo">
+	    <div class="navbar-header-my navbar-header ">
+	        <span class="logo">派出所基础警务派单平台</span>
+	    </div>
+
+	    <div class="logout" >
+	        <p class="navbar-icon navbar-text navbar-right text-right">
+	            <a href="index.html" class="navbar-link"><span class="icomoon">&#xe900;</span></a>
+	            <a href="#" class="navbar-link"><span class="icomoon">&#xe905;</span></a>
+	            <a href="#" class="navbar-link"><span class="icomoon">&#xe908;</span></a>
+	            <a href="login.html" class="navbar-link"><span class="icomoon">&#xe90b;</span></a>
+	        </p>
+	        <div id="admin" class="admin pull-right"></div>
+	    </div><!-- /.navbar-collapse -->
+	</nav>
+	<div class="main">
+		<div class="btn-box">
+			<a href="makeTask.html" target="_blank" class="make-task btn btn-xs btn-success" title="下发任务"  style="display: none;">下发任务</a>
+			<label for="police">选择警员:</label>
+			<select name="police" id="police" style="width: 180px">
+				<option value="">请选择</option>
+			</select>
+			<label for="state">选择完成情况:</label>
+			<select name="state" id="state" style="width: 80px">
+				<option value="">请选择</option>
+				<option value="0">未完成</option>
+				<option value="1">已完成</option>
+			</select>
+			<input type="button" class="search btn btn-primary btn-xs" value="查询">
+		</div>
+		<table class="table">
+			<caption>任务列表</caption>
+			<thead>
+				<tr>
+					<th>姓名</th>
+					<th>小区</th>
+					<th>房间</th>
+					<th>截止日期</th>
+					<th>任务类型</th>
+					<th>任务内容</th>
+					<th>状态</th>
+					<!-- <th>操作</th> -->
+				</tr>
+			</thead>
+			<tbody id="list">
+				
+			</tbody>
+		</table>
+	</div>
+	
+	
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var policeInfo = JSON.parse(window.localStorage.getItem('police-info'));
+		var policeId = policeInfo.poliId;
+		var poliRole = policeInfo.poliRole;
+
+		// 根据登陆者等级更改获取任务列表的url
+		var url = "";
+		if(poliRole!="01"){
+			// 不是普通警员时
+			$('.make-task').show();
+			getPoliceList();
+			url = "../task/Task_all";
+		}else{
+			url = "../task/Task_list";
+		}
+		admin();
+		getData(policeId,url);
+		$('.search')[0].onclick=function(){
+			getData(policeId,url);
+			search();
+		};
+	});
+
+	function getPoliceList(){
+		$.ajax({
+			url:'../police/Police_list',
+			type:'POST',
+			data:{},
+			success:function(data){
+				var list = eval('('+data+')').data;
+				var html = '<option value="">请选择</option>';
+				for(var i=0;i<list.length;i++){
+					html +='<option value="'+list[i].poliId+'" data-name="'+list[i].poliName+'">'+list[i].poliName+'（'+list[i].poliCode+'）</option>';
+				}
+				$('#police').html(html);
+			},
+			error:function(err){
+				console.log('获取警员列表出错了！'+err.status);
+			}
+		});
+	}
+	
+	// 筛选数据
+	function search(){
+		var poliId = $('#police').val();
+		var state = $('#state').val();
+		var className = ".poli"+poliId+".state"+state;
+		$('#list tr').hide();
+		$(className).show();
+	}
+
+	function getData(policeId,url){
+		$.ajax({
+			url: url,
+			type: 'POST',
+			data:{"policeId":policeId},
+			dataType: 'JSON',					//数据类型
+			async: false,						//是否异步，为false时锁定浏览器，请求完成前不进行其他操作
+			context: document.body,				//这个对象用于设置Ajax相关回调函数的上下文		
+			beforeSend: function(xhr) {			//请求发送前的回调函数，可修改 XMLHttpRequest 对象，如添加自定义 HTTP 头。
+				xhr.overrideMimeType("text/plain; charset=UTF-8");
+			},
+			//请求失败回调函数
+			error: function() {
+				console.log('局部事件error请求失败时调用此函数');
+			},
+			//请求成功回调函数
+			success: function(data) {
+				var arr = data;
+				var html = '';
+				if(arr.length==0){
+					html = '<tr><td colspan="10">暂无数据</td></tr>';
+				}else{
+					for(var i = 0;i<arr.length;i++){
+						html += '<tr class="state state'+arr[i].state+' poli poli'+arr[i].policeId+'">';
+						html += '<td>'+arr[i].policeName+'</td>';
+						html += '<td>'+arr[i].community+'</td>';
+						html += '<td>'+arr[i].room+'</td>';
+						html += '<td>'+arr[i].deadLine+'</td>';
+						html += '<td>'+arr[i].type+'</td>';
+						html += '<td>'+arr[i].content+'</td>';
+						if(arr[i].state==0){
+							html += '<td style="color:red">未完成</td>';
+						}else{
+							html += '<td style="color:green">已完成</td>';
+						}
+						// html += '<td><a href="javascript:;">查看详情</a></td>';
+						html += '<tr>';
+					}
+				}
+				$('#list').html(html);
+			},
+			//请求完成后回调函数 (请求success 和 error之后均调用)
+			complete: function() {
+				console.log('局部事件complete');
+			},
+		});
+	}
+</script>
+</body>
+</html>

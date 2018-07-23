@@ -1,0 +1,5 @@
+package edu.hdu.lab.checkIn.mapper;
+
+public interface InfoGetMapper {
+	
+}

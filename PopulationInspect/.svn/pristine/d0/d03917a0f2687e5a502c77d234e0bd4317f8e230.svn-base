@@ -1,0 +1,369 @@
+//网页加载完毕显示出警员管辖范围内所有小区名字
+function community01(policeId){
+
+	  $.ajax({
+        url: '../police/jurisdiction',
+        type: 'POST',
+        data: {
+            poli_id: policeId,
+        },
+        success:function(data){
+        		var communityForm = $("#communityForm");
+	                communityForm.html('');
+            console.log(data);
+            var datas = eval('('+data+')');
+            var p = '';
+            for(var  i=0;i<datas.community.length;i++){
+                  p += '<input type="checkbox" name="checkbox1" value = "'+ datas.community[i].commName+' ">' + datas.community[i].commName;
+                  p +='<input type="hidden" value="'+ datas.community[i].commId +'">'
+            }
+            for(var j=0;j<datas.building.length;j++){
+            	p += '<input type="checkbox" name="checkbox1">' + datas.building[j].builName;
+                p+= '<input type="hidden" value="'+ datas.building[j].builId +'" >'
+            }
+            communityForm.append(p);
+        },
+        error:function(err){
+        alert('发生了错误：'+err.status);
+        console.table(err);
+        }
+    });
+
+}
+//根据小区获取建筑名称
+function getCommunity1(commId){
+    $.ajax({
+        url: '../community/building',
+        type: 'POST',
+        data: {
+            comm_id: commId,
+        },
+        success:function(data){
+        	var buildingForm = $("#buildingForm");
+	            buildingForm.html('');
+            // console.log(data);
+            var datas = eval('('+data+')');
+            var p = '';
+            for(var  i=0;i<datas.building.length;i++){
+                  p += '<input type="checkbox" name="checkbox2" value = "'+ datas.building[i].builName+' ">' + datas.building[i].builName;
+                  p +='<input type="hidden" value="'+ datas.building[i].builId +'">'
+            }
+            buildingForm.append(p);
+            
+        },
+        error:function(err){
+        alert('发生了错误：'+err.status);
+        console.table(err);
+        }
+    });
+}
+function getUnit1(builId){
+	 $.ajax({
+        url: '../building/unit',
+        type: 'POST',
+        data: {
+            buil_id: builId,
+        },
+        success:function(data){
+        	var unitForm = $("#unitForm");
+	            unitForm.html('');
+            // console.log(data);
+            var datas = eval('('+data+')');
+            var p = '';
+            for(var  i=0;i<datas.unit.length;i++){
+                  p += '<input type="checkbox" name="checkbox3" value = "'+ datas.unit[i]+' ">' + datas.unit[i] + "单元";
+       
+            }
+            unitForm.append(p);
+            
+        },
+        error:function(err){
+        alert('发生了错误：'+err.status);
+        console.table(err);
+        }
+    }); 
+}
+function getFloor1(builId,unitNum){
+	 $.ajax({
+        url: '../building/unit/floor',
+        type: 'POST',
+        data: {
+            buil_id: builId,
+            unit_num:unitNum,
+        },
+        success:function(data){
+        	var floorForm = $("#floorForm");
+	            floorForm.html('');
+            // console.log(data);
+            var datas = eval('('+data+')');
+            var p = '';
+            for(var  i=0;i<datas.floor.length;i++){
+                  p += '<input type="checkbox" name="checkbox4" value = "'+ datas.floor[i]+' ">' + datas.floor[i] + "楼";
+       
+            }
+            floorForm.append(p);
+            
+        },
+        error:function(err){
+        alert('发生了错误：'+err.status);
+        console.table(err);
+        }
+    }); 
+}
+function getRoom1(builId,unitNum,floorNum){
+     $.ajax({
+        url: '../building/unit/floor/room',
+        type: 'POST',
+        data: {
+            buil_id: builId,
+            unit_num:unitNum,
+            floor_num:floorNum,
+        },
+        success:function(data){
+        	var roomForm = $("#roomForm");
+	            roomForm.html('');
+            // console.log(data);
+            var datas = eval('('+data+')');
+            var p = '';
+            for(var  i=0;i<datas.room.length;i++){
+                  p += '<input type="checkbox" name="checkbox5" value = "'+ datas.room[i].roomNo+' ">' + datas.room[i].roomNo;
+                  p +='<input type="hidden" value="'+ datas.room[i].roomId +'">'
+            }
+            roomForm.append(p);
+            
+        },
+        error:function(err){
+        alert('发生了错误：'+err.status);
+        console.table(err);
+        }
+    }); 
+}
+//限制选择小区的个数
+function checked0(){
+	$('input[name="checkbox1"]').removeAttr("disabled");
+	$('input[name="checkbox1"]').attr("checked",false);
+	$('input[name="checkbox1"]').click(function(){
+		 if($('input[name="checkbox1"]:checked').length >= 1){
+     	$('input[name="checkbox1"]').attr("disabled","disabled");
+		 }
+	})
+}
+//当选择小区名字时点击选择小区建筑加载建筑名称
+function checked01(){
+		$('input[name="checkbox2"]').removeAttr("disabled");
+		$('input[name="checkbox2"]').attr("checked",false);
+	    $('input[name="checkbox2"]').click(function(){
+		if($('input[name="checkbox2"]:checked').length >= 1){
+		 	
+     	$('input[name="checkbox2"]').attr("disabled","disabled");
+		 }
+	})
+}
+function checked02(){
+		$('input[name="checkbox3"]').removeAttr("disabled");
+		$('input[name="checkbox3"]').attr("checked",false);
+	    $('input[name="checkbox3"]').click(function(){
+		if($('input[name="checkbox3"]:checked').length >= 1){
+		 	
+     	$('input[name="checkbox3"]').attr("disabled","disabled");
+		 }
+	})
+}
+function checked03(){
+		$('input[name="checkbox4"]').removeAttr("disabled");
+		$('input[name="checkbox4"]').attr("checked",false);
+	    $('input[name="checkbox4"]').click(function(){
+		if($('input[name="checkbox4"]:checked').length >= 1){
+		 	
+     	$('input[name="checkbox4"]').attr("disabled","disabled");
+		 }
+	})
+}
+
+function checked04(){
+		$('input[name="checkbox5"]').removeAttr("disabled");
+		$('input[name="checkbox5"]').attr("checked",false);
+	    $('input[name="checkbox5"]').click(function(){
+		if($('input[name="checkbox5"]:checked').length >= 1){
+		 	
+     	$('input[name="checkbox5"]').attr("disabled","disabled");
+		 }
+	})
+}
+//将所选择小区名字显示在Input输入框中
+function checked1(){
+     
+     var checkLength = $('input[name="checkbox1"]:checked').length;
+     console.log(checkLength);
+     var p = '';
+     var communityName = $("#communityName");
+     if(checkLength > 0){
+     	
+         communityName.val('');
+         var p = '';
+       $('input[name="checkbox1"]:checked').each(function(){
+       	   p += $(this).val();
+       })  
+    	var hidden0 = $('input[name="checkbox1"]:checked').next().val();
+		 	$("#hidden0").val(hidden0);
+     }
+     communityName.val(p);
+     setTimeout(function(){
+			$('#communitySelect').modal('hide');
+		},500);
+       var hidden0 = $("#hidden0").val();
+	   if(hidden0.length > 0){
+		getCommunity1(hidden0);
+	}
+
+}
+
+function checked11(){
+     
+     var checkLength = $('input[name="checkbox2"]:checked').length;
+     console.log(checkLength);
+     var p = '';
+     var buildingName = $("#buildingName");
+     if(checkLength > 0){
+     	
+         buildingName.val('');
+         var p = '';
+       $('input[name="checkbox2"]:checked').each(function(){
+       	   p += $(this).val();
+       })  
+
+     }
+     buildingName.val(p);
+     var hidden1 = $('input[name="checkbox2"]:checked').next().val();
+	  $("#hidden1").val(hidden1);
+	    if(hidden1.length > 0){
+		getUnit1(hidden1);
+	}
+     setTimeout(function(){
+			$('#buildingSelect').modal('hide');
+		},500);
+}
+function checked12(){
+     
+     var checkLength = $('input[name="checkbox3"]:checked').length;
+     console.log(checkLength);
+     var p = '';
+     var unitName = $("#unitName");
+     if(checkLength > 0){
+     	
+         unitName.val('');
+         var p = '';
+       $('input[name="checkbox3"]:checked').each(function(){
+       	   p += $(this).val() + "单元";
+       })  
+
+     }
+     unitName.val(p);
+     var hidden2 = $('input[name="checkbox3"]:checked').val();
+	  $("#hidden2").val(hidden2);
+	  var hidden1 = $("#hidden1").val();
+	    if(hidden2.length > 0 && hidden1.length > 0){
+		getFloor1(hidden1,hidden2);
+	}
+     setTimeout(function(){
+			$('#unitSelect').modal('hide');
+		},500);
+}
+
+function checked13(){
+     
+     var checkLength = $('input[name="checkbox4"]:checked').length;
+     console.log(checkLength);
+     var p = '';
+     var floorName = $("#floorName");
+     if(checkLength > 0){
+     	
+         floorName.val('');
+         var p = '';
+       $('input[name="checkbox4"]:checked').each(function(){
+       	   p += $(this).val() + "楼";
+       })  
+
+     }
+     floorName.val(p);
+     var hidden3 = $('input[name="checkbox4"]:checked').val();
+	  $("#hidden3").val(hidden3);
+	  var hidden1 = $("#hidden1").val();
+	  var hidden2 = $("#hidden2").val();
+	    if(hidden2.length > 0 && hidden1.length > 0 && hidden3.length > 0){
+		getRoom1(hidden1,hidden2,hidden3);
+	}
+     setTimeout(function(){
+			$('#floorSelect').modal('hide');
+		},500);
+}
+function checked14(){
+     
+     var checkLength = $('input[name="checkbox5"]:checked').length;
+     console.log(checkLength);
+     var p = '';
+     var roomName = $("#roomName");
+     if(checkLength > 0){
+     	
+         roomName.val('');
+         var p = '';
+       $('input[name="checkbox5"]:checked').each(function(){
+       	   p += $(this).val();
+       })  
+
+     }
+     roomName.val(p);
+     var hidden4 = $('input[name="checkbox5"]:checked').next().val();
+	  $("#hidden4").val(hidden4);
+     setTimeout(function(){
+			$('#roomSelect').modal('hide');
+		},500);
+}
+function getPersonInfo(){
+	var roomId = $("#hidden4").val();
+	if(roomId.length > 0){
+		$.ajax({
+        url: '../room/person',
+        type: 'POST',
+        data: {
+           room_id:roomId,
+        },
+        success:function(data){
+        	var datas = eval('('+data+')');
+        	var thead = $("#personThead");
+            var head = '<tr><th>姓名</th><th>性别</th><th>身份证号</th>'
+             + '<th>电话</th><th>居住地</th><th>是否为重点关注对象</th></tr>';
+             thead.html(head);
+             var tbody = $("#personTbody");
+             tbody.html('');
+             var p = '';
+             for(var i=0;i<datas.length;i++){
+             	p += '<tr><td>'+datas[i].persName + '</td>';
+             	if(datas[i].persSex == true){
+             		p += '<td>男</td>'
+             	}
+             	if(datas[i].persSex == false){
+             		p += '<td>女</td>'
+             	}
+             	p += '<td>'+datas[i].persIdcard+'</td>';
+             	p += '<td>'+datas[i].persPhone+'</td>';
+             	p += '<td>'+datas[i].addrLive+'</td>';
+             	if(datas[i].isFocus == true){
+             		p += '<td>是</td>';
+             	}
+             	if(datas[i].isFocus == false){
+             		p += '<td>否</td>';
+             	}
+
+             	p += '</tr>';
+             }
+             tbody.append(p);
+            
+        },
+        error:function(err){
+        alert('发生了错误：'+err.status);
+        console.table(err);
+        }
+    }); 
+	}
+}

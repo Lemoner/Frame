@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>人员详情</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/people_info.css">
+</head>
+<body>
+<nav class="navbar-my col-lg-12 col-md-12 col-xs-12 col-sm-12">
+    <img class="logo-img" src="images/logo.png" alt="logo">
+    <div class="navbar-header-my navbar-header ">
+        <span class="logo">派出所住户地址登记查询系统</span>
+    </div>
+
+    <div class="logout" >
+        <p class="navbar-icon navbar-text navbar-right text-right">
+            <a href="index.html" class="navbar-link"><span class="icomoon">&#xe900;</span></a><!--home-->
+            <a href="#" class="navbar-link"><span class="icomoon">&#xe905;</span></a>
+            <a href="#" class="navbar-link"><span class="icomoon">&#xe908;</span></a>
+            <a href="#" class="navbar-link"><span class="icomoon">&#xe90b;</span></a>
+        </p>
+        <div id="admin" class="admin pull-right"></div>
+    </div><!-- /.navbar-collapse -->
+</nav>
+<div class="main">
+    <div id="person-info" class="col-lg-8 col-md-8 col-lg-offset-2 col-md-offset-2">
+        <div class="people-info-details">
+            <div class="picture col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <img src="images/user.jpg" alt="住户照片">
+            </div>
+            <div class="people-info-body col-lg-8 col-md-8 col-sm-8 col-xs-8">
+               <span id="roomId" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">房间号：</span>
+                <span id="username" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">姓名：</span>
+                <span id="sex" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">性别：</span>
+                <span id="tel" class="col-lg-4 col-md-4 col-sm-4 col-xs-4">电话：</span>
+                <span id="idCard" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">身份证号码：</span>
+                <span id="logTime" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">登记时间：</span>
+                <span id="logReason" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">登记原因:</span><br>
+                <span id="place" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">户籍所在地：</span>
+                <span id="livePlace" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">居住地：</span>
+                <span id="workPlace" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">工作地：</span><br>
+                <span id="isFocus" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">是否为重点关注对象：</span><br>
+                <span id="copy" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">备注:</span>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/peopleInformation.js"></script>
+<script src="js/data.js"></script>
+<script src="js/police.js"></script>
+<script type="text/javascript">
+ window.onload = function(){
+    var datas = JSON.parse(storage.getItem('police-info'));
+
+    admin();
+    //getOverDue(poli_id_my);
+
+    var persId = window.location.href.split("?")[1].split("&")[0].split("=")[1];
+    var room = window.location.href.split("?")[1].split("&")[1].split("=")[1]
+    personInformation(persId,room);
+	 
+}
+
+</script>
+</html>

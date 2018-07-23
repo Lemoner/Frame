@@ -1,0 +1,43 @@
+package edu.hdu.lab.checkIn.controllers;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import edu.hdu.lab.checkIn.mapper.PersonMapper;
+import edu.hdu.lab.checkIn.model.Person;
+import edu.hdu.lab.checkIn.utils.JsonUtils;
+
+@Controller
+public class RoomController {
+	private Logger logger = Logger.getLogger(getClass());
+	
+	
+	@Autowired
+	private PersonMapper personMapper;
+	
+	/*
+	 * @ResponseBody
+	@RequestMapping(value = "/inspectlog/overdue", method = RequestMethod.POST, produces = "text/html;charset=UTF-8")
+	public String getOverDueInspectLog(@RequestParam("poli_id") Integer poli_id,HttpServletRequest request) {
+		return JsonUtils.createGson().toJson(policeMapper.getOverDueInspectLog(poli_id));
+	}
+	 * */
+	@ResponseBody
+	@RequestMapping(value="/room/person",method = RequestMethod.POST, produces = "text/html;charset=UTF-8")
+	public String getPersonByRoomId(
+			@RequestParam("room_id") Integer room_id,
+			HttpServletRequest request)
+	{
+		List<Person> personCollection = personMapper.getPersonByRoomId(room_id);
+		return JsonUtils.createGson().toJson(personCollection);	
+	}
+}

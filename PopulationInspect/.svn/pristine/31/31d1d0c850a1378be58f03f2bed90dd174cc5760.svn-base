@@ -1,0 +1,172 @@
+/**
+ * Created by Perfect on 2016/4/27.
+ */
+    // 统计表格
+
+function creatCharts(myChart,data,text) {
+
+    var myChart = echarts.init(document.getElementById(myChart));
+
+    var option = {
+        title : {
+            text:text,
+            textStyle:{
+                fontSize: 12
+            },
+            fontFamily:'微软雅黑',
+            left: 20,
+            top: 0
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: "{b} : {c} ({d}%)",
+            position:'inside'
+        },
+        series : [
+            {
+                name: '访问来源',
+                type: 'pie',
+                radius : '55%',
+                center: ['50%', '60%'],
+                data: data,
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+    myChart.setOption(option);
+}
+
+//隐藏与显示详细信息
+$("#hide-btn2").click(function(){
+    if($("#tab").css("display")=="none"){
+        $("#tab").show();
+        
+        $('.map').removeClass('col-lg-12 col-md-12 col-md-12 col-xs-12').addClass('col-lg-8 col-md-8 col-md-8 col-xs-8');
+
+        $('#hide-btn2').html("隐")
+    }else{
+        $("#tab").hide();
+
+        $('.map').removeClass('col-lg-8 col-md-8 col-md-8 col-xs-8').addClass('col-lg-12 col-md-12 col-md-12 col-xs-12');
+
+        $('#hide-btn2').html("显");
+    }
+});
+
+// 显示详细信息
+function showBuildInfo(){
+    $("#tab").show();
+    $('.map').removeClass('col-lg-12 col-md-12 col-md-12 col-xs-12').addClass('col-lg-8 col-md-8 col-md-8 col-xs-8');
+    $('#hide-btn2').html("隐");
+}
+function hideBuildInfo(){
+    $("#tab").hide();
+    $('.map').removeClass('col-lg-8 col-md-8 col-md-8 col-xs-8').addClass('col-lg-12 col-md-12 col-md-12 col-xs-12');
+     $('#hide-btn2').html("显");
+}
+
+
+function mult(checkId,checkAllId,ButtonText) {
+    var $checkId = $(checkId);
+    var $checkAllId = $(checkAllId);
+    $checkId.multiselect({
+        buttonText: function () {
+            return ButtonText;
+        },
+        onChange: function (option, checked, select){
+            var classArray = $checkId.val();
+            var p = '';
+            // console.log($(checked)[0]);
+            if($(checked)[0]==true){
+                if(classArray){
+                    for(var i = 0;i < classArray.length;i++){
+                    p += classArray[i];
+                }
+                    console.log(p);
+                    getBuildByroomClass($checkAllId.val(),p);
+                }else{
+                    $checkAllId.attr('checked',false);
+                }
+            }else{
+                console.log($checkAllId.val(),$(option).val());
+                removeBuildByroomClass($checkAllId.val(),$(option).val());
+            }
+            
+            
+        }
+    });
+    $checkAllId.change(function () {
+        if ($checkAllId.prop('checked')) {
+            $checkId.multiselect('selectAll', false);
+            
+            getBuildByroomClass($checkAllId.val(),null);
+        }
+        else {
+            $checkId.multiselect('deselectAll', false);
+            removeBuildByroomClass($checkAllId.val(),null);
+        }
+    });
+}
+
+function page(pageId,totalPages,visiblePages,currentPage){
+    $(pageId).jqPaginator({
+        totalPages: totalPages,
+        visiblePages: visiblePages,
+        currentPage: currentPage,
+        first: '<li class="first"><a href="javascript:void(0);">首页<\/a><\/li>',
+        prev: '<li class="prev"><a href="javascript:void(0);">&lt;&lt;<\/a><\/li>',
+        next: '<li class="next"><a href="javascript:void(0);">&gt;&gt;<\/a><\/li>',
+        last: '<li class="last"><a href="javascript:void(0);">末页<\/a><\/li>',
+        page: '<li class="page"><a href="javascript:void(0);">{{page}}<\/a><\/li>',
+        onPageChange: function (n) {
+            $("#demo1-text").html("当前第" + n + "页");
+        }
+    });
+}
+
+function getCommName(comm_id_my,i){
+    $.ajax({
+        url: '../community/comm_id',
+        type: 'POST',
+        data: {
+            comm_id: comm_id_my,
+        },
+        success:function(data){
+            // console.log(data);
+            var datas = eval('('+data+')');
+            // console.log(datas.community.commName,i);
+            $('#commName-overdue'+i).html(datas.community.commName);
+        },
+        error:function(err){
+        alert('发生了错误：'+err.status);
+        console.table(err);
+        }
+    });
+}
+
+function getBuildName(buil_id_my,i){
+    $.ajax({
+        url: '../building/buil_id',
+        type: 'POST',
+        data: {
+            buil_id: buil_id_my,
+        },
+        success:function(data){
+            // console.log(data);
+            var datas = eval('('+data+')');
+
+            $('#builName-overdue'+i).html(datas.building.builName);
+            getCommName(datas.building.commId,'-'+i+'-'+i)
+        },
+        error:function(err){
+        alert('发生了错误：'+err.status);
+        console.table(err);
+        }
+    });
+}

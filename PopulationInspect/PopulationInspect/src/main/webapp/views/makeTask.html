@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下发任务</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="images/logo.png" type="image/png" >
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-datetimepicker.min.css">
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+    	body{
+    		overflow-y: auto;
+    	}
+    	.main{
+    		padding: 0 50px;
+    		top:90px;
+    	}
+    	.clear-fix{
+    		clear:both;
+    		height: 100%;
+    	}
+    	.fl{
+    		float: left;
+    	}
+    	.chose-box div{
+    		width: 30%;
+    		height: 100%;
+    		border: 1px solid #999;
+    		margin: 0 10px;
+    		overflow: auto;
+    	}
+    	ul{
+    		list-style-type: none;
+    		padding-left: 20px;
+    	}
+    	ul li{
+    		vertical-align: middle;
+    	}
+    	ul li input[type=checkbox]{
+    		vertical-align: middle;
+    		margin: 0
+    	}
+    	ul li a{
+    		display: inline-block;
+    		min-width: 80px;
+    	}
+    	a.alone-buil,a.alone-buil:hover,a.alone-buil:active,a.alone-buil:focus{
+    		color: black;
+    		text-decoration: none;
+    	}
+    </style>
+</head>
+<body>
+	<nav class="navbar-my col-lg-12 col-md-12 col-xs-12 col-sm-12">
+	    <img class="logo-img" src="images/logo.png" alt="logo">
+	    <div class="navbar-header-my navbar-header ">
+	        <span class="logo">派出所基础警务派单平台</span>
+	    </div>
+
+	    <div class="logout" >
+	        <p class="navbar-icon navbar-text navbar-right text-right">
+	            <a href="index.html" class="navbar-link"><span class="icomoon">&#xe900;</span></a>
+	            <a href="#" class="navbar-link"><span class="icomoon">&#xe905;</span></a>
+	            <a href="#" class="navbar-link"><span class="icomoon">&#xe908;</span></a>
+	            <a href="login.html" class="navbar-link"><span class="icomoon">&#xe90b;</span></a>
+	        </p>
+	        <div id="admin" class="admin pull-right"></div>
+	    </div><!-- /.navbar-collapse -->
+	</nav>
+	<div class="main">
+		<div class="btn-box">
+			<label for="police">选择警员</label>
+			<select id="police" name="police">
+			</select>
+			<label for="deadLine">选择截止日期</label>
+			<input type="text" id="deadLine" class="date-picker" data-date-format="yyyy-mm-dd" style="position: relative;">
+			<label for="type">任务类型</label>
+			<input type="text" id="type" style="width: 100px">
+			<label for="content">任务内容</label>
+			<input type="text" id="content" style="width: 180px">
+			<input type="button" onclick="makeTask()" class="btn btn-xs btn-success" style="margin-left: 50px" name="" value="下发任务">
+		</div>
+		<h4>选择巡检区域</h4>
+		<div class="clear-fix chose-box">
+			<div class="fl community">
+				<ul>
+					
+				</ul>
+			</div>
+			<div class="fl building">
+				<ul>
+					
+				</ul>
+			</div>
+			<div class="fl room">
+				<ul>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	
+	
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap-datetimepicker.js" type="text/javascript"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		var policeInfo = JSON.parse(window.localStorage.getItem('police-info'));
+        var poli_id_my = policeInfo.poliId;
+        var stat_id = policeInfo.statId;
+		admin();
+		bindEvents();
+		getPoliceList();
+		getComm(stat_id);
+	});
+
+	function getPoliceList(){
+		$.ajax({
+			url:'../police/Police_list',
+			type:'POST',
+			data:{},
+			success:function(data){
+				var list = eval('('+data+')').data;
+				var html = '<option value="">请选择</option>';
+				for(var i=0;i<list.length;i++){
+					html +='<option data-code="'+list[i].poliCode+'" value="'+list[i].poliId+'" data-name="'+list[i].poliName+'">'+list[i].poliName+'（'+list[i].poliCode+'）</option>';
+				}
+				$('#police').html(html);
+			},
+			error:function(err){
+				console.log('获取警员列表出错了！'+err.status);
+			}
+		});
+	}
+
+	function bindEvents(){
+		$(".date-picker").datetimepicker({
+            format: 'yyyy/mm/dd',
+            autoclose: 1,
+            startView: 2,
+            minView: 2,
+            forceParse: 0
+        });
+	}
+	function getComm(stat_id_my){
+		$.ajax({
+			url:'../police_station/jurisdiction',
+			type:'POST',
+			data:{
+				poli_station_id:stat_id_my,
+			},
+			success:function(data){
+				var data = eval('('+data+')');
+				var html = '';
+				html +='<li>小区</li>';
+				var community = data.community;
+				var building = data.building;
+				for(var i = 0;i<community.length;i++){
+					// 截取小区范围坐标，作为小区点坐标
+					var e = community[i].commGpslist.split('-')[0].split('|')[0];
+					var n = community[i].commGpslist.split('-')[0].split('|')[1];
+					html += '<li><input type="checkbox" data-e="'+e+'" data-n="'+n+'" data-type="com" data-id="'+community[i].commId+'" class="com"><a href="javascript:;" onclick="getBuilding('+community[i].commId+',this)">'+community[i].commName+'</a></li>';
+				}
+				html +='<li><input type="checkbox" class="com alone-buil" data-id="0" checked style="display:none"><a href="javascript:;" class="alone-buil">独立建筑</a></li>';
+				for(var j = 0;j<building.length;j++){
+					html += '<li><input type="checkbox" data-e="'+building[j].builGpse+'" data-n="'+building[j].builGpsn+'" data-type="buil" data-id="'+building[j].builId+'" class="buil com-c-0"><a href="javascript:;" onclick="getUnit('+building[j].builId+',this,0,1)">'+building[j].builName+'</a></li>';
+				}
+				$('.community ul').html(html);
+			},
+			error:function(err){
+				// alert('发生了错误：'+err.status);
+				console.table(err);
+			}
+		});
+	}
+
+	function getBuilding(id,ele){
+		var name = $(ele).html();
+		// 建筑列表的数据已经是当前小区的建筑时，不再进行请求
+		var ulId = $('.building ul').attr('data-com');
+		if(id == ulId){
+			return;
+		}
+		$.ajax({
+			url:'../community/building',
+			type:'POST',
+			data:{
+				comm_id:id,
+			},
+			success:function(data){
+				var data = eval('('+data+')');
+				var html = '';
+				html +='<li>'+name+'</li>';
+				var building = data.building;
+				for(var j = 0;j<building.length;j++){
+					html += '<li><input type="checkbox" data-e="'+building[j].builGpse+'"  data-n="'+building[j].builGpsn+'" data-type="buil" data-id="'+building[j].builId+'" class="com-c-'+id+' buil"><a href="javascript:;" onclick="getUnit('+building[j].builId+',this,'+id+')">'+building[j].builName+'</a></li>';
+				}
+				$('.building ul').html(html).attr('data-com',id);
+				$('.room ul').html('');
+
+				$('.com').each(function(i,el){
+					var parent = $(el);
+					var children = $('.com-c-'+$(el).attr('data-id'));
+					selectAll(parent,children);
+				});
+			    
+			},
+			error:function(err){
+				// alert('发生了错误：'+err.status);
+				console.table(err);
+			}
+		});
+	}
+	//点击建筑获取单元信息
+	function getUnit(id,ele,cid,type){
+		var name = $(ele).html();
+		var ulId = $('.room ul').attr('data-buil');
+		if(id == ulId){
+			return;
+		}
+		$.ajax({
+			url:'../building/unit',
+			type:'POST',
+			data:{
+				buil_id:id,
+			},
+			success:function(data){
+				var data = eval('('+data+')');
+				var html = '';
+				html += '<li>'+name+'</li>'
+				var unit = data.unit;
+				for(var i = 0;i<unit.length;i++){
+					html += '<li><input type="checkbox"  data-type="unit" data-id="'+unit[i]+'" class="unit com-c-'+cid+' buil-c-'+id+'"><a href="javascript:;" onclick="getfloor('+id+','+unit[i]+',this,'+cid+')">'+unit[i]+'单元</a></li>';
+				}
+				if(unit.length==0){
+					getfloor(id);
+				}
+				if(type==1){
+					$('.building ul').html('<li>'+name+'</li>');
+				}
+				$('.room ul').html(html).attr('data-buil',id);
+
+				$('.com').each(function(i,el){
+					var parent = $(el);
+					var children = $('.com-c-'+$(el).attr('data-id'));
+					selectAll(parent,children);
+				});
+				$('.buil').each(function(i,el){
+					var parent = $(el);
+					var children = $('.buil-c-'+$(el).attr('data-id'));
+					selectAll(parent,children);
+				});
+			    
+			},
+			error:function(err){
+				// alert('发生了错误：'+err.status);
+				console.table(err);
+			}
+		});
+	}
+	function getfloor(builId,unit,ele,cid){
+		// 如果楼层信息已经存在，控制显示隐藏
+		if($('.unit-'+unit).length){
+			$('.unit-'+unit).toggle();
+			return;
+		}
+		$.ajax({
+			url:'../building/unit/floor',
+			type:'POST',
+			data:{
+				buil_id:builId,
+				unit_num:unit,
+			},
+			success:function(data){
+				var data = eval('('+data+')');
+				var html = '<ul class="unit-'+unit+'">';
+				var floor = data.floor;
+				for(var i = 0;i<floor.length;i++){
+					html += '<li><input type="checkbox" data-type="flor" data-id="'+floor[i]+'" class="flor com-c-'+cid+' buil-c-'+builId+' unit-c-'+unit+'"><a href="javascript:;" onclick="getroom('+builId+','+unit+','+floor[i]+',this,'+cid+')">'+floor[i]+'层</a></li>';
+				}
+				html+='</ul>';
+				if($('.unit-'+unit).length==0){
+					$(ele).parent('li').append(html);
+				}
+
+				$('.com').each(function(i,el){
+					var parent = $(el);
+					var children = $('.com-c-'+$(el).attr('data-id'));
+					selectAll(parent,children);
+				});
+				$('.buil').each(function(i,el){
+					var parent = $(el);
+					var children = $('.buil-c-'+$(el).attr('data-id'));
+					selectAll(parent,children);
+				});
+				$('.unit').each(function(i,el){
+					var parent = $(el);
+					var children = $('.unit-c-'+$(el).attr('data-id'));
+					selectAll(parent,children);
+				});
+				
+			},
+			error:function(err){
+				// alert('发生了错误：'+err.status);
+				console.table(err);
+			}
+		});
+	}
+
+	//获取房间信息
+	function getroom(builId,unit_num,floor_num,ele,cid){
+		// 如果数据存在则控制列表的显示和隐藏
+		if($('.floor-'+floor_num).length){
+			$('.floor-'+floor_num).toggle();
+			return;
+		}
+		$.ajax({
+			url:'../building/unit/floor/room',
+			type:'POST',
+			data:{
+				buil_id:builId,
+				unit_num:unit_num,
+				floor_num:floor_num,
+			},
+			success:function(data){
+				var data = eval('('+data+')');
+
+				var html = '<ul class="floor-'+floor_num+'">';
+				var room = data.room;
+				for(var i = 0;i<room.length;i++){
+					html += '<li><input type="checkbox" data-type="room" class="room com-c-'+cid+' buil-c-'+builId+' unit-c-'+unit_num+' flor-c-'+floor_num+'"><i>'+room[i].roomNo+'</i></li>';
+				}
+				html+='</ul>';
+				if($('.floor-'+floor_num).length==0){
+					$(ele).parent('li').append(html);
+				}
+
+				$('.com').each(function(i,el){
+					var parent = $(el);
+					var children = $('.com-c-'+$(el).attr('data-id'));
+					selectAll(parent,children);
+				});
+				$('.buil').each(function(i,el){
+					var parent = $(el);
+					var children = $('.buil-c-'+$(el).attr('data-id'));
+					selectAll(parent,children);
+				});
+				$('.unit').each(function(i,el){
+					var parent = $(el);
+					var children = $('.unit-c-'+$(el).attr('data-id'));
+					selectAll(parent,children);
+				});
+				$('.flor').each(function(i,el){
+					var parent = $(el);
+					var children = $('.flor-c-'+$(el).attr('data-id'));
+					selectAll(parent,children);
+				});
+			
+			},
+			error:function(err){
+				// alert('发生了错误：'+err.status);
+				console.table(err);
+			}
+		});
+	}
+
+	//全选、取消全选的事件
+	function selectAll(parent,children){
+		$(parent.unbind('click'));
+		// $(children.unbind('click'));
+
+		$(parent)[0].onclick = function(){
+			if ($(parent).prop("checked")) {
+				$(children).prop("checked", true);
+			} else {
+				$(children).prop("checked", false);
+			}
+		};
+
+		// $(children).each(function(i, el) {
+		// 	el.onclick = function(){
+		// 	//当没有选中某个子复选框时，SelectAll取消选中
+		// 		console.log($(el).prop("checked"));
+		// 		if (!$(el).prop("checked")) {
+		// 			$(parent).prop("checked", false);
+		// 		}
+		// 		var chsub = $(children).length; //获取subcheck的个数
+		// 		var checkedsub = 0;
+		// 		for(var i = 0;i<chsub;i++){
+		// 			if($($(children)[i]).prop("checked")){
+		// 				checkedsub++;
+		// 			}
+		// 		} //获取选中的subcheck的个数
+		// 		console.log(checkedsub,chsub)
+		// 		if (checkedsub == chsub) {
+		// 			$(parent).prop("checked", true);
+		// 		}
+		// 	};
+		// });
+	}
+	
+	function makeTask(){
+		var policeId  = $('#police').val();
+		if(policeId==''){
+			alert('请选择警员');
+			return;
+		}
+		var deadLine = $('#deadLine').val();
+		if(deadLine==''){
+			alert('请选择截止日期');
+			return;
+		}
+		var json = [];
+		var community = [];
+		var building = [];
+		var unit = [];
+		var floor = [];
+		var room = [];
+
+		$('input.alone-buil').prop('checked',true);
+		community = $("input.com:checked");
+
+		community.each(function(i, cel) {
+			var cid = $(cel).attr('data-id');
+			var e = $(cel).attr('data-e');
+			var n = $(cel).attr('data-n');
+			var cname = $(cel).next('a').html();
+			var obj = {};
+			obj.community = cname;
+			obj.longitude = e;
+			obj.latitude = n;
+			obj.building = [];
+			json.push(obj);
+
+			building = $("input.buil.com-c-"+cid+":checked");
+			building.each(function(j, bel) {
+				var bid = $(bel).attr('data-id');
+				var e = $(bel).attr('data-e');
+				var n = $(bel).attr('data-n');
+				var bname = $(bel).next('a').html();
+				var bobj = {};
+				bobj.building = bname;
+				bobj.longitude = e;
+				bobj.latitude = n;
+				bobj.unit = [];
+				json[i].building.push(bobj);
+
+				unit = $("input.unit.buil-c-"+bid+":checked");
+				unit.each(function(k, uel) {
+					var uid = $(uel).attr('data-id');
+					var uname = $(uel).next('a').html();
+					var uobj = {};
+					uobj.unit = uname;
+					uobj.floor = [];
+					json[i].building[j].unit.push(uobj);
+
+					floor = $("input.flor.unit-c-"+uid+":checked");
+					floor.each(function(l, fel) {
+						var fid = $(fel).attr('data-id');
+						var fname = $(fel).next('a').html();
+						var fobj = {};
+						fobj.floor = fname;
+						fobj.room = [];
+						json[i].building[j].unit[k].floor.push(fobj);
+
+						room = $("input.room.flor-c-"+fid+":checked");
+						room.each(function(m, rel) {
+							var rname = $(rel).next('i').html();
+							var robj = {};
+							robj.room = rname;
+							json[i].building[j].unit[k].floor[l].room.push(robj);
+						});
+					});
+				});
+			});
+		});
+		// 页面有一个隐藏的checkbox 作为独立建筑物的小区标识，默认是选中的，为了不影响任务列表数据，下面将该数据过滤掉了。
+		json.forEach(function(e, i) {
+			if(e.community=='独立建筑'&&e.building.length==0){
+				json.splice(i,1);
+			}
+		});
+		console.log(json);
+		if(json.length!=0){
+			exchangeJson(json);
+		}else{
+			alert('请选择任务区域!');
+		}
+		
+	}
+
+	function exchangeJson(json){
+		var policeId  = $('#police').val();
+		var policeName = $('#police option:selected').attr('data-name');
+		var policeCode = $('#police option:selected').attr('data-code');
+		var deadLine = $('#deadLine').val();
+		var type = $('#type').val();
+		var content = $('#content').val();
+
+		var tasks = [];
+		json.forEach(function(e,i) {
+			json[i].building.forEach(function(e,j) {
+				json[i].building[j].unit.forEach(function(e,k) {
+					json[i].building[j].unit[k].floor.forEach(function(e,l) {
+						json[i].building[j].unit[k].floor[l].room.forEach(function(e,m) {
+							// 任务细致到房间时，封装信息
+							var obj = {};
+							obj.community = json[i].community;
+							obj.room = json[i].building[j].building + json[i].building[j].unit[k].unit+json[i].building[j].unit[k].floor[l].floor+json[i].building[j].unit[k].floor[l].room[m].room;
+							obj.longitude = json[i].building[j].longitude;
+							obj.latitude = json[i].building[j].latitude;
+							obj.deadLine = deadLine;
+							obj.policeId = policeId;
+							obj.policeName = policeName;
+							obj.policeCode = policeCode;
+
+							obj.type = type;
+							obj.content = content;
+
+							tasks.push(obj);
+						});
+						if(json[i].building[j].unit[k].floor[l].room.length==0){
+							// 任务细致到楼层时，封装信息
+							var obj = {};
+							obj.community = json[i].community;
+							obj.room = json[i].building[j].building + json[i].building[j].unit[k].unit+json[i].building[j].unit[k].floor[l].floor;
+							obj.longitude = json[i].building[j].longitude;
+							obj.latitude = json[i].building[j].latitude;
+							obj.deadLine = deadLine;
+							obj.policeId = policeId;
+							obj.policeName = policeName;
+							obj.policeCode = policeCode;
+							obj.type = type;
+							obj.content = content;
+							tasks.push(obj);
+						}
+					});
+					if(json[i].building[j].unit[k].floor.length==0){
+						// 任务细致到单元时，封装信息
+						var obj = {};
+						obj.community = json[i].community;
+						obj.room = json[i].building[j].building + json[i].building[j].unit[k].unit;
+						obj.longitude = json[i].building[j].longitude;
+						obj.latitude = json[i].building[j].latitude;
+						obj.deadLine = deadLine;
+						obj.policeId = policeId;
+						obj.policeName = policeName;
+						obj.policeCode = policeCode;
+						obj.type = type;
+						obj.content = content;
+						tasks.push(obj);
+					}
+				});
+				if(json[i].building[j].unit.length==0){
+					// 任务细致到建筑时，封装信息
+					var obj = {};
+					obj.community = json[i].community;
+					obj.room = json[i].building[j].building;
+					obj.longitude = json[i].building[j].longitude;
+					obj.latitude = json[i].building[j].latitude;
+					obj.deadLine = deadLine;
+					obj.policeId = policeId;
+					obj.policeName = policeName;
+					obj.policeCode = policeCode;
+					obj.type = type;
+					obj.content = content;
+					tasks.push(obj);
+				}
+			});
+			if(json[i].building.length==0){
+				// 任务细致到小区时，封装信息
+				var obj = {};
+				obj.community = json[i].community;
+				obj.longitude = json[i].longitude;
+				obj.latitude = json[i].latitude;
+				obj.room = json[i].community;
+				obj.deadLine = deadLine;
+				obj.policeId = policeId;
+				obj.policeName = policeName;
+				obj.policeCode = policeCode;
+				obj.type = type;
+				obj.content = content;
+				tasks.push(obj);
+			}
+		});
+		console.log(tasks);
+		postData(tasks)
+	}
+
+	function postData(data){
+		var list = JSON.stringify(data);
+		$.ajax({
+
+			url: "http://"+window.location.host+"/PopulationInspect/task/Task_add",
+			type: 'POST',
+			dataType: 'JSON',					//数据类型
+			data:{"data":list},
+			async: true,						//是否异步，为false时锁定浏览器，请求完成前不进行其他操作
+			context: document.body,				//这个对象用于设置Ajax相关回调函数的上下文		
+			beforeSend: function(xhr) {			//请求发送前的回调函数，可修改 XMLHttpRequest 对象，如添加自定义 HTTP 头。
+				xhr.overrideMimeType("text/plain; charset=UTF-8");
+			},
+			//请求失败回调函数
+			error: function() {
+				console.log('局部事件error请求失败时调用此函数');
+			},
+			//请求成功回调函数
+			success: function(data) {
+				console.log(data);
+				if(data){
+					alert("任务下发成功");
+				}
+			},
+			error:function(err){
+				alert('抱歉，出错了！'+err.status);
+			},
+			//请求完成后回调函数 (请求success 和 error之后均调用)
+			complete: function() {
+				console.log('局部事件complete');
+			}
+		});
+	}
+</script>
+</body>
+</html>

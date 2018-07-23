@@ -1,0 +1,336 @@
+package com.example.project;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.baidu.location.BDLocation;
+import com.baidu.location.BDLocationListener;
+import com.baidu.location.LocationClient;
+import com.baidu.location.LocationClientOption;
+import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.BaiduMap.OnMarkerClickListener;
+import com.baidu.mapapi.map.BitmapDescriptor;
+import com.baidu.mapapi.map.BitmapDescriptorFactory;
+import com.baidu.mapapi.map.MapStatusUpdate;
+import com.baidu.mapapi.map.MapStatusUpdateFactory;
+import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.Marker;
+import com.baidu.mapapi.map.MarkerOptions;
+import com.baidu.mapapi.map.MyLocationData;
+import com.baidu.mapapi.map.OverlayOptions;
+import com.baidu.mapapi.model.LatLng;
+import com.example.DButil.DBMannger;
+import com.example.DButil.MySqliteHelper;
+import com.example.model.Task;
+
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RelativeLayout;
+import android.widget.Toast;
+
+public class MyFragment01 extends Fragment{
+	
+	/**百度地图*/
+	private MapView mMapView;
+	public BaiduMap mBaiduMap;
+	
+	//定位相关
+	public Button btn_location;		//我的位置
+	private LocationClient mLocationClient;
+	private MyLocationListener mLocationListener;
+	private boolean ifFirstIn = true;	//第一次进入时将地图移动到当前位置
+	private double mLatitude;
+	private double mLongitude;
+	
+	//覆盖物相关
+	private BitmapDescriptor mMarkerIcon;	//图标
+	public RelativeLayout mMarkerlay;		//点击图标后的弹框
+
+	/** 日志相关 */
+	private Button btn_addlog;	//添加日志
+	private Task currentTask = new Task();
+
+	//日志输入框布局
+	private RelativeLayout mLogInputLay;
+	private EditText mEditText;
+	private Button submit;		//提交日志
+	private Button cancel;		//取消
+	
+	//数据库
+	private MySqliteHelper helper;
+		
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View view = inflater.inflate(R.layout.tab01, container, false);  
+	 
+		/**初始化控件*/
+		//详情页部分的控件
+		btn_addlog = (Button) view.findViewById(R.id.btn_addlog);
+		
+		//输入框部分的控件
+		mLogInputLay = (RelativeLayout) view.findViewById(R.id.log_inputLay);
+		mEditText = (EditText) view.findViewById(R.id.log_editText);
+		submit = (Button) view.findViewById(R.id.confirm);
+		cancel = (Button) view.findViewById(R.id.cancel);
+		
+		//百度地图
+		mMapView = (MapView) view.findViewById(R.id.bmapView);
+		btn_location = (Button) view.findViewById(R.id.btn_location);
+		mMarkerlay = (RelativeLayout) view.findViewById(R.id.Markerlay);
+		
+		//设置控件的点击事件
+		initView();
+
+		/**初始化数据库管理�?*/
+		initDBMannger(); 
+		
+		//初始化定位
+		initLocation();
+		//覆盖物相关
+		initMarker();
+		
+		return view;
+	}
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+	}
+
+	private void initView() {
+		//添加日志
+		btn_addlog.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				mLogInputLay.setVisibility(View.VISIBLE);	//显示输入框
+			}
+		});
+		
+		//提交日志信息
+		submit.setOnClickListener(new OnClickListener() {	
+			SQLiteDatabase db;
+	    	String sql;
+	    	
+			@Override
+			public void onClick(View view) {				//点击提交按钮�?,获取输入框中的文本和当前时间，存入数据库�?
+				SimpleDateFormat mDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+				Date date = new Date();
+				String fdata = mDateFormat.format(date);
+				String text = mEditText.getText().toString();
+				
+				db = helper.getWritableDatabase();
+   	
+				if(text.equals("")){						//若输入框中无文本则存入自动巡检成功"
+					sql = "insert into log_t values('"+currentTask.getTaskId()+"','自动巡检','"+fdata+"','"+currentTask.getCommunity()+"','"+currentTask.getRoom()+"')";
+	    			DBMannger.execSQL(db, sql);
+					Toast.makeText(getActivity(), "自动巡检成功", Toast.LENGTH_SHORT ).show();
+				}else{
+					sql = "insert into log_t values('"+currentTask.getTaskId()+"','"+text+"','"+fdata+"','"+currentTask.getCommunity()+"','"+currentTask.getRoom()+"')";
+	    			DBMannger.execSQL(db, sql);
+					Toast.makeText(getActivity(), "提交成功", Toast.LENGTH_SHORT ).show();
+				}
+				
+				mLogInputLay.setVisibility(View.GONE);	//隐藏输入框
+				mMarkerlay.setVisibility(View.GONE); 	//隐藏详情页	
+				
+				//提交完日志删除对应的那条任务
+				sql = "DELETE FROM task_t where id='"+currentTask.getTaskId()+"'";
+    			DBMannger.execSQL(db, sql);
+	
+    			initMarker();
+    			db.close();	
+			}
+		});
+		
+		//取消按钮
+		cancel.setOnClickListener(new OnClickListener() {			
+			@Override
+			public void onClick(View arg0) {
+				mLogInputLay.setVisibility(View.GONE);	//隐藏输入框
+				mMarkerlay.setVisibility(View.GONE); 	//隐藏详情页	
+			}
+		});
+		
+		/** 百度地图 */
+		mBaiduMap = mMapView.getMap();
+		//缩放比例调整为15,500米左右
+		MapStatusUpdate msu = MapStatusUpdateFactory.zoomTo(15.0f);
+		mBaiduMap.setMapStatus(msu);
+		
+		btn_location.setOnClickListener(new OnClickListener() {	
+			//我的位置按钮
+			@Override
+			public void onClick(View view) {
+				LatLng mlatLng = new LatLng(mLatitude, mLongitude);
+				MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(mlatLng);
+				mBaiduMap.animateMapStatus(msu);
+			}
+		});
+		
+		//覆盖物点击事件
+		mBaiduMap.setOnMarkerClickListener(new OnMarkerClickListener() {		
+			@Override
+			public boolean onMarkerClick(Marker marker) {
+				Bundle extraInfo = marker.getExtraInfo();
+				Task t = (Task) extraInfo.getSerializable("info");
+				
+				currentTask.setTaskId(t.getTaskId());
+				currentTask.setCommunity(t.getCommunity());
+				currentTask.setRoom(t.getRoom());
+		
+				mMarkerlay.setVisibility(View.VISIBLE);		//显示详情页
+				return false;
+			}
+		});
+	}
+	
+	//初始化数据库管理
+	private void initDBMannger() {
+		helper = DBMannger.getIntance(getActivity());
+		//创建数据库
+		SQLiteDatabase db = helper.getWritableDatabase();
+	}
+	
+	/**定位相关*/
+	private class MyLocationListener implements BDLocationListener{
+		@Override
+		public void onReceiveLocation(BDLocation location) {
+			MyLocationData data = new MyLocationData.Builder()
+									.accuracy(location.getRadius())
+									.latitude(location.getLatitude())
+									.longitude(location.getLongitude())
+									.build();
+			mBaiduMap.setMyLocationData(data);
+			
+			//定位成功时记录下最新的位置
+			mLatitude = location.getLatitude();
+			mLongitude = location.getLongitude();
+			if(ifFirstIn){
+				LatLng mlatLng = new LatLng(location.getLatitude(), location.getLongitude());
+				MapStatusUpdate msu = MapStatusUpdateFactory.newLatLng(mlatLng);
+				mBaiduMap.animateMapStatus(msu);
+				ifFirstIn = false;
+			}
+		}
+		
+	}
+	
+	//初始化定位函数
+	private void initLocation() {
+		mLocationClient = new LocationClient(getActivity());
+		mLocationListener = new MyLocationListener();
+		mLocationClient.registerLocationListener(mLocationListener);
+	
+		LocationClientOption option = new LocationClientOption();
+		option.setCoorType("bd09ll");
+		option.setIsNeedAddress(true);	
+		option.setOpenGps(true);
+		option.setScanSpan(1000);		//定位的间隔设置为1秒
+		
+		mLocationClient.setLocOption(option);	
+	}
+	
+	/** 覆盖物相关 */
+	private void initMarker() {
+		mMarkerIcon = BitmapDescriptorFactory.fromResource(R.drawable.maker);
+		
+		//从数据库中获取任务列表，作为覆盖物添加到地图中
+		List<Task> taskList = new ArrayList<Task>();
+		
+		SQLiteDatabase db = helper.getWritableDatabase();
+    	String sql;   	
+	
+		sql = "select * from task_t";					
+		Cursor c = db.rawQuery(sql,null);
+		if(c != null){
+			String[] cols = c.getColumnNames();		//id,content,date
+			while(c.moveToNext()){
+				Task t = new Task();
+				t.setTaskId(Integer.parseInt(c.getString(c.getColumnIndex("id"))));
+				t.setLatitude(Double.valueOf(c.getString(c.getColumnIndex("latitude"))));
+				t.setLongitude(Double.valueOf(c.getString(c.getColumnIndex("longitude"))));
+				t.setDeadLine(c.getString(c.getColumnIndex("deadLine")));
+				t.setCommunity(c.getString(c.getColumnIndex("community")));
+				t.setRoom(c.getString(c.getColumnIndex("room")));
+				taskList.add(t);
+			}
+		}
+		
+		if(taskList.size() > 0)
+			addOverLay(taskList);
+		c.close();
+		db.close();
+	}
+	//根据数据添加覆盖物
+	private void addOverLay(List<Task> Tasks){
+		mBaiduMap.clear();
+		LatLng mLatLng = null;
+		Marker mMarker = null;
+		OverlayOptions options;
+		for(Task task:Tasks){
+			mLatLng = new LatLng(task.getLatitude(), task.getLongitude());
+			options = new MarkerOptions().position(mLatLng).icon(mMarkerIcon).zIndex(5);
+			mMarker = (Marker) mBaiduMap.addOverlay(options);
+			
+			Bundle bundle = new Bundle();
+			bundle.putSerializable("info", task);
+			mMarker.setExtraInfo(bundle);
+		}
+	}
+	
+	
+	/** 生命周期 */
+	@Override
+	public void onStart() {
+		super.onStart();
+		mBaiduMap.setMyLocationEnabled(true);		//允许定位
+		if(!mLocationClient.isStarted())
+			mLocationClient.start();				//开启定位功能
+	}
+	
+	@Override
+	public void onStop() {
+		super.onStop();
+		mBaiduMap.setMyLocationEnabled(false);
+		mLocationClient.stop();
+	}
+	
+	@Override  
+	public void onDestroy() {  
+        super.onDestroy();  
+        //在activity执行onDestroy时执行mMapView.onDestroy()，实现地图生命周期管理  
+        mMapView.onDestroy();  
+    }  
+    @Override  
+    public void onResume() {  
+        super.onResume();  
+        //在activity执行onResume时执行mMapView. onResume ()，实现地图生命周期管理  
+        mMapView.onResume();  
+    }  
+    @Override  
+    public void onPause() {  
+        super.onPause();  
+        //在activity执行onPause时执行mMapView. onPause ()，实现地图生命周期管理  
+        mMapView.onPause();  
+    }  
+}

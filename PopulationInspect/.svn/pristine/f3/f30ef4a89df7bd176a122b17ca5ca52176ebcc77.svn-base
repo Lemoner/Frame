@@ -1,0 +1,37 @@
+function treeLevel1(poli_id_my){
+	$.ajax({
+		url:'http://localhost:8080/PopulationInspect/police/getCommunityByPoliId',
+		type:'POST',
+		data:{
+			poli_id:poli_id_my,
+		},
+		success:function(data){
+		 //console.log(data);
+			var datas = eval('('+data+')');
+			createtree2(datas);
+		},
+		error:function(err){
+			alert('发生了错误：'+err.status);
+			console.table(err);
+		}
+	});
+}
+
+function treeLevel2(nodeId,Comm_id_my){
+	$.ajax({
+		url:'http://localhost:8080/PopulationInspect/police/getBuildingbyCommid',
+		type:'POST',
+		data:{
+			comm_id:Comm_id_my,
+		},
+		success:function(data){
+			var datas = eval('('+data+')');
+			console.log(nodeId);
+			createtree3(nodeId,datas);
+		},
+		error:function(err){
+			alert('发生了错误：'+err.status);
+			console.table(err);
+		}
+	});
+}

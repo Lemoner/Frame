@@ -1,0 +1,142 @@
+/**
+ * Created by Perfect on 2016/5/7.
+ */
+// var ploi={
+//     "resultCode":1,
+//     "police":{
+//         "poliId":1,"poliCode":"010001","poliName":"下沙-警员A","poliPass":"pwd123","poliRole":"01","poliPhoto":"","poliDistrict":"","timeLastlogin":"2016-05-08 13:19:33","ipLastlogin":"218.75.123.165","isDeleted":false,"ramark":"","statId":1,"poliRoleName":"一般警员"
+//     }
+// }
+
+
+function admin(){
+	var datas = JSON.parse(storage.getItem('police-info'));
+    var adminbox = $('#admin');
+    var p = '';
+    p += '<img src="'+'images/刘德华.jpg'+'" alt="警员照片">';
+    p += '<ul class="admin-info">';
+    p += '欢迎您！<span>'+datas.police.poliName+'&nbsp;[<i class="num blue b">'+datas.police.poliCode+'</i>]</span>巡检提醒（<i class="num red-2 b"><a class="num red-2" href="#">'+'1'+'</a>/<a class="num red-2" href="#">'+'15'+'</a>/<a class="num red-2" href="#">'+'50'+'</a></i>）'
+    p += '</ul><ul class="admin-web">';
+    p += '上一次登陆：<span>'+datas.police.timeLastlogin+'&nbsp;&nbsp;[<i class="blue b">'+datas.police.ipLastlogin+'</i>]</span></ul>';
+    adminbox.html(p);
+}
+//admin(datas);
+
+function  createtree(trees) {
+    var treebox = $('#tree');
+    var p = '';
+
+    for (var i = 0; i < trees.length; i++) {
+        p += '<ul class="folder"><li class="building0"><a class="m0" href="#">'+trees[i].name+'</a><ul class="subfolder" id="menu1-ul">';
+
+        for (var j = 0;j < trees[i].children.length ; j++) {
+            p += '<li class="building1"><a class="m1" href="#">'+trees[i].children[j].name+'</a><ul class="file" class="m2">';
+
+            for (var m = 0; m < trees[i].children[j].children.length; m++) {
+                p += '<li class="building2"><a href="#">'+trees[i].children[j].children[m].name+'</a></li>';
+
+            }
+            p += '</li></ul>';
+        }
+        p += '</ul></li></ul>';
+
+    }
+
+    treebox.html(p);
+}
+
+
+function createdy(dy_data){
+    var tabbox = $('#tab');
+    var p = '<ul id="myTab" class="tab-my nav nav-tabs">';
+    for (var i = 0; i < dy_data.length; i++) {
+        p += '<li><a class="tab-d" href="#dy1" data-toggle="tab">' + dy_data[i].name + '</a></li>';
+
+    }
+    p += '</ul>';
+    tabbox.prepend(p);
+}
+
+function createfloor(floor_data,dy,fl){
+    var roombox = $('#roombox'),
+        q = "<p>";
+
+    for (var m = 0; m < floor_data[dy].children[fl].children.length; m++) {
+        // 有人 未超期 关注
+        if(floor_data[fl].children[dy].children[m].personNum>0 &&floor_data[fl].children[dy].children[m].checked && floor_data[fl].children[dy].children[m].focus){
+
+            q += '<button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-danger">'+floor_data[fl].children[dy].children[m].personNum+'<span class="badge-my badge-danger">'+floor_data[fl].children[dy].children[m].roomNum+'</span></button>';
+
+        //有人 未超期 不关注
+        }else if(floor_data[fl].children[dy].children[m].personNum>0 &&floor_data[fl].children[dy].children[m].checked && !(floor_data[fl].children[dy].children.focus)){
+
+            q += '<button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-success">'+floor_data[fl].children[dy].children[m].personNum+'<span class="badge-my badge-success">'+floor_data[fl].children[dy].children[m].roomNum+'</span></button>';
+
+        //有人 超期 关注
+        }else if(floor_data[fl].children[dy].children[m].personNum>0 &&!(floor_data[fl].children[dy].children[m].checked) && floor_data[fl].children[dy].children[m].focus){
+            q += '<button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-danger">'+floor_data[fl].children[dy].children[m].personNum+'<span class="badge-my">'+floor_data[fl].children[dy].children[m].roomNum+'</span></button>';
+
+        //有人 超期 不关注
+        }else if(floor_data[fl].children[dy].children[m].personNum>0 &&!(floor_data[fl].children[dy].children[m].checked) && !(floor_data[fl].children[dy].children[m].focus)){
+
+            q += '<button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-success">'+floor_data[fl].children[dy].children[m].personNum+'<span class="badge-my">'+floor_data[fl].children[dy].children[m].roomNum+'</span></button>';
+        // 没人
+        }else if(floor_data[fl].children[dy].children[m].personNum==0){
+
+            q += '<button type="button" class="btn-h col-lg-2 col-md-2 col-xs-2 col-sm-2 btn btn-default">'+floor_data[fl].children[dy].children[m].personNum+'<span class="badge-my badge-success">'+floor_data[fl].children[dy].children[m].roomNum+'</span></button>';
+
+        }
+
+    }
+    q += '</p>';
+
+    roombox.prepend(q);
+}
+
+
+
+// var tree_datas={
+// "community":[
+//     {"commId":1,"poliId":1,"commName":"望江小区","commGpslist":"4|12-21|12-34|23-32|12-89","isDeleted":false,"ramark":""},
+//     {"commId":2,"poliId":1,"commName":"小区2","commGpslist":"4|12-2|12-9|1-9|12.99","isDeleted":false,"ramark":""},
+//     {"commId":3,"poliId":1,"commName":"小区3","commGpslist":"","isDeleted":false,"ramark":""}
+//     ],
+// "building":[
+//     {"builId":4,"poliId":1,"builName":"商务大厦A","builGpse":0.0,"builGpsn":0.0,"builType":"03","isDeleted":false,"ramark":""}
+//     ]
+// }
+
+// var building_datas={
+// "building":[
+//     {"builId":1,"commId":1,"poliId":0,"builName":"一幢","builGpse":0.0,"builGpsn":0.0,"builType":"01","isDeleted":false,"ramark":""},
+//     {"builId":2,"commId":1,"poliId":0,"builName":"二幢","builGpse":0.0,"builGpsn":0.0,"builType":"01","isDeleted":false,"ramark":""},
+//     {"builId":5,"commId":1,"poliId":0,"builName":"写字楼B","builGpse":0.0,"builGpsn":0.0,"builType":"02","isDeleted":false,"ramark":""}
+//     ]
+// }
+
+function createtree2(tree_datas){
+    var treebox = $('#tree');
+    treebox.html('');
+    var p = '<ul class="folder">';
+    for (var i = 0; i < tree_datas.community.length; i++) {
+        p += '<li class="building0" id="commId'+tree_datas.community[i].commId+'" onclick="treeLevel2(commId'+tree_datas.community[i].commId+','+tree_datas.community[i].commId+')"><a class="m0" href="#">'+tree_datas.community[i].commName+'</a><ul></ul></li>';
+    }
+    for (var j = 0; j < tree_datas.building.length; j++) {
+        p += '<li class="building0"><a class="m0" href="#">'+tree_datas.building[j].builName+'</a></li>';
+    }
+    p += '</ul>';
+
+    treebox.prepend(p);
+} 
+
+function createtree3(nodeId,building_datas){
+    var buildingbox = $('#nodeId').children('ul');
+    buildingbox.html('');
+    var p = '<ul class="subfolder" id="menu1-ul">';
+    for (var i = 0; i < building_datas.building.length; i++) {
+        p += '<li class="building1"><a class="m1" href="#">'+building_datas.building[i].builName+'</a></li>';
+    }
+    p += '</ul>';
+
+    buildingbox.append(p);
+}

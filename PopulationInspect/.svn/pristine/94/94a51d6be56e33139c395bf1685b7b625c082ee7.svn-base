@@ -1,0 +1,156 @@
+//所长二级目录请求数据---派出所
+function treeLevel20(stat_id_my){
+	$.ajax({
+		url:'../police/getCommByPoliStationId',
+		type:'POST',
+		data:{
+			station_id:stat_id_my,
+		},
+		success:function(data){
+		 //console.log(data);
+			var tree_datas = eval('('+data+')');
+			var buildingbox = $('#menu1-ul');
+		    buildingbox.html('');
+		    var p = '';
+		    for (var i = 0; i < tree_datas.community.length; i++) {
+		        p += '<li class="building1" id="commId'+tree_datas.community[i].commId+'" ><a class="m0" href="javascript:void(0)" onclick="treeLevel21('+tree_datas.community[i].commId+');return false;">'+tree_datas.community[i].commName+'</a><ul class="file" id="file'+tree_datas.community[i].commId+'"></ul></li>';
+		        
+		    }
+		    for (var j = 0; j < tree_datas.building.length; j++) {
+		        p += '<li class="building2"><a class="m0" href="javascript:void(0)">'+tree_datas.building[j].builName+'</a></li>';
+		    }
+
+		    p += '</ul>';
+
+		    buildingbox.append(p);
+
+		    buildingbox.toggle();
+
+		},
+		error:function(err){
+			alert('发生了错误：'+err.status);
+			console.table(err);
+		}
+	});
+}
+//所长三级目录请求数据----小区
+function treeLevel21(Comm_id_my){
+	$.ajax({
+		url:'../police/getBuildingbyCommid',
+		type:'POST',
+		data:{
+			comm_id:Comm_id_my,
+		},
+		success:function(data){
+			var datas = eval('('+data+')');
+			// console.log(nodeId_my);
+			
+		    var buildingbox = $('#file'+Comm_id_my);
+		    buildingbox.html('');
+		    var p = '';
+		    for (var i = 0; i < datas.building.length; i++) {
+		        p += '<li class="building2"><a href="javascript:void(0)">'+datas.building[i].builName+'</a></li>';
+		    }
+
+		    buildingbox.prepend(p);
+
+		    buildingbox.toggle();
+			
+		},
+		error:function(err){
+			alert('发生了错误：'+err.status);
+			console.table(err);
+		}
+	});
+}
+
+//一般警员一级目录数据请求---辖区建筑
+function treeLevel10(poli_id_my){
+
+	$.ajax({
+		url:'../police/getCommunityByPoliId',
+		type:'POST',
+		data:{
+			poli_id:poli_id_my,
+		},
+		success:function(data){
+		 //console.log(data);
+			var tree_datas = eval('('+data+')');
+			var treebox = $('#tree');
+		    treebox.html('');
+		    var p = '<ul class="folder">';
+		    for (var i = 0; i < tree_datas.community.length; i++) {
+		        p += '<li class="building0" id="commId'+tree_datas.community[i].commId+'"><a class="m0" href="javascript:void(0)" onclick="treeLevel11('+tree_datas.community[i].commId+')">'+tree_datas.community[i].commName+'</a><ul></ul></li>';
+		        
+		    }
+		    for (var j = 0; j < tree_datas.building.length; j++) {
+		        p += '<li class="building0"><a class="m0" href="javascript:void(0)">'+tree_datas.building[j].builName+'</a></li>';
+		    }
+		    p += '</ul>';
+		    treebox.prepend(p);
+		},
+		error:function(err){
+			alert('发生了错误：'+err.status);
+			console.table(err);
+		}
+	});
+}
+
+//警员二级目录数据请求----小区
+function treeLevel11(Comm_id_my){
+	$.ajax({
+		url:'../police/getBuildingbyCommid',
+		type:'POST',
+		data:{
+			comm_id:Comm_id_my,
+		},
+		success:function(data){
+
+			var datas = eval('('+data+')');
+			
+		    var buildingbox = $('#commId'+Comm_id_my).children('ul');
+		    buildingbox.html('');
+		    var p = '<ul class="subfolder" id="menu1-ul">';
+		    for (var i = 0; i < datas.building.length; i++) {
+		        p += '<li class="building1"><a class="m1" href="javascript:void(0)">'+datas.building[i].builName+'</a></li>';
+		    }
+		    p += '</ul>';
+
+		    buildingbox.prepend(p);
+
+		    buildingbox.toggle();
+
+	
+			
+		},
+		error:function(err){
+			alert('发生了错误：'+err.status);
+			console.table(err);
+		}
+	});
+}
+
+function getStatisByPoli(poli_id_my){
+	$.ajax({
+		url:'..//police/jurisdiction/statistics',
+		type:'POST',
+		data:{
+			poli_id:poli_id_my,
+		},
+		success:function(data){
+		 //console.log(data);
+			var datas = eval('('+data+')');
+
+			var statisticsBox = $('#info-t-box');
+			var p = '';
+			p += '<ul><li>小区数：'+datas.community_number+'</li><li>超期未巡检小区数：'+datas.over_due_community_number+'</li><li>重点关注小区数：'+datas.focus_community_number+'</li></ul>';
+			p += '<ul><li>楼宇数：'+datas.buildng_number+'</li><li>超期未巡检楼宇数：'+datas.over_due_building_number+'</li><li>重点关注楼宇数：'+datas.focus_building_number+'</li></ul>';
+			p += '<ul><li>房间总数：'+datas.room_number+'</li><li>空房间数：'+datas.empty_room_number+'</li><li>超期未巡检房间数：'+datas.over_due_room_number+'</li><li>重点关注房间数：'+datas.focus_room_number+'</li></ul>';
+			statisticsBox.prepend(p);
+		},
+		error:function(err){
+			alert('发生了错误：'+err.status);
+			console.table(err);
+		}
+	});
+}

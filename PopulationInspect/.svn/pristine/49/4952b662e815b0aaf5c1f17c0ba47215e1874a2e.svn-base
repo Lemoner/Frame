@@ -1,0 +1,118 @@
+package edu.hdu.lab.checkIn.controllers;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import edu.hdu.lab.checkIn.mapper.PersonMapper;
+import edu.hdu.lab.checkIn.model.Person;
+import edu.hdu.lab.checkIn.utils.JsonUtils;
+
+@Controller
+@RequestMapping("/person")
+public class PersonController {
+	
+	private Logger logger = Logger.getLogger(getClass());
+
+	@Autowired
+	private PersonMapper personMapper;
+
+	/**
+	 * 根据人员的ID 获取详细信息
+	 * @param pers_id 人员ID
+	 * @param request
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/info", method = RequestMethod.POST, produces = "text/html;charset=UTF-8")
+	public String getPersonInfobyPersId(
+			@RequestParam("pers_id") Integer pers_id,
+			HttpServletRequest request) {
+		Person person = personMapper.selectByPrimaryKey(pers_id);
+		int resultCode = 0;
+		Map<String, Object> resultMap = new HashMap<String, Object>(2);
+		if (person != null) {
+			resultCode=1;
+			resultMap.put("person", person);
+		}
+		resultMap.put("resultCode", resultCode);
+		return JsonUtils.createGson().toJson(resultMap);
+	}
+	
+	/**
+	 * 添加人员信息
+	 * @param addrCensus
+	 * @param addrLive
+	 * @param addrWork
+	 * @param isDeleted
+	 * @param isFocus
+	 * @param persIdcard
+	 * @param persName
+	 * @param persPhone
+	 * @param persPhoto
+	 * @param persSex
+	 * @param ramark
+	 * @param roomId
+	 * @param timeRegister
+	 * @param whyRegister
+	 * @param request
+	 * @return
+	 */
+	@ResponseBody
+	@RequestMapping(value = "/add.do", method = RequestMethod.POST, produces = "text/html;charset=UTF-8")
+	public String addPerson(@RequestParam(value = "addrCensus", required = false) String addrCensus,
+			@RequestParam(value = "addrLive", required = false) String addrLive,
+			@RequestParam(value = "addrWork", required = false) String addrWork,
+			@RequestParam(value = "isDeleted", required = false) Boolean isDeleted,
+			@RequestParam(value = "isFocus", required = false) Boolean isFocus,
+			@RequestParam(value = "persIdcard", required = false) String persIdcard,
+			@RequestParam(value = "persName", required = false) String persName,
+			@RequestParam(value = "persPhone", required = false) String persPhone,
+			@RequestParam(value = "persPhoto", required = false) String persPhoto,
+			@RequestParam(value = "persSex", required = false) Boolean persSex,
+			@RequestParam(value = "ramark", required = false) String ramark,
+			@RequestParam(value = "roomId", required = true) Integer roomId,
+			@RequestParam(value = "timeRegister", required = false) String timeRegister,
+			@RequestParam(value = "whyRegister", required = false) String whyRegister,
+			HttpServletRequest request) {
+		Person person = new Person();
+		person.setAddrCensus(addrCensus);
+		person.setAddrLive(addrLive);
+		person.setAddrWork(addrWork);
+		person.setIsDeleted(isDeleted);
+		person.setIsFocus(isFocus);
+		person.setPersIdcard(persIdcard);
+		person.setPersName(persName);
+		person.setPersPhone(persPhone);
+		person.setPersPhoto(persPhoto);
+		person.setPersSex(persSex);
+		person.setRamark(ramark);
+		person.setRoomId(roomId);
+		try {
+			person.setTimeRegister(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(timeRegister));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		person.setWhyRegister(whyRegister);
+		
+		int resultCode = 0;
+		Map<String, Object> resultMap = new HashMap<String, Object>(2);
+		resultCode = personMapper.insertSelective(person);
+		resultMap.put("resultCode", resultCode);
+		return JsonUtils.createGson().toJson(resultMap);
+	}
+
+	
+}

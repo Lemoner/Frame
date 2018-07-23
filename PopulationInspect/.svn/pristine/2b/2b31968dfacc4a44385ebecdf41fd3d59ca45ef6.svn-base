@@ -1,0 +1,73 @@
+/**
+ * Created by Perfect on 2016/5/7.
+ */
+function getOverDue(poli_id_my){
+    $.ajax({
+        url:'../police/inspectlog/overdue',
+        type:'POST',
+        dataType:'json',
+        data:{
+            poli_id:poli_id_my,
+        },
+        success:function(data){
+        //console.log(data);
+        var datas = eval('('+data+')');
+        var overduebox = $('#over-due');
+        var p = '';
+        p += '<a class="num red-2" href="javascript:void(0)">'+datas.comm_overinspect+'</a>/';
+        p += '<a class="num red-2" href="javascript:void(0)">'+datas.buil_overinspect+'</a>/';
+        p += '<a class="num red-2" href="javascript:void(0)">'+datas.room_overinspect+'</a>';
+
+        overduebox.html(p);
+        },
+        error:function(err){
+            alert('发生了错误：'+err.status);
+            console.table(err);
+        }
+    });
+}
+function admin(){
+	var datas = JSON.parse(storage.getItem('police-info'));
+    var adminbox = $('#admin');
+    var p = '';
+    p += '<img src="'+'images/user.jpg'+'" alt="警员照片">';
+    p += '<ul class="admin-info">';
+    p += '欢迎您！<span>'+datas.police.poliName+'&nbsp;[<i class="num blue b">'+datas.police.poliCode+'</i>]</span>巡检提醒（<i id="over-due" class="num red-2 b"><a class="num red-2" href="javascript:void(0)">'+'1'+'</a>/<a class="num red-2" href="javascript:void(0)">'+'21'+'</a>/<a class="num red-2" href="javascript:void(0)">'+'100'+'</a></i>）'
+    p += '</ul><ul class="admin-web">';
+    p += '上一次登陆：<span>'+datas.police.timeLastlogin+'&nbsp;&nbsp;[<i class="blue b">'+datas.police.ipLastlogin+'</i>]</span></ul>';
+    adminbox.html(p);
+
+    getOverDue(datas.police.poliId);
+}
+//admin(datas);
+
+function createtree10(poliId){
+    var treebox = $('#tree');
+    var breadcrumb = $("#breadcrumb");
+    breadcrumb.html("");
+    treebox.html('');
+    var p = '<ul class="folder">';
+    p += '<li class="building0" id="station" ><a class="m0" href="javascript:void(0)" onclick="treeLevel10('+poliId+');getStatisByPoli('+poliId+')"> 所管辖区</a><ul class="subfolder" id="menu1-ul"></li>';
+    p += '</ul>';
+
+    treebox.prepend(p);
+// 面包屑导航 添加辖区
+    var ol = '<ol class="breadcrumb" id="breadcrumb1">';
+    ol +='<li id="root1"><a  href="javascript:void(0)">所管辖区</a></li>';
+    breadcrumb.append(ol);
+}
+
+function createtree20(statName,statId){
+    var treebox = $('#tree');
+    var breadcrumb = $("#breadcrumb");
+    breadcrumb.html("");
+    treebox.html('');
+    var p = '<ul class="folder">';
+    p += '<li class="building0" id="station" ><a class="m0" href="javascript:void(0)" onclick="treeLevel20('+statId+');getStatisByStat('+statId+')">'+statName+'</a><ul class="subfolder" id="menu1-ul"></li>';
+    p += '</ul>';
+    //标头添加公安局
+    treebox.prepend(p);
+    var ol = '<ol class="breadcrumb" id="breadcrumb1">';
+    ol +='<li id="root1"><a  href="javascript:void(0)">' + statName + '</a></li>';
+    breadcrumb.append(ol);
+} 
