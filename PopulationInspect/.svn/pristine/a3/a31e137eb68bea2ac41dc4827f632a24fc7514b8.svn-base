@@ -1,3 +1,0 @@
-﻿项目采用Maven项目管理工具进行管理，使用目前流行的SpringMVC，mybatis框架，数据库使用mysql
-目前项目已完成SpringMVC和mybatis的配置
-做前端的同学请将应用放在src/mian/webapp下
