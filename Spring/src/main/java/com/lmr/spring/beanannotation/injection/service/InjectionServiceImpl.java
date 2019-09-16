@@ -1,6 +1,6 @@
 package com.lmr.spring.beanannotation.injection.service;
 
-import javax.inject.Inject;
+//import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,7 +14,7 @@ public class InjectionServiceImpl implements InjectionService{
 
 //	@Autowired()
 //	@Qualifier("injectionDaoImplOne")
-	@Inject
+//	@Inject
 	@Named("injectionDaoImplTwo")
 	private InjectionDao injectionDao;
 	
@@ -39,7 +39,7 @@ public class InjectionServiceImpl implements InjectionService{
 		System.out.println("Service层接收数据: "+arg);
 		
 		injectionDao.save(arg);
-		
+
 	}
 
 }
