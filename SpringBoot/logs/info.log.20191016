@@ -1,0 +1,1140 @@
+[ERROR][2019-10-16T15:46:04.448][restartedMain:SpringApplication.java:823] - Application run failed
+java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE-ERROR] - 'FileNamePattern' option has the same value "logs//info.log.%d{yyyyMMdd}" as that given for appender [FILE] defined earlier.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE-ERROR] - Collisions detected with FileAppender/RollingAppender instances defined earlier. Aborting.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE-ERROR] - For more information, please visit http://logback.qos.ch/codes.html#earlier_fa_collision
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:167)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:289)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:264)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:226)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:203)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:76)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:305)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.lmr.springboot.SpringbootApplication.main(SpringbootApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+[ERROR][2019-10-16T15:47:33.464][restartedMain:SpringApplication.java:823] - Application run failed
+java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE-ERROR] - 'FileNamePattern' option has the same value "logs/info.log.%d{yyyyMMdd}" as that given for appender [FILE] defined earlier.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE-ERROR] - Collisions detected with FileAppender/RollingAppender instances defined earlier. Aborting.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE-ERROR] - For more information, please visit http://logback.qos.ch/codes.html#earlier_fa_collision
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:167)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:80)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:60)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:118)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:289)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:264)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:226)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:203)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:127)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:76)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:53)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:342)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:305)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.lmr.springboot.SpringbootApplication.main(SpringbootApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+[INFO][2019-10-16T15:49:18.764][restartedMain:StartupInfoLogger.java:50] - Starting SpringbootApplication on bogon with PID 16062 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[INFO][2019-10-16T15:49:18.766][restartedMain:SpringApplication.java:652] - The following profiles are active: dev
+[INFO][2019-10-16T15:49:18.893][restartedMain:DeferredLog.java:225] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO][2019-10-16T15:49:18.893][restartedMain:DeferredLog.java:225] - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO][2019-10-16T15:49:18.894][restartedMain:DeferredLog.java:225] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO][2019-10-16T15:49:18.894][restartedMain:DeferredLog.java:225] - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO][2019-10-16T15:49:19.989][restartedMain:TomcatWebServer.java:90] - Tomcat initialized with port(s): 8088 (http)
+[INFO][2019-10-16T15:49:19.989][restartedMain:TomcatWebServer.java:90] - Tomcat initialized with port(s): 8088 (http)
+[INFO][2019-10-16T15:49:20.006][restartedMain:DirectJDKLog.java:173] - Initializing ProtocolHandler ["http-nio-8088"]
+[INFO][2019-10-16T15:49:20.016][restartedMain:DirectJDKLog.java:173] - Starting service [Tomcat]
+[INFO][2019-10-16T15:49:20.017][restartedMain:DirectJDKLog.java:173] - Starting Servlet engine: [Apache Tomcat/9.0.26]
+[INFO][2019-10-16T15:49:20.104][restartedMain:DirectJDKLog.java:173] - Initializing Spring embedded WebApplicationContext
+[INFO][2019-10-16T15:49:20.105][restartedMain:ServletWebServerApplicationContext.java:284] - Root WebApplicationContext: initialization completed in 1210 ms
+[INFO][2019-10-16T15:49:20.105][restartedMain:ServletWebServerApplicationContext.java:284] - Root WebApplicationContext: initialization completed in 1210 ms
+[INFO][2019-10-16T15:49:20.310][restartedMain:ExecutorConfigurationSupport.java:171] - Initializing ExecutorService 'applicationTaskExecutor'
+[INFO][2019-10-16T15:49:20.310][restartedMain:ExecutorConfigurationSupport.java:171] - Initializing ExecutorService 'applicationTaskExecutor'
+[INFO][2019-10-16T15:49:20.450][restartedMain:OptionalLiveReloadServer.java:57] - LiveReload server is running on port 35729
+[INFO][2019-10-16T15:49:20.450][restartedMain:OptionalLiveReloadServer.java:57] - LiveReload server is running on port 35729
+[INFO][2019-10-16T15:49:20.473][restartedMain:DirectJDKLog.java:173] - Starting ProtocolHandler ["http-nio-8088"]
+[INFO][2019-10-16T15:49:20.506][restartedMain:TomcatWebServer.java:202] - Tomcat started on port(s): 8088 (http) with context path ''
+[INFO][2019-10-16T15:49:20.506][restartedMain:TomcatWebServer.java:202] - Tomcat started on port(s): 8088 (http) with context path ''
+[INFO][2019-10-16T15:49:20.509][restartedMain:StartupInfoLogger.java:59] - Started SpringbootApplication in 2.198 seconds (JVM running for 3.967)
+[INFO][2019-10-16T15:57:35.234][Thread-13:ExecutorConfigurationSupport.java:208] - Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO][2019-10-16T15:57:35.234][Thread-13:ExecutorConfigurationSupport.java:208] - Shutting down ExecutorService 'applicationTaskExecutor'
+CONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERNCONSOLE_LOG_PATTERN[32m2019-10-16 15:58:33.776[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m Starting SpringbootApplication on bogon with PID 16090 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[32m2019-10-16 15:58:33.778[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m The following profiles are active: dev
+[32m2019-10-16 15:58:33.904[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[32m2019-10-16 15:58:33.904[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[32m2019-10-16 15:58:33.905[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[32m2019-10-16 15:58:33.905[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[32m2019-10-16 15:58:34.915[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[32m2019-10-16 15:58:34.915[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[32m2019-10-16 15:58:34.926[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[32m2019-10-16 15:58:34.935[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.apache.catalina.core.StandardService  [0;39m [34m:[0;39m Starting service [Tomcat]
+[32m2019-10-16 15:58:34.936[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36morg.apache.catalina.core.StandardEngine [0;39m [34m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[32m2019-10-16 15:58:35.004[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [34m:[0;39m Initializing Spring embedded WebApplicationContext
+[32m2019-10-16 15:58:35.004[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.web.context.ContextLoader           [0;39m [34m:[0;39m Root WebApplicationContext: initialization completed in 1098 ms
+[32m2019-10-16 15:58:35.004[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.web.context.ContextLoader           [0;39m [34m:[0;39m Root WebApplicationContext: initialization completed in 1098 ms
+[32m2019-10-16 15:58:35.169[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[32m2019-10-16 15:58:35.169[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[32m2019-10-16 15:58:35.295[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [34m:[0;39m LiveReload server is running on port 35729
+[32m2019-10-16 15:58:35.295[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [34m:[0;39m LiveReload server is running on port 35729
+[32m2019-10-16 15:58:35.313[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[32m2019-10-16 15:58:35.348[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[32m2019-10-16 15:58:35.348[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[32m2019-10-16 15:58:35.352[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m Started SpringbootApplication in 2.079 seconds (JVM running for 2.829)
+[32m2019-10-16 15:59:20.764[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                     Thread-13][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[32m2019-10-16 15:59:20.764[0;39m [31m INFO[0;39m [35m16090[0;39m [34m---[0;39m [33m[                     Thread-13][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[32m2019-10-16 15:59:25.750[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m Starting SpringbootApplication on bogon with PID 16096 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[32m2019-10-16 15:59:25.752[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m The following profiles are active: dev
+[32m2019-10-16 15:59:25.780[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[32m2019-10-16 15:59:25.780[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[32m2019-10-16 15:59:25.781[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[32m2019-10-16 15:59:25.781[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[32m2019-10-16 15:59:26.513[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[32m2019-10-16 15:59:26.513[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[32m2019-10-16 15:59:26.523[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[32m2019-10-16 15:59:26.530[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.apache.catalina.core.StandardService  [0;39m [34m:[0;39m Starting service [Tomcat]
+[32m2019-10-16 15:59:26.530[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36morg.apache.catalina.core.StandardEngine [0;39m [34m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[32m2019-10-16 15:59:26.595[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [34m:[0;39m Initializing Spring embedded WebApplicationContext
+[32m2019-10-16 15:59:26.595[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.web.context.ContextLoader           [0;39m [34m:[0;39m Root WebApplicationContext: initialization completed in 814 ms
+[32m2019-10-16 15:59:26.595[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.web.context.ContextLoader           [0;39m [34m:[0;39m Root WebApplicationContext: initialization completed in 814 ms
+[32m2019-10-16 15:59:26.730[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[32m2019-10-16 15:59:26.730[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[32m2019-10-16 15:59:26.859[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [34m:[0;39m LiveReload server is running on port 35729
+[32m2019-10-16 15:59:26.859[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [34m:[0;39m LiveReload server is running on port 35729
+[32m2019-10-16 15:59:26.879[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[32m2019-10-16 15:59:26.908[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[32m2019-10-16 15:59:26.908[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[32m2019-10-16 15:59:26.911[0;39m [31m INFO[0;39m [35m16096[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m Started SpringbootApplication in 1.527 seconds (JVM running for 3.364)
+[32m2019-10-16 16:04:12.495[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m Starting SpringbootApplication on bogon with PID 16178 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[32m2019-10-16 16:04:12.504[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m The following profiles are active: dev
+[32m2019-10-16 16:04:12.606[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[32m2019-10-16 16:04:12.606[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[32m2019-10-16 16:04:12.607[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[32m2019-10-16 16:04:12.607[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[32m2019-10-16 16:04:14.671[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[32m2019-10-16 16:04:14.671[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[32m2019-10-16 16:04:14.690[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[32m2019-10-16 16:04:14.708[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.apache.catalina.core.StandardService  [0;39m [34m:[0;39m Starting service [Tomcat]
+[32m2019-10-16 16:04:14.708[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36morg.apache.catalina.core.StandardEngine [0;39m [34m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[32m2019-10-16 16:04:14.975[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [34m:[0;39m Initializing Spring embedded WebApplicationContext
+[32m2019-10-16 16:04:14.975[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.web.context.ContextLoader           [0;39m [34m:[0;39m Root WebApplicationContext: initialization completed in 2368 ms
+[32m2019-10-16 16:04:14.975[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.web.context.ContextLoader           [0;39m [34m:[0;39m Root WebApplicationContext: initialization completed in 2368 ms
+[32m2019-10-16 16:04:15.228[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[32m2019-10-16 16:04:15.228[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[32m2019-10-16 16:04:15.543[0;39m [31m WARN[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [34m:[0;39m Unable to start LiveReload server
+[32m2019-10-16 16:04:15.543[0;39m [31m WARN[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [34m:[0;39m Unable to start LiveReload server
+[32m2019-10-16 16:04:15.586[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[32m2019-10-16 16:04:15.636[0;39m [31mERROR[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36morg.apache.catalina.util.LifecycleBase  [0;39m [34m:[0;39m Failed to start component [Connector[HTTP/1.1-8088]]
+
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.lmr.springboot.SpringbootApplication.main(SpringbootApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:230)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 19 common frames omitted
+
+[32m2019-10-16 16:04:15.646[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Pausing ProtocolHandler ["http-nio-8088"]
+[32m2019-10-16 16:04:15.647[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.apache.catalina.core.StandardService  [0;39m [34m:[0;39m Stopping service [Tomcat]
+[32m2019-10-16 16:04:15.654[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36morg.apache.catalina.util.LifecycleBase  [0;39m [34m:[0;39m The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+[32m2019-10-16 16:04:15.655[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Stopping ProtocolHandler ["http-nio-8088"]
+[32m2019-10-16 16:04:15.655[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Destroying ProtocolHandler ["http-nio-8088"]
+[32m2019-10-16 16:04:15.659[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mConditionEvaluationReportLoggingListener[0;39m [34m:[0;39m 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[32m2019-10-16 16:04:15.659[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mConditionEvaluationReportLoggingListener[0;39m [34m:[0;39m 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[32m2019-10-16 16:04:15.664[0;39m [31mERROR[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.d.LoggingFailureAnalysisReporter  [0;39m [34m:[0;39m 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8088 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8088, or configure this application to listen on another port.
+
+[32m2019-10-16 16:04:15.664[0;39m [31mERROR[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.d.LoggingFailureAnalysisReporter  [0;39m [34m:[0;39m 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8088 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8088, or configure this application to listen on another port.
+
+[32m2019-10-16 16:04:15.671[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[32m2019-10-16 16:04:15.671[0;39m [31m INFO[0;39m [35m16178[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[32m2019-10-16 16:05:04.612[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m Starting SpringbootApplication on bogon with PID 16181 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[32m2019-10-16 16:05:04.617[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m The following profiles are active: dev
+[32m2019-10-16 16:05:04.850[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[32m2019-10-16 16:05:04.850[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[32m2019-10-16 16:05:04.853[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[32m2019-10-16 16:05:04.853[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[32m2019-10-16 16:05:05.856[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[32m2019-10-16 16:05:05.856[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[32m2019-10-16 16:05:05.866[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[32m2019-10-16 16:05:05.873[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.apache.catalina.core.StandardService  [0;39m [34m:[0;39m Starting service [Tomcat]
+[32m2019-10-16 16:05:05.873[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36morg.apache.catalina.core.StandardEngine [0;39m [34m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[32m2019-10-16 16:05:05.944[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [34m:[0;39m Initializing Spring embedded WebApplicationContext
+[32m2019-10-16 16:05:05.944[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.web.context.ContextLoader           [0;39m [34m:[0;39m Root WebApplicationContext: initialization completed in 1091 ms
+[32m2019-10-16 16:05:05.944[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.web.context.ContextLoader           [0;39m [34m:[0;39m Root WebApplicationContext: initialization completed in 1091 ms
+[32m2019-10-16 16:05:06.151[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[32m2019-10-16 16:05:06.151[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[32m2019-10-16 16:05:06.264[0;39m [31m WARN[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [34m:[0;39m Unable to start LiveReload server
+[32m2019-10-16 16:05:06.264[0;39m [31m WARN[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [34m:[0;39m Unable to start LiveReload server
+[32m2019-10-16 16:05:06.282[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[32m2019-10-16 16:05:06.305[0;39m [31mERROR[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36morg.apache.catalina.util.LifecycleBase  [0;39m [34m:[0;39m Failed to start component [Connector[HTTP/1.1-8088]]
+
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.lmr.springboot.SpringbootApplication.main(SpringbootApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:230)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 19 common frames omitted
+
+[32m2019-10-16 16:05:06.310[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Pausing ProtocolHandler ["http-nio-8088"]
+[32m2019-10-16 16:05:06.310[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.apache.catalina.core.StandardService  [0;39m [34m:[0;39m Stopping service [Tomcat]
+[32m2019-10-16 16:05:06.315[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36morg.apache.catalina.util.LifecycleBase  [0;39m [34m:[0;39m The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+[32m2019-10-16 16:05:06.316[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Stopping ProtocolHandler ["http-nio-8088"]
+[32m2019-10-16 16:05:06.316[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Destroying ProtocolHandler ["http-nio-8088"]
+[32m2019-10-16 16:05:06.319[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mConditionEvaluationReportLoggingListener[0;39m [34m:[0;39m 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[32m2019-10-16 16:05:06.319[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mConditionEvaluationReportLoggingListener[0;39m [34m:[0;39m 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[32m2019-10-16 16:05:06.322[0;39m [31mERROR[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.d.LoggingFailureAnalysisReporter  [0;39m [34m:[0;39m 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8088 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8088, or configure this application to listen on another port.
+
+[32m2019-10-16 16:05:06.322[0;39m [31mERROR[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.d.LoggingFailureAnalysisReporter  [0;39m [34m:[0;39m 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8088 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8088, or configure this application to listen on another port.
+
+[32m2019-10-16 16:05:06.325[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[32m2019-10-16 16:05:06.325[0;39m [31m INFO[0;39m [35m16181[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[32m2019-10-16 16:07:26.180[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m Starting SpringbootApplication on bogon with PID 16195 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[32m2019-10-16 16:07:26.182[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m The following profiles are active: dev
+[32m2019-10-16 16:07:26.245[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[32m2019-10-16 16:07:26.245[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[32m2019-10-16 16:07:26.246[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[32m2019-10-16 16:07:26.246[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[32m2019-10-16 16:07:27.151[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[32m2019-10-16 16:07:27.151[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[32m2019-10-16 16:07:27.161[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[32m2019-10-16 16:07:27.168[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.apache.catalina.core.StandardService  [0;39m [34m:[0;39m Starting service [Tomcat]
+[32m2019-10-16 16:07:27.168[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36morg.apache.catalina.core.StandardEngine [0;39m [34m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[32m2019-10-16 16:07:27.233[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [34m:[0;39m Initializing Spring embedded WebApplicationContext
+[32m2019-10-16 16:07:27.235[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.web.context.ContextLoader           [0;39m [34m:[0;39m Root WebApplicationContext: initialization completed in 989 ms
+[32m2019-10-16 16:07:27.235[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.web.context.ContextLoader           [0;39m [34m:[0;39m Root WebApplicationContext: initialization completed in 989 ms
+[32m2019-10-16 16:07:27.413[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[32m2019-10-16 16:07:27.413[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[32m2019-10-16 16:07:27.543[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [34m:[0;39m LiveReload server is running on port 35729
+[32m2019-10-16 16:07:27.543[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [34m:[0;39m LiveReload server is running on port 35729
+[32m2019-10-16 16:07:27.560[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[32m2019-10-16 16:07:27.589[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[32m2019-10-16 16:07:27.589[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[32m2019-10-16 16:07:27.592[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                 restartedMain][0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m Started SpringbootApplication in 1.977 seconds (JVM running for 3.795)
+[32m2019-10-16 16:18:30.063[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                     Thread-14][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[32m2019-10-16 16:18:30.063[0;39m [31m INFO[0;39m [35m16195[0;39m [34m---[0;39m [33m[                     Thread-14][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [32m[2019-10-16 16:18:36.348][0;39m [35m16224[0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m Starting SpringbootApplication on bogon with PID 16224 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [32m[2019-10-16 16:18:36.350][0;39m [35m16224[0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m The following profiles are active: dev
+[31m[INFO][0;39m [32m[2019-10-16 16:18:36.418][0;39m [35m16224[0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [32m[2019-10-16 16:18:36.418][0;39m [35m16224[0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [32m[2019-10-16 16:18:36.418][0;39m [35m16224[0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [32m[2019-10-16 16:18:36.418][0;39m [35m16224[0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [32m[2019-10-16 16:18:37.211][0;39m [35m16224[0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [32m[2019-10-16 16:18:37.211][0;39m [35m16224[0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [32m[2019-10-16 16:18:37.220][0;39m [35m16224[0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [32m[2019-10-16 16:18:37.228][0;39m [35m16224[0;39m [36mo.apache.catalina.core.StandardService  [0;39m [34m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [32m[2019-10-16 16:18:37.229][0;39m [35m16224[0;39m [36morg.apache.catalina.core.StandardEngine [0;39m [34m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [32m[2019-10-16 16:18:37.300][0;39m [35m16224[0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [34m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [32m[2019-10-16 16:18:37.301][0;39m [35m16224[0;39m [36mo.s.web.context.ContextLoader           [0;39m [34m:[0;39m Root WebApplicationContext: initialization completed in 882 ms
+[31m[INFO][0;39m [32m[2019-10-16 16:18:37.301][0;39m [35m16224[0;39m [36mo.s.web.context.ContextLoader           [0;39m [34m:[0;39m Root WebApplicationContext: initialization completed in 882 ms
+[31m[INFO][0;39m [32m[2019-10-16 16:18:37.485][0;39m [35m16224[0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [32m[2019-10-16 16:18:37.485][0;39m [35m16224[0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [32m[2019-10-16 16:18:37.634][0;39m [35m16224[0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [34m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [32m[2019-10-16 16:18:37.634][0;39m [35m16224[0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [34m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [32m[2019-10-16 16:18:37.655][0;39m [35m16224[0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [32m[2019-10-16 16:18:37.684][0;39m [35m16224[0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [32m[2019-10-16 16:18:37.684][0;39m [35m16224[0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [32m[2019-10-16 16:18:37.687][0;39m [35m16224[0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m Started SpringbootApplication in 1.813 seconds (JVM running for 3.667)
+[31m[INFO][0;39m [32m[2019-10-16 16:20:02.846][0;39m [35m16224[0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [32m[2019-10-16 16:20:02.846][0;39m [35m16224[0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [32m[2019-10-16 16:20:10.215][0;39m [35m16230[0;39m [33m[restartedMain:StartupInfoLogger.java:50][0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m Starting SpringbootApplication on bogon with PID 16230 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [32m[2019-10-16 16:20:10.218][0;39m [35m16230[0;39m [33m[restartedMain:SpringApplication.java:652][0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m The following profiles are active: dev
+[31m[INFO][0;39m [32m[2019-10-16 16:20:10.299][0;39m [35m16230[0;39m [33m[restartedMain:DeferredLog.java:225][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [32m[2019-10-16 16:20:10.299][0;39m [35m16230[0;39m [33m[restartedMain:DeferredLog.java:225][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [32m[2019-10-16 16:20:10.300][0;39m [35m16230[0;39m [33m[restartedMain:DeferredLog.java:225][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [32m[2019-10-16 16:20:10.300][0;39m [35m16230[0;39m [33m[restartedMain:DeferredLog.java:225][0;39m [36m.e.DevToolsPropertyDefaultsPostProcessor[0;39m [34m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [32m[2019-10-16 16:20:11.096][0;39m [35m16230[0;39m [33m[restartedMain:TomcatWebServer.java:90][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [32m[2019-10-16 16:20:11.096][0;39m [35m16230[0;39m [33m[restartedMain:TomcatWebServer.java:90][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [32m[2019-10-16 16:20:11.107][0;39m [35m16230[0;39m [33m[restartedMain:DirectJDKLog.java:173][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [32m[2019-10-16 16:20:11.114][0;39m [35m16230[0;39m [33m[restartedMain:DirectJDKLog.java:173][0;39m [36mo.apache.catalina.core.StandardService  [0;39m [34m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [32m[2019-10-16 16:20:11.114][0;39m [35m16230[0;39m [33m[restartedMain:DirectJDKLog.java:173][0;39m [36morg.apache.catalina.core.StandardEngine [0;39m [34m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [32m[2019-10-16 16:20:11.179][0;39m [35m16230[0;39m [33m[restartedMain:DirectJDKLog.java:173][0;39m [36mo.a.c.c.C.[Tomcat].[localhost].[/]      [0;39m [34m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [32m[2019-10-16 16:20:11.179][0;39m [35m16230[0;39m [33m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [36mo.s.web.context.ContextLoader           [0;39m [34m:[0;39m Root WebApplicationContext: initialization completed in 878 ms
+[31m[INFO][0;39m [32m[2019-10-16 16:20:11.179][0;39m [35m16230[0;39m [33m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [36mo.s.web.context.ContextLoader           [0;39m [34m:[0;39m Root WebApplicationContext: initialization completed in 878 ms
+[31m[INFO][0;39m [32m[2019-10-16 16:20:11.370][0;39m [35m16230[0;39m [33m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [32m[2019-10-16 16:20:11.370][0;39m [35m16230[0;39m [33m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [32m[2019-10-16 16:20:11.487][0;39m [35m16230[0;39m [33m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [34m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [32m[2019-10-16 16:20:11.487][0;39m [35m16230[0;39m [33m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [36mo.s.b.d.a.OptionalLiveReloadServer      [0;39m [34m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [32m[2019-10-16 16:20:11.505][0;39m [35m16230[0;39m [33m[restartedMain:DirectJDKLog.java:173][0;39m [36mo.a.coyote.http11.Http11NioProtocol     [0;39m [34m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [32m[2019-10-16 16:20:11.534][0;39m [35m16230[0;39m [33m[restartedMain:TomcatWebServer.java:202][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [32m[2019-10-16 16:20:11.534][0;39m [35m16230[0;39m [33m[restartedMain:TomcatWebServer.java:202][0;39m [36mo.s.b.w.embedded.tomcat.TomcatWebServer [0;39m [34m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [32m[2019-10-16 16:20:11.537][0;39m [35m16230[0;39m [33m[restartedMain:StartupInfoLogger.java:59][0;39m [36mc.lmr.springboot.SpringbootApplication  [0;39m [34m:[0;39m Started SpringbootApplication in 1.723 seconds (JVM running for 3.741)
+[31m[INFO][0;39m [32m[2019-10-16 16:23:33.572][0;39m [35m16230[0;39m [33m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [32m[2019-10-16 16:23:33.572][0;39m [35m16230[0;39m [33m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [36mo.s.s.concurrent.ThreadPoolTaskExecutor [0;39m [34m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 16:23:41.520][0;39m [35m16235[0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [33m:[0;39m Starting SpringbootApplication on bogon with PID 16235 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 16:23:41.522][0;39m [35m16235[0;39m [34m[restartedMain:SpringApplication.java:652][0;39m [33m:[0;39m The following profiles are active: dev
+[31m[INFO][0;39m [36m[2019-10-16 16:23:41.718][0;39m [35m16235[0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [33m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 16:23:41.718][0;39m [35m16235[0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [33m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 16:23:41.718][0;39m [35m16235[0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [33m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 16:23:41.718][0;39m [35m16235[0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [33m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 16:23:42.790][0;39m [35m16235[0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [33m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 16:23:42.790][0;39m [35m16235[0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [33m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 16:23:42.806][0;39m [35m16235[0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [33m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 16:23:42.817][0;39m [35m16235[0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [33m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 16:23:42.818][0;39m [35m16235[0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [33m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 16:23:42.914][0;39m [35m16235[0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [33m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 16:23:42.915][0;39m [35m16235[0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [33m:[0;39m Root WebApplicationContext: initialization completed in 1196 ms
+[31m[INFO][0;39m [36m[2019-10-16 16:23:42.915][0;39m [35m16235[0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [33m:[0;39m Root WebApplicationContext: initialization completed in 1196 ms
+[31m[INFO][0;39m [36m[2019-10-16 16:23:43.145][0;39m [35m16235[0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [33m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 16:23:43.145][0;39m [35m16235[0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [33m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 16:23:43.291][0;39m [35m16235[0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [33m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 16:23:43.291][0;39m [35m16235[0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [33m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 16:23:43.315][0;39m [35m16235[0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [33m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 16:23:43.365][0;39m [35m16235[0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [33m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [36m[2019-10-16 16:23:43.365][0;39m [35m16235[0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [33m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [36m[2019-10-16 16:23:43.369][0;39m [35m16235[0;39m [34m[restartedMain:StartupInfoLogger.java:59][0;39m [33m:[0;39m Started SpringbootApplication in 2.419 seconds (JVM running for 4.562)
+[31m[INFO][0;39m [36m[2019-10-16 16:24:35.476][0;39m [35m16235[0;39m [34m[Thread-14:ExecutorConfigurationSupport.java:208][0;39m [33m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 16:24:35.476][0;39m [35m16235[0;39m [34m[Thread-14:ExecutorConfigurationSupport.java:208][0;39m [33m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 16:24:41.367][0;39m [35m[restartedMain:StartupInfoLogger.java:50][0;39m [34m:[0;39m Starting SpringbootApplication on bogon with PID 16249 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 16:24:41.369][0;39m [35m[restartedMain:SpringApplication.java:652][0;39m [34m:[0;39m The following profiles are active: dev
+[31m[INFO][0;39m [36m[2019-10-16 16:24:41.468][0;39m [35m[restartedMain:DeferredLog.java:225][0;39m [34m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 16:24:41.468][0;39m [35m[restartedMain:DeferredLog.java:225][0;39m [34m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 16:24:41.469][0;39m [35m[restartedMain:DeferredLog.java:225][0;39m [34m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 16:24:41.469][0;39m [35m[restartedMain:DeferredLog.java:225][0;39m [34m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 16:24:42.431][0;39m [35m[restartedMain:TomcatWebServer.java:90][0;39m [34m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 16:24:42.431][0;39m [35m[restartedMain:TomcatWebServer.java:90][0;39m [34m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 16:24:42.441][0;39m [35m[restartedMain:DirectJDKLog.java:173][0;39m [34m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 16:24:42.448][0;39m [35m[restartedMain:DirectJDKLog.java:173][0;39m [34m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 16:24:42.448][0;39m [35m[restartedMain:DirectJDKLog.java:173][0;39m [34m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 16:24:42.516][0;39m [35m[restartedMain:DirectJDKLog.java:173][0;39m [34m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 16:24:42.516][0;39m [35m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [34m:[0;39m Root WebApplicationContext: initialization completed in 1047 ms
+[31m[INFO][0;39m [36m[2019-10-16 16:24:42.516][0;39m [35m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [34m:[0;39m Root WebApplicationContext: initialization completed in 1047 ms
+[31m[INFO][0;39m [36m[2019-10-16 16:24:42.720][0;39m [35m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [34m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 16:24:42.720][0;39m [35m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [34m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 16:24:42.842][0;39m [35m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [34m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 16:24:42.842][0;39m [35m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [34m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 16:24:42.861][0;39m [35m[restartedMain:DirectJDKLog.java:173][0;39m [34m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 16:24:42.892][0;39m [35m[restartedMain:TomcatWebServer.java:202][0;39m [34m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [36m[2019-10-16 16:24:42.892][0;39m [35m[restartedMain:TomcatWebServer.java:202][0;39m [34m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [36m[2019-10-16 16:24:42.895][0;39m [35m[restartedMain:StartupInfoLogger.java:59][0;39m [34m:[0;39m Started SpringbootApplication in 2.126 seconds (JVM running for 3.059)
+[31m[INFO][0;39m [36m[2019-10-16 16:28:47.664][0;39m [35m[http-nio-8088-exec-1:DirectJDKLog.java:173][0;39m [34m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 16:28:47.668][0;39m [35m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [34m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 16:28:47.668][0;39m [35m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [34m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 16:28:47.679][0;39m [35m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [34m:[0;39m Completed initialization in 10 ms
+[31m[INFO][0;39m [36m[2019-10-16 16:28:47.679][0;39m [35m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [34m:[0;39m Completed initialization in 10 ms
+[31m[INFO][0;39m [36m[2019-10-16 16:34:34.521][0;39m [35m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [34m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 16:34:34.521][0;39m [35m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [34m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:24:54.868][0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [35m:[0;39m Starting SpringbootApplication on bogon with PID 18331 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 17:24:54.872][0;39m [34m[restartedMain:SpringApplication.java:652][0;39m [35m:[0;39m The following profiles are active: dev
+[31m[INFO][0;39m [36m[2019-10-16 17:24:54.977][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:24:54.977][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:24:54.978][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:24:54.978][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[WARN][0;39m [36m[2019-10-16 17:24:55.862][0;39m [34m[restartedMain:Logger.java:44][0;39m [35m:[0;39m No MyBatis mapper was found in '[com.lmr.springboot]' package. Please check your configuration.
+[31m[INFO][0;39m [36m[2019-10-16 17:24:56.394][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:24:56.394][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:24:56.410][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:24:56.419][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 17:24:56.419][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 17:24:56.514][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 17:24:56.515][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 1535 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:24:56.515][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 1535 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:24:57.020][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:24:57.020][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[WARN][0;39m [36m[2019-10-16 17:24:57.134][0;39m [34m[restartedMain:AbstractApplicationContext.java:557][0;39m [35m:[0;39m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+[31m[WARN][0;39m [36m[2019-10-16 17:24:57.134][0;39m [34m[restartedMain:AbstractApplicationContext.java:557][0;39m [35m:[0;39m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+[31m[INFO][0;39m [36m[2019-10-16 17:24:57.135][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:24:57.135][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:24:57.138][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Stopping service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 17:24:57.161][0;39m [34m[restartedMain:ConditionEvaluationReportLoggingListener.java:136][0;39m [35m:[0;39m 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[31m[INFO][0;39m [36m[2019-10-16 17:24:57.161][0;39m [34m[restartedMain:ConditionEvaluationReportLoggingListener.java:136][0;39m [35m:[0;39m 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[31m[ERROR][0;39m [36m[2019-10-16 17:24:57.172][0;39m [34m[restartedMain:LoggingFailureAnalysisReporter.java:40][0;39m [35m:[0;39m 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+[31m[ERROR][0;39m [36m[2019-10-16 17:24:57.172][0;39m [34m[restartedMain:LoggingFailureAnalysisReporter.java:40][0;39m [35m:[0;39m 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+[31m[INFO][0;39m [36m[2019-10-16 17:25:57.162][0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [35m:[0;39m Starting SpringbootApplication on bogon with PID 18342 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 17:25:57.164][0;39m [34m[restartedMain:SpringApplication.java:652][0;39m [35m:[0;39m The following profiles are active: dev
+[31m[INFO][0;39m [36m[2019-10-16 17:25:57.247][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:25:57.247][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:25:57.247][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:25:57.247][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[WARN][0;39m [36m[2019-10-16 17:25:57.884][0;39m [34m[restartedMain:Logger.java:44][0;39m [35m:[0;39m No MyBatis mapper was found in '[com.lmr.springboot]' package. Please check your configuration.
+[31m[INFO][0;39m [36m[2019-10-16 17:25:58.337][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:25:58.337][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:25:58.350][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:25:58.358][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 17:25:58.358][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 17:25:58.435][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 17:25:58.436][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 1188 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:25:58.436][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 1188 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:25:58.648][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:25:58.648][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[WARN][0;39m [36m[2019-10-16 17:25:58.764][0;39m [34m[restartedMain:AbstractApplicationContext.java:557][0;39m [35m:[0;39m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+[31m[WARN][0;39m [36m[2019-10-16 17:25:58.764][0;39m [34m[restartedMain:AbstractApplicationContext.java:557][0;39m [35m:[0;39m Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+[31m[INFO][0;39m [36m[2019-10-16 17:25:58.764][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:25:58.764][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:25:58.767][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Stopping service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 17:25:58.777][0;39m [34m[restartedMain:ConditionEvaluationReportLoggingListener.java:136][0;39m [35m:[0;39m 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[31m[INFO][0;39m [36m[2019-10-16 17:25:58.777][0;39m [34m[restartedMain:ConditionEvaluationReportLoggingListener.java:136][0;39m [35m:[0;39m 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[31m[ERROR][0;39m [36m[2019-10-16 17:25:58.781][0;39m [34m[restartedMain:LoggingFailureAnalysisReporter.java:40][0;39m [35m:[0;39m 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+[31m[ERROR][0;39m [36m[2019-10-16 17:25:58.781][0;39m [34m[restartedMain:LoggingFailureAnalysisReporter.java:40][0;39m [35m:[0;39m 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (no profiles are currently active).
+
+[31m[INFO][0;39m [36m[2019-10-16 17:26:37.705][0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [35m:[0;39m Starting SpringbootApplication on bogon with PID 18363 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 17:26:37.708][0;39m [34m[restartedMain:SpringApplication.java:652][0;39m [35m:[0;39m The following profiles are active: dev
+[31m[INFO][0;39m [36m[2019-10-16 17:26:37.855][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:26:37.855][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:26:37.855][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:26:37.855][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:26:38.929][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:26:38.929][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:26:38.950][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:26:38.962][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 17:26:38.963][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 17:26:39.072][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 17:26:39.072][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 1214 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:26:39.072][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 1214 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:26:39.259][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:26:39.259][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:26:39.392][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:26:39.392][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:26:39.413][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:26:39.446][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/hello'
+[31m[INFO][0;39m [36m[2019-10-16 17:26:39.446][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/hello'
+[31m[INFO][0;39m [36m[2019-10-16 17:26:39.450][0;39m [34m[restartedMain:StartupInfoLogger.java:59][0;39m [35m:[0;39m Started SpringbootApplication in 2.219 seconds (JVM running for 3.212)
+[31m[INFO][0;39m [36m[2019-10-16 17:26:47.081][0;39m [34m[http-nio-8088-exec-2:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:26:47.082][0;39m [34m[http-nio-8088-exec-2:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:26:47.082][0;39m [34m[http-nio-8088-exec-2:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:26:47.089][0;39m [34m[http-nio-8088-exec-2:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 7 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:26:47.089][0;39m [34m[http-nio-8088-exec-2:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 7 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:27:36.641][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:27:36.641][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:28:00.972][0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [35m:[0;39m Starting SpringbootApplication on bogon with PID 18371 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 17:28:00.974][0;39m [34m[restartedMain:SpringApplication.java:652][0;39m [35m:[0;39m The following profiles are active: dev
+[31m[INFO][0;39m [36m[2019-10-16 17:28:01.008][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:28:01.008][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:28:01.011][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:28:01.011][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:28:01.835][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:28:01.835][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:28:01.846][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:28:01.863][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 17:28:01.863][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 17:28:01.929][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 17:28:01.929][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 917 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:28:01.929][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 917 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:28:02.083][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:28:02.083][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:28:02.205][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:28:02.205][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:28:02.224][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:28:02.256][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:28:02.256][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:28:02.259][0;39m [34m[restartedMain:StartupInfoLogger.java:59][0;39m [35m:[0;39m Started SpringbootApplication in 1.679 seconds (JVM running for 3.32)
+[31m[INFO][0;39m [36m[2019-10-16 17:28:25.168][0;39m [34m[http-nio-8088-exec-4:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:28:25.169][0;39m [34m[http-nio-8088-exec-4:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:28:25.169][0;39m [34m[http-nio-8088-exec-4:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:28:25.175][0;39m [34m[http-nio-8088-exec-4:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 5 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:28:25.175][0;39m [34m[http-nio-8088-exec-4:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 5 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:29:35.746][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:29:35.746][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:29:40.502][0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [35m:[0;39m Starting SpringbootApplication on bogon with PID 18377 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 17:29:40.504][0;39m [34m[restartedMain:SpringApplication.java:652][0;39m [35m:[0;39m The following profiles are active: dev
+[31m[INFO][0;39m [36m[2019-10-16 17:29:40.568][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:29:40.568][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:29:40.569][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:29:40.569][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:29:41.358][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:29:41.358][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:29:41.368][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:29:41.386][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 17:29:41.387][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 17:29:41.451][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 17:29:41.452][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 883 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:29:41.452][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 883 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:29:41.596][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:29:41.596][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:29:41.711][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:29:41.711][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:29:41.732][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:29:41.761][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:29:41.761][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:29:41.764][0;39m [34m[restartedMain:StartupInfoLogger.java:59][0;39m [35m:[0;39m Started SpringbootApplication in 1.742 seconds (JVM running for 3.458)
+[31m[INFO][0;39m [36m[2019-10-16 17:29:58.233][0;39m [34m[http-nio-8088-exec-3:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:29:58.234][0;39m [34m[http-nio-8088-exec-3:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:29:58.234][0;39m [34m[http-nio-8088-exec-3:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:29:58.243][0;39m [34m[http-nio-8088-exec-3:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 9 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:29:58.243][0;39m [34m[http-nio-8088-exec-3:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 9 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:31:48.652][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:31:48.652][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:31:55.331][0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [35m:[0;39m Starting SpringbootApplication on bogon with PID 18386 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 17:31:55.333][0;39m [34m[restartedMain:SpringApplication.java:648][0;39m [35m:[0;39m No active profile set, falling back to default profiles: default
+[31m[INFO][0;39m [36m[2019-10-16 17:31:55.401][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:31:55.401][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:31:55.401][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:31:55.401][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:31:56.194][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:31:56.194][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:31:56.206][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:31:56.215][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 17:31:56.215][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 17:31:56.289][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 17:31:56.290][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 888 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:31:56.290][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 888 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:31:56.439][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:31:56.439][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:31:56.559][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:31:56.559][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:31:56.585][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:31:56.632][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:31:56.632][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:31:56.636][0;39m [34m[restartedMain:StartupInfoLogger.java:59][0;39m [35m:[0;39m Started SpringbootApplication in 1.739 seconds (JVM running for 3.501)
+[31m[INFO][0;39m [36m[2019-10-16 17:32:13.331][0;39m [34m[http-nio-8088-exec-5:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:32:13.331][0;39m [34m[http-nio-8088-exec-5:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:32:13.331][0;39m [34m[http-nio-8088-exec-5:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:32:13.336][0;39m [34m[http-nio-8088-exec-5:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 4 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:32:13.336][0;39m [34m[http-nio-8088-exec-5:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 4 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:34:15.564][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:34:15.564][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:34:27.837][0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [35m:[0;39m Starting SpringbootApplication on bogon with PID 18536 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 17:34:27.840][0;39m [34m[restartedMain:SpringApplication.java:648][0;39m [35m:[0;39m No active profile set, falling back to default profiles: default
+[31m[INFO][0;39m [36m[2019-10-16 17:34:27.907][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:34:27.907][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:34:27.908][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:34:27.908][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:34:28.683][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:34:28.683][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:34:28.703][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:34:28.710][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 17:34:28.710][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 17:34:28.880][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[31m[INFO][0;39m [36m[2019-10-16 17:34:28.883][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 17:34:28.884][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 976 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:34:28.884][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 976 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:34:29.049][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:34:29.049][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:34:29.115][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 17:34:29.115][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 17:34:29.202][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:34:29.202][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:34:29.223][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:34:29.256][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:34:29.256][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:34:29.260][0;39m [34m[restartedMain:StartupInfoLogger.java:59][0;39m [35m:[0;39m Started SpringbootApplication in 1.774 seconds (JVM running for 3.646)
+[31m[INFO][0;39m [36m[2019-10-16 17:34:34.433][0;39m [34m[http-nio-8088-exec-1:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:34:34.434][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:34:34.434][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:34:34.438][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 4 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:34:34.438][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 4 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:43:38.008][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:43:38.008][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:43:44.639][0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [35m:[0;39m Starting SpringbootApplication on bogon with PID 18675 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 17:43:44.642][0;39m [34m[restartedMain:SpringApplication.java:648][0;39m [35m:[0;39m No active profile set, falling back to default profiles: default
+[31m[INFO][0;39m [36m[2019-10-16 17:43:44.728][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:43:44.728][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:43:44.728][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:43:44.728][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:43:45.608][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:43:45.608][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:43:45.633][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:43:45.640][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 17:43:45.640][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 17:43:45.799][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[31m[INFO][0;39m [36m[2019-10-16 17:43:45.803][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 17:43:45.803][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 1074 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:43:45.803][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 1074 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:43:46.051][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:43:46.051][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:43:46.100][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 17:43:46.100][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 17:43:46.182][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:43:46.182][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:43:46.204][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:43:46.243][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:43:46.243][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:43:46.246][0;39m [34m[restartedMain:StartupInfoLogger.java:59][0;39m [35m:[0;39m Started SpringbootApplication in 2.102 seconds (JVM running for 4.44)
+[31m[INFO][0;39m [36m[2019-10-16 17:44:15.484][0;39m [34m[http-nio-8088-exec-1:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:44:15.485][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:44:15.485][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:44:15.489][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 4 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:44:15.489][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 4 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:52:46.632][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:52:46.632][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:52:55.226][0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [35m:[0;39m Starting SpringbootApplication on bogon with PID 18701 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 17:52:55.229][0;39m [34m[restartedMain:SpringApplication.java:648][0;39m [35m:[0;39m No active profile set, falling back to default profiles: default
+[31m[INFO][0;39m [36m[2019-10-16 17:52:55.291][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:52:55.291][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:52:55.292][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:52:55.292][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.232][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.232][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.244][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.262][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.262][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.433][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.438][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.439][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 1146 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.439][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 1146 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.615][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.615][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.672][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.672][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.757][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.757][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.779][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.813][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.813][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:52:56.816][0;39m [34m[restartedMain:StartupInfoLogger.java:59][0;39m [35m:[0;39m Started SpringbootApplication in 1.97 seconds (JVM running for 3.862)
+[31m[INFO][0;39m [36m[2019-10-16 17:53:05.138][0;39m [34m[http-nio-8088-exec-1:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:53:05.138][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:53:05.138][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:53:05.144][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 5 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:53:05.144][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 5 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:53:54.072][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:53:54.072][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:53:59.789][0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [35m:[0;39m Starting SpringbootApplication on bogon with PID 18705 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 17:53:59.791][0;39m [34m[restartedMain:SpringApplication.java:648][0;39m [35m:[0;39m No active profile set, falling back to default profiles: default
+[31m[INFO][0;39m [36m[2019-10-16 17:53:59.865][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:53:59.865][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:53:59.866][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:53:59.866][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:54:00.613][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:54:00.613][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:54:00.622][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:54:00.638][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 17:54:00.639][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 17:54:00.796][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[31m[INFO][0;39m [36m[2019-10-16 17:54:00.798][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 17:54:00.799][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 932 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:54:00.799][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 932 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:54:00.962][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:54:00.962][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:54:01.003][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 17:54:01.003][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 17:54:01.076][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:54:01.076][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:54:01.103][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:54:01.142][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:54:01.142][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:54:01.147][0;39m [34m[restartedMain:StartupInfoLogger.java:59][0;39m [35m:[0;39m Started SpringbootApplication in 1.764 seconds (JVM running for 3.489)
+[31m[INFO][0;39m [36m[2019-10-16 17:54:15.205][0;39m [34m[http-nio-8088-exec-1:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:54:15.206][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:54:15.206][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:54:15.211][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 5 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:54:15.211][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 5 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:55:10.581][0;39m [34m[Thread-12:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:55:10.581][0;39m [34m[Thread-12:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:55:17.602][0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [35m:[0;39m Starting SpringbootApplication on bogon with PID 18710 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 17:55:17.635][0;39m [34m[restartedMain:SpringApplication.java:648][0;39m [35m:[0;39m No active profile set, falling back to default profiles: default
+[31m[INFO][0;39m [36m[2019-10-16 17:55:17.675][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:55:17.675][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:55:17.675][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:55:17.675][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.402][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.402][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.412][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.418][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.418][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.565][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.570][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.571][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 896 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.571][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 896 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.737][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.737][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.783][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.783][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.851][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.851][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.870][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.905][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.905][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:55:18.908][0;39m [34m[restartedMain:StartupInfoLogger.java:59][0;39m [35m:[0;39m Started SpringbootApplication in 1.641 seconds (JVM running for 3.222)
+[31m[INFO][0;39m [36m[2019-10-16 17:56:03.796][0;39m [34m[http-nio-8088-exec-3:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:56:03.796][0;39m [34m[http-nio-8088-exec-3:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:56:03.796][0;39m [34m[http-nio-8088-exec-3:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:56:03.810][0;39m [34m[http-nio-8088-exec-3:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 13 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:56:03.810][0;39m [34m[http-nio-8088-exec-3:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 13 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:56:12.090][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:56:12.090][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:57:25.092][0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [35m:[0;39m Starting SpringbootApplication on bogon with PID 18717 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 17:57:25.097][0;39m [34m[restartedMain:SpringApplication.java:648][0;39m [35m:[0;39m No active profile set, falling back to default profiles: default
+[31m[INFO][0;39m [36m[2019-10-16 17:57:25.183][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:57:25.183][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:57:25.184][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:57:25.184][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.091][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.091][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.117][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.124][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.125][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.311][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.315][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.315][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 1130 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.315][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 1130 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.502][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.502][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.574][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.574][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.658][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.658][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.681][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.724][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.724][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [36m[2019-10-16 17:57:26.728][0;39m [34m[restartedMain:StartupInfoLogger.java:59][0;39m [35m:[0;39m Started SpringbootApplication in 2.241 seconds (JVM running for 3.998)
+[31m[INFO][0;39m [36m[2019-10-16 17:57:36.972][0;39m [34m[http-nio-8088-exec-1:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:57:36.972][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:57:36.972][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:57:36.979][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 6 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:57:36.979][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 6 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:57:46.340][0;39m [34m[http-nio-8088-exec-2:HelloController.java:27][0;39m [35m:[0;39m 2019-10-16 17:57:46
+[31m[INFO][0;39m [36m[2019-10-16 17:58:52.733][0;39m [34m[Thread-14:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:58:52.733][0;39m [34m[Thread-14:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:58:59.687][0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [35m:[0;39m Starting SpringbootApplication on bogon with PID 18723 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 17:58:59.690][0;39m [34m[restartedMain:SpringApplication.java:648][0;39m [35m:[0;39m No active profile set, falling back to default profiles: default
+[31m[INFO][0;39m [36m[2019-10-16 17:58:59.771][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:58:59.771][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 17:58:59.771][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:58:59.771][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.036][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.036][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.061][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.068][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.069][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.250][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.253][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.254][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 1483 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.254][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 1483 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.420][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.420][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.468][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.468][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.559][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.559][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.581][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.618][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.618][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path '/index'
+[31m[INFO][0;39m [36m[2019-10-16 17:59:01.622][0;39m [34m[restartedMain:StartupInfoLogger.java:59][0;39m [35m:[0;39m Started SpringbootApplication in 2.361 seconds (JVM running for 4.058)
+[31m[INFO][0;39m [36m[2019-10-16 17:59:27.240][0;39m [34m[http-nio-8088-exec-2:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:59:27.241][0;39m [34m[http-nio-8088-exec-2:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:59:27.241][0;39m [34m[http-nio-8088-exec-2:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 17:59:27.248][0;39m [34m[http-nio-8088-exec-2:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 7 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:59:27.248][0;39m [34m[http-nio-8088-exec-2:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 7 ms
+[31m[INFO][0;39m [36m[2019-10-16 17:59:27.279][0;39m [34m[http-nio-8088-exec-2:HelloController.java:26][0;39m [35m:[0;39m 2019-10-16 17:59:27
+[31m[INFO][0;39m [36m[2019-10-16 18:00:12.352][0;39m [34m[http-nio-8088-exec-4:HelloController.java:26][0;39m [35m:[0;39m 2019-10-16 18:00:12
+[31m[INFO][0;39m [36m[2019-10-16 18:00:22.500][0;39m [34m[Thread-14:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 18:00:22.500][0;39m [34m[Thread-14:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 18:00:26.667][0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [35m:[0;39m Starting SpringbootApplication on bogon with PID 18729 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 18:00:26.669][0;39m [34m[restartedMain:SpringApplication.java:648][0;39m [35m:[0;39m No active profile set, falling back to default profiles: default
+[31m[INFO][0;39m [36m[2019-10-16 18:00:26.742][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 18:00:26.742][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 18:00:26.743][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 18:00:26.743][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 18:00:27.497][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 18:00:27.497][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 18:00:27.520][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 18:00:27.526][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 18:00:27.527][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 18:00:27.679][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[31m[INFO][0;39m [36m[2019-10-16 18:00:27.682][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 18:00:27.682][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 939 ms
+[31m[INFO][0;39m [36m[2019-10-16 18:00:27.682][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 939 ms
+[31m[INFO][0;39m [36m[2019-10-16 18:00:27.854][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 18:00:27.854][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 18:00:27.895][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 18:00:27.895][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 18:00:27.967][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 18:00:27.967][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 18:00:27.988][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 18:00:28.030][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [36m[2019-10-16 18:00:28.030][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [36m[2019-10-16 18:00:28.033][0;39m [34m[restartedMain:StartupInfoLogger.java:59][0;39m [35m:[0;39m Started SpringbootApplication in 1.712 seconds (JVM running for 3.386)
+[31m[INFO][0;39m [36m[2019-10-16 18:32:45.343][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 18:32:45.343][0;39m [34m[Thread-13:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 18:32:57.445][0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [35m:[0;39m Starting SpringbootApplication on bogon with PID 18809 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 18:32:57.449][0;39m [34m[restartedMain:SpringApplication.java:648][0;39m [35m:[0;39m No active profile set, falling back to default profiles: default
+[31m[INFO][0;39m [36m[2019-10-16 18:32:57.525][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 18:32:57.525][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 18:32:57.526][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 18:32:57.526][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 18:32:58.358][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 18:32:58.358][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 18:32:58.372][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 18:32:58.379][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 18:32:58.379][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 18:32:58.452][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 18:32:58.452][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 925 ms
+[31m[INFO][0;39m [36m[2019-10-16 18:32:58.452][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 925 ms
+[31m[INFO][0;39m [36m[2019-10-16 18:32:58.601][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 18:32:58.601][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 18:32:58.724][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 18:32:58.724][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 18:32:58.741][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 18:32:58.772][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [36m[2019-10-16 18:32:58.772][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [36m[2019-10-16 18:32:58.776][0;39m [34m[restartedMain:StartupInfoLogger.java:59][0;39m [35m:[0;39m Started SpringbootApplication in 1.766 seconds (JVM running for 3.67)
+[31m[INFO][0;39m [36m[2019-10-16 18:33:15.640][0;39m [34m[http-nio-8088-exec-1:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 18:33:15.641][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 18:33:15.641][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 18:33:15.647][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 6 ms
+[31m[INFO][0;39m [36m[2019-10-16 18:33:15.647][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 6 ms
+[31m[INFO][0;39m [36m[2019-10-16 18:33:15.673][0;39m [34m[http-nio-8088-exec-1:HelloController.java:26][0;39m [35m:[0;39m 2019-10-16 18:33:15
+[31m[WARN][0;39m [36m[2019-10-16 18:33:15.769][0;39m [34m[http-nio-8088-exec-1:ResourceHttpRequestHandler.java:638][0;39m [35m:[0;39m Path with "WEB-INF" or "META-INF": [WEB-INF/views/index.jsp]
+[31m[WARN][0;39m [36m[2019-10-16 18:33:15.769][0;39m [34m[http-nio-8088-exec-1:ResourceHttpRequestHandler.java:638][0;39m [35m:[0;39m Path with "WEB-INF" or "META-INF": [WEB-INF/views/index.jsp]
+[31m[INFO][0;39m [36m[2019-10-16 18:34:03.651][0;39m [34m[Thread-10:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 18:34:03.651][0;39m [34m[Thread-10:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 18:34:04.784][0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [35m:[0;39m Starting SpringbootApplication on bogon with PID 18809 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 18:34:04.784][0;39m [34m[restartedMain:SpringApplication.java:648][0;39m [35m:[0;39m No active profile set, falling back to default profiles: default
+[31m[INFO][0;39m [36m[2019-10-16 18:34:04.965][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 18:34:04.965][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 18:34:04.966][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 18:34:04.967][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 18:34:04.967][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 18:34:04.975][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 18:34:04.976][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 190 ms
+[31m[INFO][0;39m [36m[2019-10-16 18:34:04.976][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 190 ms
+[31m[INFO][0;39m [36m[2019-10-16 18:34:05.030][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 18:34:05.030][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 18:34:05.083][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 18:34:05.083][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 18:34:05.104][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 18:34:05.109][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [36m[2019-10-16 18:34:05.109][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [36m[2019-10-16 18:34:05.111][0;39m [34m[restartedMain:StartupInfoLogger.java:59][0;39m [35m:[0;39m Started SpringbootApplication in 1.367 seconds (JVM running for 70.004)
+[31m[INFO][0;39m [36m[2019-10-16 18:34:05.113][0;39m [34m[restartedMain:ConditionEvaluationDeltaLoggingListener.java:63][0;39m [35m:[0;39m Condition evaluation unchanged
+[31m[INFO][0;39m [36m[2019-10-16 18:34:05.113][0;39m [34m[restartedMain:ConditionEvaluationDeltaLoggingListener.java:63][0;39m [35m:[0;39m Condition evaluation unchanged
+[INFO] [2019-10-16 18:34:07.508] [restartedMain:StartupInfoLogger.java:50] : Starting SpringbootApplication on bogon with PID 18944 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[INFO] [2019-10-16 18:34:07.511] [restartedMain:SpringApplication.java:648] : No active profile set, falling back to default profiles: default
+[INFO] [2019-10-16 18:34:07.598] [restartedMain:DeferredLog.java:225] : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO] [2019-10-16 18:34:07.598] [restartedMain:DeferredLog.java:225] : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[INFO] [2019-10-16 18:34:07.599] [restartedMain:DeferredLog.java:225] : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO] [2019-10-16 18:34:07.599] [restartedMain:DeferredLog.java:225] : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[INFO] [2019-10-16 18:34:09.299] [restartedMain:TomcatWebServer.java:90] : Tomcat initialized with port(s): 8088 (http)
+[INFO] [2019-10-16 18:34:09.299] [restartedMain:TomcatWebServer.java:90] : Tomcat initialized with port(s): 8088 (http)
+[INFO] [2019-10-16 18:34:09.318] [restartedMain:DirectJDKLog.java:173] : Initializing ProtocolHandler ["http-nio-8088"]
+[INFO] [2019-10-16 18:34:09.333] [restartedMain:DirectJDKLog.java:173] : Starting service [Tomcat]
+[INFO] [2019-10-16 18:34:09.333] [restartedMain:DirectJDKLog.java:173] : Starting Servlet engine: [Apache Tomcat/9.0.26]
+[INFO] [2019-10-16 18:34:09.502] [restartedMain:DirectJDKLog.java:173] : Initializing Spring embedded WebApplicationContext
+[INFO] [2019-10-16 18:34:09.503] [restartedMain:ServletWebServerApplicationContext.java:284] : Root WebApplicationContext: initialization completed in 1903 ms
+[INFO] [2019-10-16 18:34:09.503] [restartedMain:ServletWebServerApplicationContext.java:284] : Root WebApplicationContext: initialization completed in 1903 ms
+[INFO] [2019-10-16 18:34:09.748] [restartedMain:ExecutorConfigurationSupport.java:171] : Initializing ExecutorService 'applicationTaskExecutor'
+[INFO] [2019-10-16 18:34:09.748] [restartedMain:ExecutorConfigurationSupport.java:171] : Initializing ExecutorService 'applicationTaskExecutor'
+[WARN] [2019-10-16 18:34:10.002] [restartedMain:OptionalLiveReloadServer.java:60] : Unable to start LiveReload server
+[WARN] [2019-10-16 18:34:10.002] [restartedMain:OptionalLiveReloadServer.java:60] : Unable to start LiveReload server
+[INFO] [2019-10-16 18:34:10.031] [restartedMain:DirectJDKLog.java:173] : Starting ProtocolHandler ["http-nio-8088"]
+[ERROR] [2019-10-16 18:34:10.056] [restartedMain:DirectJDKLog.java:175] : Failed to start component [Connector[HTTP/1.1-8088]]
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1008)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:263)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:195)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:297)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:552)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:744)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:391)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1215)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1204)
+	at com.lmr.springboot.SpringbootApplication.main(SpringbootApplication.java:10)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.net.BindException: Address already in use
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Net.java:433)
+	at sun.nio.ch.Net.bind(Net.java:425)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(ServerSocketChannelImpl.java:223)
+	at sun.nio.ch.ServerSocketAdaptor.bind(ServerSocketAdaptor.java:74)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:230)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:213)
+	at org.apache.tomcat.util.net.AbstractEndpoint.bindWithCleanup(AbstractEndpoint.java:1124)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1210)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:585)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:1005)
+	... 19 common frames omitted
+[INFO] [2019-10-16 18:34:10.061] [restartedMain:DirectJDKLog.java:173] : Pausing ProtocolHandler ["http-nio-8088"]
+[INFO] [2019-10-16 18:34:10.061] [restartedMain:DirectJDKLog.java:173] : Stopping service [Tomcat]
+[INFO] [2019-10-16 18:34:10.068] [restartedMain:DirectJDKLog.java:173] : The stop() method was called on component [StandardServer[-1]] after stop() had already been called. The second call will be ignored.
+[INFO] [2019-10-16 18:34:10.068] [restartedMain:DirectJDKLog.java:173] : Stopping ProtocolHandler ["http-nio-8088"]
+[INFO] [2019-10-16 18:34:10.069] [restartedMain:DirectJDKLog.java:173] : Destroying ProtocolHandler ["http-nio-8088"]
+[INFO] [2019-10-16 18:34:10.071] [restartedMain:ConditionEvaluationReportLoggingListener.java:136] : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[INFO] [2019-10-16 18:34:10.071] [restartedMain:ConditionEvaluationReportLoggingListener.java:136] : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+[ERROR] [2019-10-16 18:34:10.073] [restartedMain:LoggingFailureAnalysisReporter.java:40] : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8088 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8088, or configure this application to listen on another port.
+
+[ERROR] [2019-10-16 18:34:10.073] [restartedMain:LoggingFailureAnalysisReporter.java:40] : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8088 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8088, or configure this application to listen on another port.
+
+[INFO] [2019-10-16 18:34:10.077] [restartedMain:ExecutorConfigurationSupport.java:208] : Shutting down ExecutorService 'applicationTaskExecutor'
+[INFO] [2019-10-16 18:34:10.077] [restartedMain:ExecutorConfigurationSupport.java:208] : Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 18:34:37.386][0;39m [34m[http-nio-8088-exec-1:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 18:34:37.387][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 18:34:37.387][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 18:34:37.399][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 12 ms
+[31m[INFO][0;39m [36m[2019-10-16 18:34:37.399][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 12 ms
+[31m[INFO][0;39m [36m[2019-10-16 18:34:37.401][0;39m [34m[http-nio-8088-exec-1:HelloController.java:26][0;39m [35m:[0;39m 2019-10-16 18:34:37
+[31m[WARN][0;39m [36m[2019-10-16 18:34:37.403][0;39m [34m[http-nio-8088-exec-1:ResourceHttpRequestHandler.java:638][0;39m [35m:[0;39m Path with "WEB-INF" or "META-INF": [WEB-INF/views/index.jsp]
+[31m[WARN][0;39m [36m[2019-10-16 18:34:37.403][0;39m [34m[http-nio-8088-exec-1:ResourceHttpRequestHandler.java:638][0;39m [35m:[0;39m Path with "WEB-INF" or "META-INF": [WEB-INF/views/index.jsp]
+[31m[INFO][0;39m [36m[2019-10-16 18:34:44.564][0;39m [34m[http-nio-8088-exec-2:HelloController.java:26][0;39m [35m:[0;39m 2019-10-16 18:34:44
+[31m[WARN][0;39m [36m[2019-10-16 18:34:44.566][0;39m [34m[http-nio-8088-exec-2:ResourceHttpRequestHandler.java:638][0;39m [35m:[0;39m Path with "WEB-INF" or "META-INF": [WEB-INF/views/index.jsp]
+[31m[WARN][0;39m [36m[2019-10-16 18:34:44.566][0;39m [34m[http-nio-8088-exec-2:ResourceHttpRequestHandler.java:638][0;39m [35m:[0;39m Path with "WEB-INF" or "META-INF": [WEB-INF/views/index.jsp]
+[31m[INFO][0;39m [36m[2019-10-16 18:38:05.290][0;39m [34m[Thread-23:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 18:38:05.290][0;39m [34m[Thread-23:ExecutorConfigurationSupport.java:208][0;39m [35m:[0;39m Shutting down ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 18:38:16.508][0;39m [34m[restartedMain:StartupInfoLogger.java:50][0;39m [35m:[0;39m Starting SpringbootApplication on bogon with PID 18982 (/Users/didi/WorkSpace/Frame/SpringBoot/target/classes started by didi in /Users/didi/WorkSpace/Frame/SpringBoot)
+[31m[INFO][0;39m [36m[2019-10-16 18:38:16.511][0;39m [34m[restartedMain:SpringApplication.java:648][0;39m [35m:[0;39m No active profile set, falling back to default profiles: default
+[31m[INFO][0;39m [36m[2019-10-16 18:38:16.575][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 18:38:16.575][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+[31m[INFO][0;39m [36m[2019-10-16 18:38:16.575][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 18:38:16.575][0;39m [34m[restartedMain:DeferredLog.java:225][0;39m [35m:[0;39m For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.315][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.315][0;39m [34m[restartedMain:TomcatWebServer.java:90][0;39m [35m:[0;39m Tomcat initialized with port(s): 8088 (http)
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.325][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.342][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting service [Tomcat]
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.343][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting Servlet engine: [Apache Tomcat/9.0.26]
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.498][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.501][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring embedded WebApplicationContext
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.501][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 926 ms
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.501][0;39m [34m[restartedMain:ServletWebServerApplicationContext.java:284][0;39m [35m:[0;39m Root WebApplicationContext: initialization completed in 926 ms
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.665][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.665][0;39m [34m[restartedMain:ExecutorConfigurationSupport.java:171][0;39m [35m:[0;39m Initializing ExecutorService 'applicationTaskExecutor'
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.703][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.703][0;39m [34m[restartedMain:WelcomePageHandlerMapping.java:58][0;39m [35m:[0;39m Adding welcome page template: index
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.774][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.774][0;39m [34m[restartedMain:OptionalLiveReloadServer.java:57][0;39m [35m:[0;39m LiveReload server is running on port 35729
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.794][0;39m [34m[restartedMain:DirectJDKLog.java:173][0;39m [35m:[0;39m Starting ProtocolHandler ["http-nio-8088"]
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.829][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.829][0;39m [34m[restartedMain:TomcatWebServer.java:202][0;39m [35m:[0;39m Tomcat started on port(s): 8088 (http) with context path ''
+[31m[INFO][0;39m [36m[2019-10-16 18:38:17.832][0;39m [34m[restartedMain:StartupInfoLogger.java:59][0;39m [35m:[0;39m Started SpringbootApplication in 1.667 seconds (JVM running for 3.458)
+[31m[INFO][0;39m [36m[2019-10-16 18:39:18.600][0;39m [34m[http-nio-8088-exec-1:DirectJDKLog.java:173][0;39m [35m:[0;39m Initializing Spring DispatcherServlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 18:39:18.601][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 18:39:18.601][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:525][0;39m [35m:[0;39m Initializing Servlet 'dispatcherServlet'
+[31m[INFO][0;39m [36m[2019-10-16 18:39:18.606][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 4 ms
+[31m[INFO][0;39m [36m[2019-10-16 18:39:18.606][0;39m [34m[http-nio-8088-exec-1:FrameworkServlet.java:547][0;39m [35m:[0;39m Completed initialization in 4 ms
+[31m[INFO][0;39m [36m[2019-10-16 18:39:18.627][0;39m [34m[http-nio-8088-exec-1:HelloController.java:26][0;39m [35m:[0;39m 2019-10-16 18:39:18
